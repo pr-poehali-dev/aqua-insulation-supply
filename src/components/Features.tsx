@@ -29,8 +29,12 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="py-16 md:py-24 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section id="features" className="relative py-16 md:py-24 bg-secondary/30 overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-[0.02] bg-cover bg-center"
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/f842b562-e73c-4120-b8cb-39786b53db85.jpg)' }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Почему выбирают нас</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">

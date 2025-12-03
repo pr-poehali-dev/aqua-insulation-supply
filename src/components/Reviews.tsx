@@ -41,8 +41,12 @@ export default function Reviews() {
   const totalReviews = 17;
 
   return (
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-[0.02] bg-cover bg-center"
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/b1a7af70-9c48-466c-92b1-acb87caf2ec8.jpg)' }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Отзывы клиентов</h2>
           <div className="flex items-center justify-center gap-2 mb-2">

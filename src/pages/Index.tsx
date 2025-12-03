@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Hero from '@/components/Hero';
 import Catalog from '@/components/Catalog';
 import Features from '@/components/Features';
+import Certificates from '@/components/Certificates';
 import Calculator from '@/components/Calculator';
 import Reviews from '@/components/Reviews';
 import ProjectGallery from '@/components/ProjectGallery';
@@ -20,6 +21,7 @@ const Index = () => {
       <Hero />
       <Features />
       <Catalog searchQuery={searchQuery} />
+      <Certificates />
       <Calculator />
       <Reviews />
       <ProjectGallery />

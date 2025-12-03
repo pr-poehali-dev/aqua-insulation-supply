@@ -21,11 +21,10 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            Качественная теплоизоляция для профессионалов
+            Изготовление и поставка теплоизоляционных чехлов
           </h1>
           <p className="text-lg md:text-xl mb-8 text-white/90 animate-fade-in">
-            Поставка материалов от ведущих производителей с доставкой по Санкт-Петербургу и ЛО. 
-            Собственный склад на Московском шоссе.
+            Производство теплоизоляционных чехлов и поставка материалов от ведущих производителей по всей России
           </p>
           <div className="flex flex-wrap gap-4 animate-fade-in">
             <Button
@@ -52,20 +51,20 @@ export default function Hero() {
               <Icon name="Truck" className="h-8 w-8 text-accent" />
               <div>
                 <p className="text-sm font-light text-white/70">Доставка</p>
-                <p className="font-semibold">по СПб и ЛО</p>
+                <p className="font-semibold">по всей России</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Icon name="Warehouse" className="h-8 w-8 text-accent" />
+              <Icon name="Factory" className="h-8 w-8 text-accent" />
               <div>
-                <p className="text-sm font-light text-white/70">Склад</p>
-                <p className="font-semibold">3000+ м²</p>
+                <p className="text-sm font-light text-white/70">Производство</p>
+                <p className="font-semibold">чехлов на заказ</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <Icon name="ShieldCheck" className="h-8 w-8 text-accent" />
               <div>
-                <p className="text-sm font-light text-white/70">Гарантия</p>
+                <p className="text-sm font-light text-white/70">Сертификаты</p>
                 <p className="font-semibold">качества</p>
               </div>
             </div>
