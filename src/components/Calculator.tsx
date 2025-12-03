@@ -34,7 +34,7 @@ export default function Calculator() {
     <section className="relative py-16 md:py-24 bg-secondary/30 overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.02] bg-cover bg-center"
-        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/960729f6-5b09-42da-93c8-75211f39f3ad.jpg)' }}
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/bfd72e86-bf1f-4609-9f78-b632f73becbd.jpg)' }}
       />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">

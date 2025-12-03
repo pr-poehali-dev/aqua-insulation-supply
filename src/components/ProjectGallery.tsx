@@ -37,7 +37,7 @@ export default function ProjectGallery() {
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div 
           className="absolute inset-0 opacity-[0.02] bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/72968afe-634a-4a7a-8d4c-fcf66bb4a2cc.jpg)' }}
+          style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/1dddd07a-5a5d-4c5d-bc23-b47853006fb8.jpg)' }}
         />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">

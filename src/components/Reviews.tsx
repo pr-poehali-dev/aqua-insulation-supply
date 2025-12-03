@@ -37,14 +37,14 @@ export default function Reviews() {
     },
   ];
 
-  const averageRating = 4.6;
-  const totalReviews = 17;
+  const averageRating = 4.4;
+  const totalReviews = 28;
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.02] bg-cover bg-center"
-        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/b1a7af70-9c48-466c-92b1-acb87caf2ec8.jpg)' }}
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/454349fc-24fb-4821-a839-f87eed21e91c.jpg)' }}
       />
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
@@ -66,7 +66,7 @@ export default function Reviews() {
             <span className="text-2xl font-bold">{averageRating}</span>
           </div>
           <p className="text-muted-foreground">
-            На основе {totalReviews} отзывов из Google
+            На основе {totalReviews} отзывов из Яндекс.Карт
           </p>
         </div>
 
@@ -100,13 +100,13 @@ export default function Reviews() {
 
         <div className="text-center mt-8">
           <a
-            href="https://www.google.com/maps"
+            href="https://yandex.ru/maps"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-accent hover:underline"
           >
             <Icon name="ExternalLink" className="h-4 w-4" />
-            Все отзывы на Google
+            Все отзывы на Яндекс.Картах
           </a>
         </div>
       </div>
