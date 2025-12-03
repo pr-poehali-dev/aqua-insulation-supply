@@ -52,6 +52,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['λ = 0.028-0.030 Вт/(м·К)', 'Толщина: 30-100 мм', 'Водопоглощение: 0.2%'],
       application: 'Нагружаемые конструкции, эксплуатируемые кровли',
       icon: 'Boxes',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/3b723978-8e3e-4b06-8c79-39c3cb201308.jpg',
     },
     {
       id: 5,
@@ -61,6 +62,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['λ = 0.035 Вт/(м·К)', 'Толщина: 2-15 мм', 'Отражение тепла: до 97%'],
       application: 'Трубопроводы, полы с подогревом, парозащита',
       icon: 'Waves',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/c1e56f15-84cc-48a9-ae43-0ee5b5cc7fc4.jpg',
     },
     {
       id: 6,
@@ -70,6 +72,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['λ = 0.037-0.049 Вт/(м·К)', 'Толщина: 3-10 мм', 'Фольга: одно- или двустороння'],
       application: 'Теплоотражающая изоляция, парозащита',
       icon: 'Shield',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/18be3077-b28a-483a-aeff-c7bdedb77c6b.jpg',
     },
     {
       id: 7,
@@ -79,6 +82,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['Клей-пена', 'Дюбели тарельчатые', 'Армирующие сетки'],
       application: 'Монтаж всех типов утеплителей',
       icon: 'Wrench',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/b60a4c38-9853-4403-ac65-644d8624232f.jpg',
     },
     {
       id: 8,
@@ -88,6 +92,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['Ветрозащита', 'Пароизоляция', 'Гидрозащита'],
       application: 'Защита конструкций от влаги и ветра',
       icon: 'Droplet',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/3a42495e-bb70-41d9-81f6-5b48106929b8.jpg',
     },
   ];
 

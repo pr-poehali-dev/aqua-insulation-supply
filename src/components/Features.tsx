@@ -7,6 +7,7 @@ export default function Features() {
       icon: 'Package',
       title: 'Широкий ассортимент',
       description: 'PIR-плиты, минвата, XPS, пенофол и сопутствующие материалы от ведущих брендов',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/960729f6-5b09-42da-93c8-75211f39f3ad.jpg',
     },
     {
       icon: 'Calculator',
@@ -17,11 +18,13 @@ export default function Features() {
       icon: 'Truck',
       title: 'Доставка на объект',
       description: 'Оперативная доставка по СПб и Ленинградской области собственным транспортом',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/f842b562-e73c-4120-b8cb-39786b53db85.jpg',
     },
     {
       icon: 'Clock',
       title: 'Работаем с 2010 года',
       description: 'Надежный поставщик для строительных компаний и частных застройщиков',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/34e24869-604c-4d62-84bd-10a5c44f41d6.jpg',
     },
   ];
 
@@ -37,8 +40,17 @@ export default function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex flex-col items-center text-center">
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
+              {feature.image ? (
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              ) : null}
+              <div className="p-6 flex flex-col items-center text-center">
                 <div className="mb-4 p-3 rounded-full bg-accent/10">
                   <Icon name={feature.icon} className="h-8 w-8 text-accent" />
                 </div>

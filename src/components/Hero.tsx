@@ -13,8 +13,12 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-white py-20 md:py-32">
-      <div className="container mx-auto px-4">
+    <section id="hero" className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-white py-20 md:py-32 overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-5 bg-cover bg-center"
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/b1a7af70-9c48-466c-92b1-acb87caf2ec8.jpg)' }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
             Качественная теплоизоляция для профессионалов
