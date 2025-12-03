@@ -32,9 +32,9 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-2">
-            <Icon name="Snowflake" className="h-8 w-8 text-accent" />
+            <div className="w-8 h-8"></div>
             <div>
-              <h1 className="text-lg font-bold text-primary">АкваРос СПб</h1>
+              <h1 className="text-lg font-bold text-accent">АкваРос СПб</h1>
               <p className="text-xs text-muted-foreground">Теплоизоляция</p>
             </div>
           </div>

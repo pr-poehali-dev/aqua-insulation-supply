@@ -86,7 +86,7 @@ export default function ContactForm() {
                     <Icon name="MapPin" className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Адрес склада</h4>
+                    <h4 className="font-semibold mb-1">Адрес офиса</h4>
                     <p className="text-sm text-muted-foreground">
                       196158, Санкт-Петербург<br />
                       Московское ш., 46, лит. Б<br />

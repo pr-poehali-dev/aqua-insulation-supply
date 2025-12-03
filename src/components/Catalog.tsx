@@ -22,6 +22,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['λ = 0.022 Вт/(м·К)', 'Толщина: 20-150 мм', 'Плотность: 30-40 кг/м³'],
       application: 'Фасады, кровли, фундаменты',
       icon: 'Layers',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/f442b201-0415-4e03-8cc8-04fd20485f11.jpg',
     },
     {
       id: 2,
@@ -31,6 +32,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['λ = 0.035-0.042 Вт/(м·К)', 'Толщина: 50-200 мм', 'Класс горючести: НГ'],
       application: 'Стены, перегородки, кровли',
       icon: 'Wind',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/9c721597-0bec-4de8-8099-c4b5717fd4dc.jpg',
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
       features: ['λ = 0.032 Вт/(м·К)', 'Толщина: 20-100 мм', 'Прочность: 200 кПа'],
       application: 'Фундаменты, цоколи, полы',
       icon: 'Box',
+      image: 'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/3b723978-8e3e-4b06-8c79-39c3cb201308.jpg',
     },
     {
       id: 4,
@@ -125,9 +128,19 @@ export default function Catalog({ searchQuery }: CatalogProps) {
               onClick={() => setSelectedProduct(product)}
             >
               <div className="flex flex-col h-full">
-                <div className="mb-4 p-4 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
-                  <Icon name={product.icon} className="h-12 w-12 text-accent mx-auto" />
-                </div>
+                {product.image ? (
+                  <div className="mb-4 rounded-lg overflow-hidden aspect-video">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="mb-4 p-4 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                    <Icon name={product.icon} className="h-12 w-12 text-accent mx-auto" />
+                  </div>
+                )}
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                 <p className="text-xs text-muted-foreground mb-3">{product.category}</p>
                 <p className="text-sm text-muted-foreground flex-grow">{product.description}</p>
