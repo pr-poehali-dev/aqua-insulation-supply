@@ -26,7 +26,7 @@ export default function Catalog({ searchQuery }: CatalogProps) {
     },
     {
       id: 2,
-      name: 'Вспененный каучук Unionflex',
+      name: 'Теплоизоляция Unionflex',
       category: 'Вспененный каучук',
       description: 'Гибкая эластичная теплоизоляция из синтетического каучука для трубопроводов и оборудования',
       features: ['λ = 0.033-0.040 Вт/(м·К)', 'Толщина: 6-32 мм', 'Диапазон температур: -50…+110°C'],
