@@ -18,7 +18,14 @@ export default {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'brand-gradient': 'linear-gradient(135deg, #E8303A 0%, #F97316 50%, #FACC15 100%)',
+				'brand-gradient-h': 'linear-gradient(90deg, #E8303A 0%, #F97316 50%, #FACC15 100%)',
+			},
 			colors: {
+				'brand-red': '#E8303A',
+				'brand-orange': '#F97316',
+				'brand-yellow': '#FACC15',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

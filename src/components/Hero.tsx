@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-white py-20 md:py-32 overflow-hidden">
+    <section id="hero" className="relative bg-brand-gradient text-white py-20 md:py-32 overflow-hidden">
       <div 
         className="absolute inset-0 opacity-5 bg-cover bg-center"
         style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/bfd72e86-bf1f-4609-9f78-b632f73becbd.jpg)' }}
@@ -30,7 +30,7 @@ export default function Hero() {
             <Button
               size="lg"
               onClick={scrollToCatalog}
-              className="bg-accent hover:bg-accent/90 text-white"
+              className="bg-white text-brand-orange hover:bg-white/90 font-bold shadow-lg"
             >
               <Icon name="Package" className="mr-2 h-5 w-5" />
               Каталог продукции
@@ -39,7 +39,7 @@ export default function Hero() {
               size="lg"
               variant="outline"
               onClick={scrollToContacts}
-              className="bg-white text-primary hover:bg-white/90 border-white"
+              className="bg-transparent text-white hover:bg-white/15 border-white border-2"
             >
               <Icon name="MessageSquare" className="mr-2 h-5 w-5" />
               Оставить заявку
@@ -48,21 +48,21 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12">
             <div className="flex items-center gap-3">
-              <Icon name="Truck" className="h-8 w-8 text-accent" />
+              <Icon name="Truck" className="h-8 w-8 text-white/90" />
               <div>
                 <p className="text-sm font-light text-white/70">Доставка</p>
                 <p className="font-semibold">по всей России</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Icon name="Factory" className="h-8 w-8 text-accent" />
+              <Icon name="Factory" className="h-8 w-8 text-white/90" />
               <div>
                 <p className="text-sm font-light text-white/70">Производство</p>
                 <p className="font-semibold">чехлов на заказ</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Icon name="ShieldCheck" className="h-8 w-8 text-accent" />
+              <Icon name="ShieldCheck" className="h-8 w-8 text-white/90" />
               <div>
                 <p className="text-sm font-light text-white/70">Сертификаты</p>
                 <p className="font-semibold">качества</p>
