@@ -16,7 +16,7 @@ export default function Hero() {
     <section id="hero" className="relative text-white py-20 md:py-32 overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/bfd72e86-bf1f-4609-9f78-b632f73becbd.jpg)' }}
+        style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/c3967e3f-84ff-4467-b410-306de7ba366f.jpg)' }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-orange-900/80 via-orange-800/70 to-yellow-800/60" />
       <div className="container mx-auto px-4 relative z-10">
