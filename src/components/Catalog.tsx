@@ -98,12 +98,17 @@ export default function Catalog({ searchQuery }: CatalogProps) {
             >
               <div className="flex flex-col h-full">
                 {product.image ? (
-                  <div className="mb-4 rounded-lg overflow-hidden aspect-video">
+                  <div className="mb-4 rounded-lg overflow-hidden aspect-video relative">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-105 transition-all duration-500 ease-out"
+                      className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-125 group-hover:blur-sm group-hover:opacity-0"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg drop-shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200 translate-y-2 group-hover:translate-y-0">
+                        {product.name}
+                      </span>
+                    </div>
                   </div>
                 ) : (
                   <div className="mb-4 p-4 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
