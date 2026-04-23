@@ -39,7 +39,7 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
             />
             <div>
               <h1 className="text-lg font-bold bg-brand-gradient bg-clip-text text-transparent">АкваРос СПб</h1>
-              <p className="text-xs text-muted-foreground">Теплоизоляция</p>
+              <p className="text-xs text-muted-foreground"></p>
             </div>
           </div>
 
