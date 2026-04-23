@@ -38,7 +38,7 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
               className="w-10 h-10 object-contain"
             />
             <div>
-              <h1 className="text-lg font-bold bg-brand-gradient bg-clip-text text-transparent">АкваРос СПб</h1>
+              <h1 className="text-lg font-bold bg-brand-gradient bg-clip-text text-stone-900">Т1 ИЗОЛЯЦИЯ</h1>
               <p className="text-xs text-muted-foreground"></p>
             </div>
           </div>
