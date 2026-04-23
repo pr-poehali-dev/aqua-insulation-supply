@@ -21,9 +21,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-orange-900/80 via-orange-800/70 to-yellow-800/60" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            Изготовление и поставка теплоизоляционных чехлов
-          </h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">Поставка теплоизоляции первого класса для инженерных систем и оборудования</h1>
           <p className="text-lg md:text-xl mb-8 text-white/90 animate-fade-in">
             Производство теплоизоляционных чехлов и поставка материалов от ведущих производителей по всей России
           </p>
