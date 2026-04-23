@@ -59,9 +59,7 @@ export default function Header({ searchQuery, setSearchQuery }: HeaderProps) {
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex items-center gap-2 text-sm">
             <Icon name="Phone" className="h-4 w-4 text-brand-orange" />
-            <a href="tel:88007008481" className="font-medium hover:text-brand-orange transition-colors">
-              8 800 700 84 81
-            </a>
+            <a href="tel:88007008481" className="font-medium hover:text-brand-orange transition-colors"></a>
           </div>
 
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
