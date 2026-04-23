@@ -22,9 +22,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">Поставка теплоизоляции первого класса для инженерных систем и оборудования</h1>
-          <p className="text-lg md:text-xl mb-8 text-white/90 animate-fade-in">
-            Производство теплоизоляционных чехлов и поставка материалов от ведущих производителей по всей России
-          </p>
+          <p className="text-lg md:text-xl mb-8 text-white/90 animate-fade-in">Поставка материалов от ведущих производителей России</p>
           <div className="flex flex-wrap gap-4 animate-fade-in">
             <Button
               size="lg"
