@@ -1,34 +1,10 @@
-import { useState } from 'react';
-import Hero from '@/components/Hero';
-import Catalog from '@/components/Catalog';
-import Features from '@/components/Features';
-import Certificates from '@/components/Certificates';
-import Calculator from '@/components/Calculator';
-import Reviews from '@/components/Reviews';
-import ProjectGallery from '@/components/ProjectGallery';
-import ContactForm from '@/components/ContactForm';
-import YandexMap from '@/components/YandexMap';
-import Footer from '@/components/Footer';
-import ChatWidget from '@/components/ChatWidget';
-import Header from '@/components/Header';
-
 const Index = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-
   return (
-    <div className="min-h-screen bg-background">
-      <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <Hero />
-      <Features />
-      <Catalog searchQuery={searchQuery} />
-      <Certificates />
-      <Calculator />
-      <Reviews />
-      <ProjectGallery />
-      <ContactForm />
-      <YandexMap />
-      <Footer />
-      <ChatWidget />
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center">
+        <h1 className="text-3xl font-semibold text-foreground">Новый проект</h1>
+        <p className="mt-2 text-muted-foreground">Расскажи, каким будет сайт — и начнём собирать его вместе.</p>
+      </div>
     </div>
   );
 };
