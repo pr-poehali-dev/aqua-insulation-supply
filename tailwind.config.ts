@@ -30,6 +30,7 @@ export default {
 				ink: '#ECE7DA',
 				'ink-muted': '#AFA99A',
 				garnet: '#D14D63',
+				'garnet-wine': '#4A1F2B',
 				brass: '#CDA968',
 				steel: '#A7B4BE',
 				border: 'hsl(var(--border))',

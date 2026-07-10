@@ -27,8 +27,8 @@ const Collections = () => {
     <section id="collections" className="relative bg-bg py-20 md:py-28">
       <div className="container">
         <MonoLabel>Коллекции</MonoLabel>
-        <h2 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-          Две линии <span className="italic text-garnet">кроя</span>
+        <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink">
+          Две линии кроя
         </h2>
         <p className="mt-6 max-w-2xl text-lg text-ink-muted">
           {/* Плейсхолдер вводного текста */}
@@ -54,7 +54,7 @@ const Collections = () => {
           </div>
 
           {/* От кутюр — флагман */}
-          <div className="relative overflow-hidden rounded-sm border-2 border-garnet bg-bg-alt p-8 lg:col-span-3">
+          <div className="relative overflow-hidden rounded-sm border border-garnet/60 bg-garnet-wine p-8 lg:col-span-3">
             <CornerRegs />
             <div className="flex items-center gap-3">
               <MonoLabel>От кутюр</MonoLabel>
@@ -62,8 +62,8 @@ const Collections = () => {
                 флагман
               </span>
             </div>
-            <h3 className="mt-4 font-display text-3xl font-semibold text-ink md:text-4xl">
-              Индивидуальный <span className="italic text-brass">пошив</span>
+            <h3 className="mt-4 font-display text-3xl font-medium text-ink md:text-4xl">
+              Индивидуальный пошив
             </h3>
             <p className="mt-3 max-w-lg text-ink-muted">
               {/* Плейсхолдер */}
@@ -83,8 +83,8 @@ const Collections = () => {
 
         {/* Конструкция — три слоя */}
         <MonoLabel>Конструкция</MonoLabel>
-        <h3 className="mt-4 font-display text-3xl font-semibold text-ink">
-          Три слоя <span className="italic text-brass">чехла</span>
+        <h3 className="mt-4 font-display text-2xl font-medium text-ink">
+          Три слоя чехла
         </h3>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {LAYERS.map((layer, i) => (
@@ -130,8 +130,8 @@ const Collections = () => {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <MonoLabel>Как читать маркировку</MonoLabel>
-            <h3 className="mt-4 font-display text-3xl font-semibold text-ink">
-              Код <span className="italic text-garnet">изделия</span>
+            <h3 className="mt-4 font-display text-2xl font-medium text-ink">
+              Код изделия
             </h3>
             <p className="mt-4 text-ink-muted">
               {/* Плейсхолдер */}
@@ -164,9 +164,11 @@ const Collections = () => {
           </div>
         </div>
 
-        {/* Зона под фоновое видео (плейсхолдер) */}
-        <div className="label-mono mt-16 flex aspect-[21/9] items-center justify-center rounded-sm border border-dashed border-steel/25 text-[10px] text-steel/40">
-          видео-фон
+        {/* Медиа-плейсхолдер (видео) */}
+        <div className="relative mt-16 aspect-[21/9] overflow-hidden rounded-sm bg-bg-alt">
+          <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/30">
+            видео
+          </span>
         </div>
       </div>
     </section>

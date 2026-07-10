@@ -1,4 +1,4 @@
-import { MonoLabel, SeamLine, Notch } from './PatternDecor';
+import { MonoLabel, SeamLine } from './PatternDecor';
 
 const STEPS = [
   { title: 'Обсуждение и ТЗ', hint: 'фиксируем задачу' },
@@ -20,11 +20,10 @@ const About = () => {
         {/* Такт 1 — манифест */}
         <div className="mt-8 grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h2 className="font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-              Технологическое ателье{' '}
-              <span className="italic text-garnet">термочехлов</span>
+            <h2 className="font-display text-3xl font-medium leading-snug text-ink">
+              Технологическое ателье термочехлов
             </h2>
-            <p className="mt-6 max-w-2xl text-lg text-ink-muted">
+            <p className="mt-5 max-w-2xl text-lg text-ink-muted">
               {/* Плейсхолдер манифеста */}
               ООО «АкваРос СПб» с 2018 года шьёт съёмную тепло- и шумоизоляцию
               под брендом ПАНЦИРЬ. Свои инженеры, свой крой, работа по всей
@@ -32,10 +31,12 @@ const About = () => {
             </p>
           </div>
 
-          {/* Зона под фоновое видео (плейсхолдер) */}
+          {/* Медиа-плейсхолдер (видео) */}
           <div className="lg:col-span-5">
-            <div className="label-mono flex aspect-video items-center justify-center rounded-sm border border-dashed border-steel/25 text-[10px] text-steel/40">
-              видео-фон
+            <div className="relative aspect-video overflow-hidden rounded-sm bg-surface">
+              <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/30">
+                видео
+              </span>
             </div>
           </div>
         </div>
@@ -45,18 +46,17 @@ const About = () => {
         {/* Такт 2 — процесс */}
         <div>
           <MonoLabel>Как мы работаем</MonoLabel>
-          <h3 className="mt-4 font-display text-3xl font-semibold text-ink">
-            От <span className="italic text-brass">лекала</span> до шеф-монтажа
+          <h3 className="mt-4 font-display text-2xl font-medium text-ink">
+            От лекала до шеф-монтажа
           </h3>
 
-          <ol className="mt-10 grid gap-px overflow-hidden rounded-sm border border-border/60 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
-              <li key={i} className="relative bg-surface p-6">
-                <Notch className="absolute left-6 top-0 -translate-y-full rotate-180" />
+              <li key={i} className="relative">
                 <span className="font-mono text-sm text-garnet">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="mt-3 font-display text-lg font-semibold text-ink">
+                <div className="mt-3 font-display text-lg font-medium text-ink">
                   {s.title}
                 </div>
                 <div className="mt-1 text-sm text-ink-muted">{s.hint}</div>

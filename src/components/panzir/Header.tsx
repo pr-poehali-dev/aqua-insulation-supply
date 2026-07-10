@@ -14,12 +14,12 @@ const Header = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-bg/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between">
-        <a href="#top" className="flex items-baseline gap-2">
+        <a href="#top" className="flex items-baseline gap-2.5">
           <span className="font-display text-2xl font-semibold tracking-wide text-ink">
-            ПАНЦИРЬ
+            АКВАРОС
           </span>
-          <span className="label-mono hidden text-[10px] text-steel sm:inline">
-            АкваРос СПб
+          <span className="label-mono text-[10px] text-steel">
+            бренд ПАНЦИРЬ
           </span>
         </a>
 

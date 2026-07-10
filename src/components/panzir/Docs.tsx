@@ -13,8 +13,8 @@ const Docs = () => {
     <section id="docs" className="relative bg-bg-alt py-20 md:py-28">
       <div className="container">
         <MonoLabel>Документация</MonoLabel>
-        <h2 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-          Качество <span className="italic text-garnet">подтверждено</span>
+        <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink">
+          Качество подтверждено
         </h2>
         <p className="mt-6 max-w-2xl text-lg text-ink-muted">
           {/* Плейсхолдер */}
@@ -50,8 +50,8 @@ const Docs = () => {
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <MonoLabel>Паспорт изделия</MonoLabel>
-            <h3 className="mt-4 font-display text-3xl font-semibold text-ink">
-              Формальный <span className="italic text-brass">документ</span>
+            <h3 className="mt-4 font-display text-2xl font-medium text-ink">
+              Формальный документ
             </h3>
             <p className="mt-4 text-ink-muted">
               {/* Плейсхолдер */}
@@ -91,9 +91,11 @@ const Docs = () => {
           </div>
         </div>
 
-        {/* Зона под фоновое видео (плейсхолдер) */}
-        <div className="label-mono mt-16 flex aspect-[21/9] items-center justify-center rounded-sm border border-dashed border-steel/25 text-[10px] text-steel/40">
-          видео-фон
+        {/* Медиа-плейсхолдер (видео) */}
+        <div className="relative mt-16 aspect-[21/9] overflow-hidden rounded-sm bg-surface">
+          <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/30">
+            видео
+          </span>
         </div>
       </div>
     </section>

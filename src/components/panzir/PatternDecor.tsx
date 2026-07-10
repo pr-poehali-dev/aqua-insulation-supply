@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-/** Маленький моноширинный лейбл-эйбров с гранатовым квадратом */
+/** Маленький моноширинный лейбл-эйбров с тонкой линией слева */
 export const MonoLabel = ({
   children,
   className = '',
@@ -9,11 +9,35 @@ export const MonoLabel = ({
   className?: string;
 }) => (
   <span
-    className={`label-mono inline-flex items-center gap-2 text-[11px] text-steel ${className}`}
+    className={`label-mono inline-flex items-center gap-3 text-[11px] text-steel ${className}`}
   >
-    <span className="h-1.5 w-1.5 rotate-45 bg-garnet" />
+    <span className="h-px w-6 bg-garnet/70" />
     {children}
   </span>
+);
+
+/**
+ * Фоновое видео секции. Растягивается на всю секцию под контентом (z-0).
+ * Пока src нет — нейтральная заливка + маленькая подпись-плейсхолдер в углу.
+ */
+export const VideoBg = ({ src }: { src?: string }) => (
+  <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+    {src ? (
+      <video
+        className="absolute inset-0 h-full w-full object-cover opacity-40"
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+    ) : (
+      <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/25">
+        видео-фон
+      </span>
+    )}
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bg/30 to-bg/70" />
+  </div>
 );
 
 /** Регистрационная крестовая метка (как на печатных выкройках) */

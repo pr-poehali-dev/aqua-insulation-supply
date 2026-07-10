@@ -30,9 +30,8 @@ const Contacts = () => {
           {/* Призыв + контакты */}
           <div>
             <MonoLabel>Контакты</MonoLabel>
-            <h2 className="mt-6 font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-              Готовы снять мерки с вашего{' '}
-              <span className="italic text-garnet">оборудования?</span>
+            <h2 className="mt-6 font-display text-3xl font-medium leading-snug text-ink">
+              Готовы снять мерки с вашего оборудования?
             </h2>
 
             <div className="mt-10 space-y-5">
