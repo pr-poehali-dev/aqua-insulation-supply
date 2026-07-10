@@ -18,14 +18,20 @@ export default {
 			}
 		},
 		extend: {
-			backgroundImage: {
-				'brand-gradient': 'linear-gradient(135deg, #E8303A 0%, #F97316 50%, #FACC15 100%)',
-				'brand-gradient-h': 'linear-gradient(90deg, #E8303A 0%, #F97316 50%, #FACC15 100%)',
+			fontFamily: {
+				display: ['Fraunces', 'serif'],
+				sans: ['Manrope', 'sans-serif'],
+				mono: ['"IBM Plex Mono"', 'monospace'],
 			},
 			colors: {
-				'brand-red': '#E8303A',
-				'brand-orange': '#F97316',
-				'brand-yellow': '#FACC15',
+				bg: '#0F1E2E',
+				'bg-alt': '#16283C',
+				surface: '#1B3049',
+				ink: '#ECE7DA',
+				'ink-muted': '#AFA99A',
+				garnet: '#D14D63',
+				brass: '#CDA968',
+				steel: '#A7B4BE',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',

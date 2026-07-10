@@ -1,10 +1,23 @@
+import Header from '@/components/panzir/Header';
+import Hero from '@/components/panzir/Hero';
+import About from '@/components/panzir/About';
+import Collections from '@/components/panzir/Collections';
+import Docs from '@/components/panzir/Docs';
+import Contacts from '@/components/panzir/Contacts';
+import Footer from '@/components/panzir/Footer';
+
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-3xl font-semibold text-foreground">Новый проект</h1>
-        <p className="mt-2 text-muted-foreground">Расскажи, каким будет сайт — и начнём собирать его вместе.</p>
-      </div>
+    <div className="min-h-screen bg-bg">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Collections />
+        <Docs />
+        <Contacts />
+      </main>
+      <Footer />
     </div>
   );
 };
