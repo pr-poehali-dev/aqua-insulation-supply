@@ -2,9 +2,9 @@ import Icon from '@/components/ui/icon';
 import { MonoLabel, Grainline, VideoBg } from './PatternDecor';
 
 const FACTS = [
-  { value: '12 000+', label: 'пошитых изделий' },
-  { value: '−60…+650 °C', label: 'рабочий диапазон' },
-  { value: '1 000+', label: 'циклов монтажа' },
+  { value: '20 500+', label: 'изделий пошито' },
+  { value: 'до +1250 °C', label: 'температура применения' },
+  { value: '500+', label: 'циклов монтаж-демонтаж' },
 ];
 
 const Hero = () => {
@@ -17,15 +17,16 @@ const Hero = () => {
       <Grainline className="pointer-events-none absolute left-8 top-1/3 z-0 hidden h-40 w-3 lg:block" />
 
       <div className="container relative z-10 flex flex-col items-center text-center">
-        <MonoLabel>Ателье промышленной защиты · СПб</MonoLabel>
+        <MonoLabel>Первое промышленное ателье России · Санкт-Петербург</MonoLabel>
 
         <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.05] text-ink md:text-7xl">
           Крой <span className="italic text-garnet">по мерке</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-lg text-ink-muted">
-          {/* Плейсхолдер подзаголовка */}
-          Съёмные термочехлы, скроенные точно по геометрии вашего оборудования.
+          Съёмные термочехлы для арматуры и оборудования. Снимаем размеры на
+          объекте, подбираем ткань и наполнитель под температуру, шьём за 3–14
+          дней.
         </p>
 
         <div className="mt-9 flex flex-col gap-4 sm:flex-row">
