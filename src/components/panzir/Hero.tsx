@@ -2,7 +2,7 @@ import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 
 const HERO_IMG =
-  'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2e21b767-e8e9-412d-9672-d11fc72f939f.jpg';
+  'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2aeff836-19c2-45ca-b859-e01126fe4fe3.jpg';
 
 const FACTS = [
   { value: '20 500+', label: 'изделий пошито' },
@@ -20,63 +20,57 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={HERO_IMG}
-          alt="Термочехол ПАНЦИРЬ на промышленном оборудовании"
+          alt="Термочехол ПАНЦИРЬ крупным планом"
           className="h-full w-full object-cover"
         />
-        {/* Премиальные градиенты для читаемости */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/85 to-bg/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/50" />
+        {/* Тёмные градиенты для читаемости текста */}
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/80 to-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/90 via-bg/40 to-bg/95" />
       </div>
 
-      <div className="container relative z-10 py-32 md:py-40">
+      <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="max-w-3xl">
           <MonoLabel>Первое промышленное ателье России · Санкт-Петербург</MonoLabel>
 
-          <h1 className="mt-8 font-display text-4xl font-medium leading-[1.08] text-ink sm:text-5xl md:text-6xl">
-            ПАНЦИРЬ — индивидуальные{' '}
-            <span className="italic text-garnet-bright">термочехлы</span> от
-            первого промышленного ателье России
+          <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] text-ink sm:text-6xl md:text-7xl">
+            ПАНЦИРЬ — <span className="italic text-garnet-bright">термочехлы</span>{' '}
+            от первого промышленного ателье России
           </h1>
 
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted md:text-xl">
-            Крой по мерке. Haute Couture для экстремальных температур до{' '}
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted md:text-xl">
+            Индивидуальный крой под экстремальные температуры до{' '}
             <span className="whitespace-nowrap text-brass-soft">+1250 °C</span>.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
               href="#contacts"
-              className="inline-flex items-center justify-center gap-2.5 rounded-sm bg-garnet px-8 py-4 text-base font-medium text-ink shadow-lg shadow-garnet/20 transition-colors hover:bg-garnet-bright"
+              className="inline-flex items-center justify-center gap-2.5 rounded-sm bg-garnet px-9 py-5 text-lg font-medium text-ink shadow-lg shadow-garnet/30 transition-colors hover:bg-garnet-bright"
             >
-              <Icon name="Ruler" size={18} />
+              <Icon name="Ruler" size={20} />
               Записаться на замер
             </a>
             <a
               href="#collections"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-white/15 px-8 py-4 text-base font-medium text-ink backdrop-blur-sm transition-colors hover:border-brass hover:text-brass-soft"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/30 bg-ink/5 px-9 py-5 text-lg font-medium text-ink backdrop-blur-sm transition-colors hover:bg-ink/10"
             >
               Смотреть коллекции
             </a>
           </div>
 
-          <div className="mt-16 flex flex-col gap-8 border-t border-white/10 pt-10 sm:flex-row sm:gap-14">
+          <div className="mt-12 flex flex-wrap gap-x-10 gap-y-6 border-t border-white/10 pt-8 sm:gap-x-14">
             {FACTS.map((f, i) => (
               <div key={i}>
-                <div className="font-display text-3xl font-medium text-brass md:text-4xl">
+                <div className="font-display text-2xl font-semibold text-brass-soft md:text-3xl">
                   {f.value}
                 </div>
-                <div className="label-mono mt-2 text-[10px] text-steel">
+                <div className="label-mono mt-1.5 text-[10px] text-steel">
                   {f.label}
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Скролл-подсказка */}
-      <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-steel/50 md:block">
-        <Icon name="ChevronDown" size={22} className="animate-bounce" />
       </div>
     </section>
   );
