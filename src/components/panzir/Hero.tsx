@@ -23,26 +23,27 @@ const Hero = () => {
           alt="Термочехол ПАНЦИРЬ крупным планом"
           className="h-full w-full object-cover"
         />
-        {/* Тёмные градиенты для читаемости текста */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/80 to-bg/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/90 via-bg/40 to-bg/95" />
+        {/* Затемнение фото + градиенты сверху и снизу для читаемости */}
+        <div className="absolute inset-0 bg-bg/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/50 to-bg" />
       </div>
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="max-w-3xl">
+        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
           <MonoLabel>Первое промышленное ателье России · Санкт-Петербург</MonoLabel>
 
-          <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] text-ink sm:text-6xl md:text-7xl">
-            ПАНЦИРЬ — <span className="italic text-garnet-bright">термочехлы</span>{' '}
+          <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.06] text-ink sm:text-6xl md:text-7xl">
+            ПАНЦИРЬ — <span className="italic text-garnet-bright">термочехлы</span>
+            <br />
             от первого промышленного ателье России
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted md:text-xl">
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
             Индивидуальный крой под экстремальные температуры до{' '}
             <span className="whitespace-nowrap text-brass-soft">+1250 °C</span>.
           </p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row">
             <a
               href="#contacts"
               className="inline-flex items-center justify-center gap-2.5 rounded-sm bg-garnet px-9 py-5 text-lg font-medium text-ink shadow-lg shadow-garnet/30 transition-colors hover:bg-garnet-bright"
@@ -58,9 +59,9 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-x-10 gap-y-6 border-t border-white/10 pt-8 sm:gap-x-14">
+          <div className="mt-14 flex flex-wrap justify-center gap-x-12 gap-y-6 border-t border-white/10 pt-8 sm:gap-x-16">
             {FACTS.map((f, i) => (
-              <div key={i}>
+              <div key={i} className="text-center">
                 <div className="font-display text-2xl font-semibold text-brass-soft md:text-3xl">
                   {f.value}
                 </div>
