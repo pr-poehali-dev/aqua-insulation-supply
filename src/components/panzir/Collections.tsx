@@ -11,7 +11,7 @@ const LAYERS = [
     icon: 'Layers',
     name: 'Ткань',
     role: 'наружный слой',
-    material: 'Кремнезём · стеклоткань · базальт',
+    items: ['Кремнезёмная ткань', 'Стеклоткань', 'Базальт'],
     temp: 650,
     tempLabel: 'до +650 °C',
   },
@@ -19,7 +19,7 @@ const LAYERS = [
     icon: 'Flame',
     name: 'Наполнитель',
     role: 'изоляция',
-    material: 'Базальтовое волокно · аэрогель',
+    items: ['Базальтовое волокно', 'Аэрогель'],
     temp: 700,
     tempLabel: 'до +700 °C',
   },
@@ -27,7 +27,7 @@ const LAYERS = [
     icon: 'Wrench',
     name: 'Фурнитура',
     role: 'крепёж',
-    material: 'Стяжки · люверсы · нерж. сталь',
+    items: ['Стяжки и люверсы', 'Нержавеющая сталь'],
     temp: null,
     tempLabel: 'нерж. сталь',
   },
@@ -124,43 +124,53 @@ const Collections = () => {
         <h3 className="mt-6 font-display text-2xl font-medium text-ink md:text-3xl">
           Три слоя чехла
         </h3>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
           {LAYERS.map((layer, i) => (
             <div
               key={i}
-              className="group relative overflow-hidden rounded-sm border border-white/10 bg-surface p-8 transition-colors hover:border-brass/40"
+              className="group relative flex flex-col overflow-hidden rounded-sm border border-white/10 p-9 shadow-lg shadow-black/20 transition-colors hover:border-brass/40"
+              style={{ backgroundColor: '#111f35' }}
             >
-              <span className="pointer-events-none absolute right-6 top-6 font-mono text-5xl text-white/5">
+              <span className="pointer-events-none absolute right-7 top-7 font-display text-5xl font-semibold text-brass/25">
                 0{i + 1}
               </span>
-              <span className="flex h-12 w-12 items-center justify-center rounded-sm bg-brass/10">
-                <Icon name={layer.icon} size={22} className="text-brass" />
+              <span className="flex h-16 w-16 items-center justify-center rounded-sm bg-brass/10 ring-1 ring-brass/20">
+                <Icon name={layer.icon} size={32} className="text-brass" />
               </span>
-              <h4 className="mt-6 font-display text-xl font-medium text-ink">
+              <h4 className="mt-7 font-display text-2xl font-medium text-white">
                 {layer.name}
               </h4>
-              <div className="label-mono mt-1 text-[10px] text-steel">
+              <div className="label-mono mt-1.5 text-[10px] text-steel">
                 {layer.role}
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-ink-muted">
-                {layer.material}
-              </p>
 
-              <div className="mt-8 border-t border-white/10 pt-5">
+              <ul className="mt-6 space-y-2.5">
+                {layer.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2.5 text-sm text-ink-muted"
+                  >
+                    <Icon name="Check" size={14} className="shrink-0 text-brass" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-auto border-t border-white/10 pt-6">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-base text-brass-soft">
+                  <span className="font-display text-lg font-medium text-brass-soft">
                     {layer.tempLabel}
                   </span>
-                  {layer.temp && <Icon name="Thermometer" size={16} className="text-garnet-bright" />}
+                  {layer.temp && (
+                    <Icon name="Thermometer" size={18} className="text-garnet-bright" />
+                  )}
                 </div>
-                {layer.temp && (
-                  <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-white/10">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-brass to-garnet-bright"
-                      style={{ width: `${(layer.temp / 1250) * 100}%` }}
-                    />
-                  </div>
-                )}
+                <div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-brass to-garnet-bright"
+                    style={{ width: `${((layer.temp ?? 1250) / 1250) * 100}%` }}
+                  />
+                </div>
               </div>
             </div>
           ))}
