@@ -27,29 +27,29 @@ const About = () => {
         <MonoLabel>О нас</MonoLabel>
 
         {/* Такт 1 — манифест */}
-        <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-start">
-          <div className="lg:col-span-8">
-            <h2 className="font-display text-3xl font-medium leading-snug text-ink">
+        <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+          <div className="lg:col-span-7">
+            <h2 className="font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
               Первое промышленное ателье России
             </h2>
-            <p className="mt-5 max-w-2xl text-lg text-ink-muted">
-              ООО «АкваРос СПб» с 2018 года разрабатывает и шьёт съёмную тепло- и
-              шумоизоляцию под маркой ПАНЦИРЬ. Мы первыми в России стали работать
-              с термочехлами как ателье: мерки по месту, крой под конкретное
-              оборудование, паспорт на каждое изделие. Работаем по всей стране —
-              от котельных до НПЗ и верфей.
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted">
+              С 2018 года разрабатываем и шьём съёмные термочехлы. Работаем как
+              ателье: снимаем мерки на объекте и делаем индивидуальный крой.
+              Собственная инженерная служба. Поставляем по всей России — от
+              котельных до НПЗ и верфей.
             </p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="mt-12 grid gap-5 sm:grid-cols-3">
               {FACTS.map((f, i) => (
                 <div
                   key={i}
-                  className="rounded-sm border border-white/10 bg-surface p-6"
+                  className="rounded-sm border border-brass/20 p-7"
+                  style={{ backgroundColor: '#0f1a2e' }}
                 >
-                  <div className="font-display text-2xl font-medium text-brass">
+                  <div className="font-display text-2xl font-semibold text-brass-soft">
                     {f.value}
                   </div>
-                  <div className="label-mono mt-2 text-[10px] text-steel">
+                  <div className="label-mono mt-3 text-[10px] text-steel">
                     {f.label}
                   </div>
                 </div>
@@ -57,15 +57,16 @@ const About = () => {
             </div>
           </div>
 
-          {/* Атмосферный визуал — уменьшенный вес */}
-          <div className="lg:col-span-4">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-sm opacity-90">
+          {/* Атмосферный визуал */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <img
                 src={ATELIER_IMG}
                 alt="Крой термочехла ПАНЦИРЬ"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-alt/70 via-transparent to-transparent" />
+              {/* Тёмный оверлей по левому краю для читаемости */}
+              <div className="absolute inset-0 bg-gradient-to-r from-bg-alt via-bg-alt/30 to-transparent" />
             </div>
           </div>
         </div>
