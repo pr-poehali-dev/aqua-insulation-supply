@@ -55,8 +55,11 @@ const Contacts = () => {
             </div>
           </div>
 
-          {/* Форма */}
-          <div className="relative rounded-sm border border-border/60 bg-surface p-8">
+          {/* Форма — тёмный фон */}
+          <div
+            className="relative rounded-sm border border-white/10 p-8"
+            style={{ backgroundColor: '#0f1a2e' }}
+          >
             <CornerRegs />
             <h3 className="font-display text-2xl font-medium text-ink">
               Заявка на замер
@@ -68,7 +71,7 @@ const Contacts = () => {
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="mt-1.5 w-full rounded-sm border border-border/60 bg-bg-alt px-4 py-3 text-ink placeholder:text-steel/50 focus:border-brass focus:outline-none"
+                  className="mt-1.5 w-full rounded-sm border border-white/10 bg-bg px-4 py-3 text-ink placeholder:text-steel/50 focus:border-brass focus:outline-none"
                   placeholder="Как к вам обращаться"
                 />
               </div>
@@ -78,7 +81,7 @@ const Contacts = () => {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  className="mt-1.5 w-full rounded-sm border border-border/60 bg-bg-alt px-4 py-3 text-ink placeholder:text-steel/50 focus:border-brass focus:outline-none"
+                  className="mt-1.5 w-full rounded-sm border border-white/10 bg-bg px-4 py-3 text-ink placeholder:text-steel/50 focus:border-brass focus:outline-none"
                   placeholder="+7 (___) ___-__-__"
                 />
               </div>
@@ -88,7 +91,7 @@ const Contacts = () => {
                   value={form.comment}
                   onChange={(e) => setForm({ ...form, comment: e.target.value })}
                   rows={3}
-                  className="mt-1.5 w-full resize-none rounded-sm border border-border/60 bg-bg-alt px-4 py-3 text-ink placeholder:text-steel/50 focus:border-brass focus:outline-none"
+                  className="mt-1.5 w-full resize-none rounded-sm border border-white/10 bg-bg px-4 py-3 text-ink placeholder:text-steel/50 focus:border-brass focus:outline-none"
                   placeholder="Опишите объект и задачу"
                 />
               </div>

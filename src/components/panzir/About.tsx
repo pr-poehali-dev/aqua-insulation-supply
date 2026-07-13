@@ -5,13 +5,13 @@ const ATELIER_IMG =
 
 const STEPS = [
   { title: 'Обсуждение и ТЗ', hint: 'фиксируем задачу' },
-  { title: 'Опросный лист', hint: 'собираем параметры объекта' },
+  { title: 'Опросный лист', hint: 'параметры объекта' },
   { title: 'Предварительное КП', hint: 'состав и стоимость' },
-  { title: 'Выезд и замер', hint: 'в т.ч. 3D-сканером' },
+  { title: 'Выезд и замер', hint: '3D-сканер' },
   { title: 'Эскиз и лекало', hint: 'крой под объект' },
-  { title: 'Пошив', hint: 'на собственном производстве, 3–14 дней' },
+  { title: 'Пошив', hint: '3–14 дней' },
   { title: 'Шеф-монтаж', hint: 'установка на объекте' },
-  { title: 'Гарантия и документация', hint: 'паспорт изделия, 24 месяца' },
+  { title: 'Гарантия', hint: 'паспорт, 24 месяца' },
 ];
 
 const FACTS = [
@@ -27,28 +27,29 @@ const About = () => {
         <MonoLabel>О нас</MonoLabel>
 
         {/* Такт 1 — манифест */}
-        <div className="mt-8 grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+        <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-start">
+          <div className="lg:col-span-8">
             <h2 className="font-display text-3xl font-medium leading-snug text-ink">
               Первое промышленное ателье России
             </h2>
             <p className="mt-5 max-w-2xl text-lg text-ink-muted">
               ООО «АкваРос СПб» с 2018 года разрабатывает и шьёт съёмную тепло- и
               шумоизоляцию под маркой ПАНЦИРЬ. Мы первыми в России стали работать
-              с термочехлами как ателье: мерки по месту, крой под конкретную
-              единицу оборудования, паспорт на каждое изделие. Собственная
-              инженерная служба проводит обследования предприятий, участвует в
-              проектировании и испытывает новые материалы. Работаем по всей
-              России — от районных котельных до НПЗ и судостроительных верфей.
+              с термочехлами как ателье: мерки по месту, крой под конкретное
+              оборудование, паспорт на каждое изделие. Работаем по всей стране —
+              от котельных до НПЗ и верфей.
             </p>
 
-            <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:gap-12">
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {FACTS.map((f, i) => (
-                <div key={i}>
-                  <div className="font-display text-xl font-medium text-brass">
+                <div
+                  key={i}
+                  className="rounded-sm border border-white/10 bg-surface p-6"
+                >
+                  <div className="font-display text-2xl font-medium text-brass">
                     {f.value}
                   </div>
-                  <div className="label-mono mt-1 text-[10px] text-steel">
+                  <div className="label-mono mt-2 text-[10px] text-steel">
                     {f.label}
                   </div>
                 </div>
@@ -56,9 +57,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* Атмосферный визуал */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+          {/* Атмосферный визуал — уменьшенный вес */}
+          <div className="lg:col-span-4">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm opacity-90">
               <img
                 src={ATELIER_IMG}
                 alt="Крой термочехла ПАНЦИРЬ"
@@ -78,16 +79,19 @@ const About = () => {
             От лекала до шеф-монтажа
           </h3>
 
-          <ol className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
-              <li key={i} className="relative">
-                <span className="font-mono text-sm text-garnet-bright">
+              <li
+                key={i}
+                className="rounded-sm border border-white/10 bg-surface p-6"
+              >
+                <span className="font-mono text-sm text-brass">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="mt-3 font-display text-lg font-medium text-ink">
+                <div className="mt-3 font-display text-lg font-semibold text-ink">
                   {s.title}
                 </div>
-                <div className="mt-1 text-sm text-ink-muted">{s.hint}</div>
+                <div className="mt-1.5 text-sm text-ink-muted">{s.hint}</div>
               </li>
             ))}
           </ol>

@@ -22,22 +22,18 @@ const Docs = () => {
           обязательства.
         </p>
 
-        {/* Штампы */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Штампы — 4 в ряд */}
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {STAMPS.map((s) => (
             <div
               key={s.label}
-              className="rounded-sm border border-dashed border-brass/50 bg-surface p-6 text-center"
+              className="rounded-sm border border-white/10 bg-surface p-6 text-center"
             >
-              <Icon
-                name={s.icon}
-                size={28}
-                className="mx-auto text-brass"
-              />
-              <div className="mt-4 font-display text-lg font-medium text-ink">
+              <Icon name={s.icon} size={26} className="mx-auto text-brass" />
+              <div className="mt-4 font-display text-base font-medium text-ink">
                 {s.value}
               </div>
-              <div className="label-mono mt-1 text-[10px] text-steel">
+              <div className="label-mono mt-1.5 text-[10px] text-steel">
                 {s.label}
               </div>
             </div>
@@ -46,51 +42,38 @@ const Docs = () => {
 
         <SeamLine className="my-16" />
 
-        {/* Паспорт изделия */}
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <MonoLabel>Паспорт изделия</MonoLabel>
-            <h3 className="mt-4 font-display text-2xl font-medium text-ink">
-              Формальный документ
-            </h3>
-            <p className="mt-4 text-ink-muted">
-              {/* Плейсхолдер */}
-              К каждому чехлу прилагается паспорт с размерным кодом и
-              характеристиками.
-            </p>
+        {/* Паспорт изделия — отдельная карточка на тёмном фоне */}
+        <MonoLabel>Паспорт изделия</MonoLabel>
+        <div
+          className="relative mt-6 rounded-sm border border-white/10 p-8 md:p-10"
+          style={{ backgroundColor: '#0f1a2e' }}
+        >
+          <CornerRegs />
+          <div className="flex items-center justify-between border-b border-white/10 pb-5">
+            <span className="font-display text-xl font-medium text-ink">
+              Паспорт изделия ПАНЦИРЬ
+            </span>
+            <span className="font-mono text-sm text-steel">№ 0000</span>
           </div>
-
-          <div className="lg:col-span-8">
-            <div className="relative rounded-sm border border-border/60 bg-surface p-8">
-              <CornerRegs />
-              <div className="flex items-center justify-between border-b border-border/60 pb-4">
-                <span className="font-display text-xl font-medium text-ink">
-                  Паспорт изделия ПАНЦИРЬ
-                </span>
-                <span className="font-mono text-sm text-steel">№ 0000</span>
+          <dl className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ['Размерный код', 'PZ-K-BF-DN200-T650'],
+              ['Тип изделия', 'чехол на клапан'],
+              ['Наполнитель', 'базальтовое волокно'],
+              ['Рабочая температура', 'до +650 °C'],
+              ['Класс горючести', 'НГ'],
+              ['Дата пошива', '00.00.0000'],
+            ].map(([k, v]) => (
+              <div
+                key={k}
+                className="flex flex-col gap-1.5 border-l border-brass/40 pl-4"
+              >
+                <dt className="label-mono text-[10px] text-steel">{k}</dt>
+                <dd className="font-mono text-sm text-ink">{v}</dd>
               </div>
-              <dl className="mt-6 grid gap-5 sm:grid-cols-2">
-                {[
-                  ['Размерный код', 'PZ-K-BF-DN200-T650'],
-                  ['Тип изделия', 'чехол на клапан'],
-                  ['Наполнитель', 'базальтовое волокно'],
-                  ['Рабочая температура', 'до +650 °C'],
-                  ['Класс горючести', 'НГ'],
-                  ['Дата пошива', '00.00.0000'],
-                ].map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="flex flex-col gap-1 border-l border-brass/40 pl-4"
-                  >
-                    <dt className="label-mono text-[10px] text-steel">{k}</dt>
-                    <dd className="font-mono text-sm text-ink">{v}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
+            ))}
+          </dl>
         </div>
-
       </div>
     </section>
   );
