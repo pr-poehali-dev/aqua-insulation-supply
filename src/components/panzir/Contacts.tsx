@@ -26,29 +26,31 @@ const Contacts = () => {
   return (
     <section id="contacts" className="relative bg-bg py-24 md:py-36">
       <div className="container">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Призыв + контакты */}
           <div>
             <MonoLabel>Контакты</MonoLabel>
-            <h2 className="mt-6 font-display text-3xl font-medium leading-snug text-ink">
-              Готовы снять мерки с вашего оборудования?
+            <h2 className="mt-6 max-w-md font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+              Снимем мерки с вашего оборудования
             </h2>
 
-            <div className="mt-10 space-y-5">
+            <div className="mt-12 flex flex-col gap-6">
               {CONTACTS.map((c) => (
                 <a
                   key={c.label}
                   href={c.href}
-                  className="flex items-center gap-4 text-ink transition-colors hover:text-brass"
+                  className="group flex items-center gap-4 transition-colors"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-sm border border-border/60 bg-surface">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-sm bg-brass/10 ring-1 ring-brass/20">
                     <Icon name={c.icon} size={20} className="text-brass" />
                   </span>
                   <span>
                     <span className="label-mono block text-[10px] text-steel">
                       {c.label}
                     </span>
-                    <span className="font-mono text-base">{c.value}</span>
+                    <span className="font-mono text-lg text-ink transition-colors group-hover:text-brass-soft">
+                      {c.value}
+                    </span>
                   </span>
                 </a>
               ))}
@@ -57,14 +59,14 @@ const Contacts = () => {
 
           {/* Форма — тёмный фон */}
           <div
-            className="relative rounded-sm border border-white/10 p-8"
+            className="relative rounded-sm border border-brass/20 p-8 shadow-xl shadow-black/30 md:p-10"
             style={{ backgroundColor: '#0f1a2e' }}
           >
             <CornerRegs />
-            <h3 className="font-display text-2xl font-medium text-ink">
+            <h3 className="font-display text-2xl font-medium text-white">
               Заявка на замер
             </h3>
-            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <form onSubmit={handleSubmit} className="mt-7 space-y-5">
               <div>
                 <label className="label-mono text-[10px] text-steel">Имя</label>
                 <input
@@ -97,8 +99,9 @@ const Contacts = () => {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-sm bg-garnet px-6 py-4 text-base font-medium text-ink transition-colors hover:bg-garnet-bright"
+                className="mt-2 flex w-full items-center justify-center gap-2.5 rounded-sm bg-garnet px-6 py-4 text-base font-medium text-white shadow-lg shadow-garnet/40 transition-colors hover:bg-garnet-bright"
               >
+                <Icon name="Send" size={18} />
                 Отправить заявку
               </button>
             </form>
