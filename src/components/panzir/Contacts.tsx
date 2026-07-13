@@ -24,7 +24,7 @@ const Contacts = () => {
   };
 
   return (
-    <section id="contacts" className="relative bg-bg py-20 md:py-28">
+    <section id="contacts" className="relative bg-bg py-24 md:py-36">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Призыв + контакты */}
@@ -58,7 +58,7 @@ const Contacts = () => {
           {/* Форма */}
           <div className="relative rounded-sm border border-border/60 bg-surface p-8">
             <CornerRegs />
-            <h3 className="font-display text-2xl font-semibold text-ink">
+            <h3 className="font-display text-2xl font-medium text-ink">
               Заявка на замер
             </h3>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
@@ -94,7 +94,7 @@ const Contacts = () => {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-sm bg-garnet px-6 py-4 text-base font-semibold text-ink transition-opacity hover:opacity-90"
+                className="w-full rounded-sm bg-garnet px-6 py-4 text-base font-medium text-ink transition-colors hover:bg-garnet-bright"
               >
                 Отправить заявку
               </button>

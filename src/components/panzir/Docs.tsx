@@ -10,7 +10,7 @@ const STAMPS = [
 
 const Docs = () => {
   return (
-    <section id="docs" className="relative bg-bg-alt py-20 md:py-28">
+    <section id="docs" className="relative bg-bg-alt py-24 md:py-36">
       <div className="container">
         <MonoLabel>Документация</MonoLabel>
         <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink">
@@ -34,7 +34,7 @@ const Docs = () => {
                 size={28}
                 className="mx-auto text-brass"
               />
-              <div className="mt-4 font-display text-lg font-semibold text-ink">
+              <div className="mt-4 font-display text-lg font-medium text-ink">
                 {s.value}
               </div>
               <div className="label-mono mt-1 text-[10px] text-steel">
@@ -64,7 +64,7 @@ const Docs = () => {
             <div className="relative rounded-sm border border-border/60 bg-surface p-8">
               <CornerRegs />
               <div className="flex items-center justify-between border-b border-border/60 pb-4">
-                <span className="font-display text-xl font-semibold text-ink">
+                <span className="font-display text-xl font-medium text-ink">
                   Паспорт изделия ПАНЦИРЬ
                 </span>
                 <span className="font-mono text-sm text-steel">№ 0000</span>
@@ -91,12 +91,6 @@ const Docs = () => {
           </div>
         </div>
 
-        {/* Медиа-плейсхолдер (видео) */}
-        <div className="relative mt-16 aspect-[21/9] overflow-hidden rounded-sm bg-surface">
-          <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/30">
-            видео
-          </span>
-        </div>
       </div>
     </section>
   );

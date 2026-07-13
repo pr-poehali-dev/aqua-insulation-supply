@@ -1,5 +1,8 @@
 import { MonoLabel, SeamLine } from './PatternDecor';
 
+const ATELIER_IMG =
+  'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2e21b767-e8e9-412d-9672-d11fc72f939f.jpg';
+
 const STEPS = [
   { title: 'Обсуждение и ТЗ', hint: 'фиксируем задачу' },
   { title: 'Опросный лист', hint: 'собираем параметры объекта' },
@@ -19,7 +22,7 @@ const FACTS = [
 
 const About = () => {
   return (
-    <section id="about" className="relative bg-bg-alt py-20 md:py-28">
+    <section id="about" className="relative bg-bg-alt py-24 md:py-36">
       <div className="container">
         <MonoLabel>О нас</MonoLabel>
 
@@ -53,17 +56,20 @@ const About = () => {
             </div>
           </div>
 
-          {/* Медиа-плейсхолдер (видео) */}
+          {/* Атмосферный визуал */}
           <div className="lg:col-span-5">
-            <div className="relative aspect-video overflow-hidden rounded-sm bg-surface">
-              <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/30">
-                видео
-              </span>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <img
+                src={ATELIER_IMG}
+                alt="Крой термочехла ПАНЦИРЬ"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg-alt/70 via-transparent to-transparent" />
             </div>
           </div>
         </div>
 
-        <SeamLine className="my-14" />
+        <SeamLine className="my-16 md:my-20" />
 
         {/* Такт 2 — процесс */}
         <div>
@@ -75,7 +81,7 @@ const About = () => {
           <ol className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((s, i) => (
               <li key={i} className="relative">
-                <span className="font-mono text-sm text-garnet">
+                <span className="font-mono text-sm text-garnet-bright">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div className="mt-3 font-display text-lg font-medium text-ink">

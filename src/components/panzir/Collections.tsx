@@ -24,7 +24,7 @@ const LAYERS = [
 
 const Collections = () => {
   return (
-    <section id="collections" className="relative bg-bg py-20 md:py-28">
+    <section id="collections" className="relative bg-bg py-24 md:py-36">
       <div className="container">
         <MonoLabel>Коллекции</MonoLabel>
         <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink">
@@ -41,7 +41,7 @@ const Collections = () => {
           {/* Прет-а-порте */}
           <div className="relative rounded-sm border border-border/60 bg-surface p-8 lg:col-span-2">
             <MonoLabel>Прет-а-порте</MonoLabel>
-            <h3 className="mt-4 font-display text-2xl font-semibold text-ink">
+            <h3 className="mt-4 font-display text-2xl font-medium text-ink">
               Коллекция
             </h3>
             <p className="mt-3 text-ink-muted">
@@ -71,7 +71,7 @@ const Collections = () => {
             </p>
             <a
               href="#contacts"
-              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-garnet px-6 py-3 text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+              className="mt-6 inline-flex items-center gap-2 rounded-sm bg-garnet px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-garnet-bright"
             >
               <Icon name="Ruler" size={16} />
               Заказать пошив
@@ -94,7 +94,7 @@ const Collections = () => {
             >
               <Notch className="absolute left-6 top-0 -translate-y-full rotate-180" />
               <div className="flex items-baseline justify-between">
-                <span className="font-display text-xl font-semibold text-ink">
+                <span className="font-display text-xl font-medium text-ink">
                   {layer.name}
                 </span>
                 <span className="font-mono text-xs text-steel">
@@ -164,11 +164,14 @@ const Collections = () => {
           </div>
         </div>
 
-        {/* Медиа-плейсхолдер (видео) */}
-        <div className="relative mt-16 aspect-[21/9] overflow-hidden rounded-sm bg-bg-alt">
-          <span className="label-mono absolute bottom-3 right-4 text-[9px] text-steel/30">
-            видео
-          </span>
+        {/* Атмосферный визуал */}
+        <div className="relative mt-16 aspect-[21/9] overflow-hidden rounded-sm">
+          <img
+            src="https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2e21b767-e8e9-412d-9672-d11fc72f939f.jpg"
+            alt="Термочехол ПАНЦИРЬ крупным планом"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/60 to-transparent" />
         </div>
       </div>
     </section>

@@ -12,18 +12,18 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-bg/80 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-bg/70 backdrop-blur-xl">
+      <div className="container flex h-20 items-center justify-between">
         <a href="#top" className="flex items-baseline gap-2.5">
-          <span className="font-display text-2xl font-semibold tracking-wide text-ink">
-            АКВАРОС
+          <span className="font-display text-2xl font-semibold tracking-[0.12em] text-ink">
+            ПАНЦИРЬ
           </span>
-          <span className="label-mono text-[10px] text-steel">
-            бренд ПАНЦИРЬ
+          <span className="label-mono hidden text-[9px] text-steel/70 sm:inline">
+            АкваРос СПб
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
@@ -37,7 +37,7 @@ const Header = () => {
 
         <a
           href="#contacts"
-          className="hidden rounded-sm bg-garnet px-5 py-2.5 text-sm font-semibold text-ink transition-opacity hover:opacity-90 md:inline-block"
+          className="hidden rounded-sm border border-brass/40 px-5 py-2.5 text-sm font-medium text-brass-soft transition-colors hover:border-brass hover:bg-brass/10 md:inline-block"
         >
           Записаться на замер
         </a>
@@ -67,7 +67,7 @@ const Header = () => {
             <a
               href="#contacts"
               onClick={() => setOpen(false)}
-              className="mt-3 rounded-sm bg-garnet px-5 py-3 text-center font-semibold text-ink"
+              className="mt-3 rounded-sm bg-garnet px-5 py-3 text-center font-medium text-ink"
             >
               Записаться на замер
             </a>

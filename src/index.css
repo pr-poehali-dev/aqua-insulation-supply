@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    /* Panzir brand palette */
-    --bg: 208 51% 12%;              /* #0F1E2E */
-    --bg-alt: 211 47% 16%;          /* #16283C */
-    --surface: 210 46% 20%;         /* #1B3049 */
-    --ink: 44 33% 89%;              /* #ECE7DA warm ivory */
-    --ink-muted: 43 12% 64%;        /* #AFA99A */
-    --garnet: 350 57% 56%;          /* #D14D63 */
-    --brass: 39 47% 60%;            /* #CDA968 */
-    --steel: 208 15% 70%;           /* #A7B4BE */
+    /* Panzir brand palette — premium industrial couture */
+    --bg: 210 52% 10%;             /* #0C1826 */
+    --bg-alt: 210 48% 14%;         /* #122234 */
+    --surface: 210 47% 18%;        /* #182B42 */
+    --ink: 43 39% 90%;             /* #F0EBDE warm ivory */
+    --ink-muted: 210 11% 65%;      /* #9BA6B0 */
+    --garnet: 352 57% 39%;         /* #9E2B3A deep burgundy */
+    --brass: 40 51% 57%;           /* #C9A25A bronze gold */
+    --steel: 205 15% 62%;          /* #8FA0AD */
 
     --background: var(--bg);
     --foreground: var(--ink);
