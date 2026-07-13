@@ -51,56 +51,64 @@ const Collections = () => {
         </h2>
 
         {/* Две карточки линий */}
-        <div className="mt-14 grid gap-6 lg:grid-cols-5">
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
           {/* Прет-а-порте */}
-          <div className="group relative flex flex-col overflow-hidden rounded-sm border border-white/10 bg-surface lg:col-span-2">
-            <div className="relative aspect-[4/3] overflow-hidden">
+          <div
+            className="group relative flex flex-col overflow-hidden rounded-sm border border-white/10"
+            style={{ backgroundColor: '#111f35' }}
+          >
+            <div className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={IMG_PRET}
                 alt="Коллекция ПАНЦИРЬ — типовые термочехлы"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
+              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111f35] via-[#111f35]/30 to-transparent" />
             </div>
-            <div className="flex flex-1 flex-col p-8">
+            <div className="flex flex-1 flex-col p-8 md:p-10">
               <MonoLabel>Прет-а-порте</MonoLabel>
-              <h3 className="mt-4 font-display text-2xl font-medium text-ink">
+              <h3 className="mt-4 font-display text-2xl font-medium text-white md:text-3xl">
                 Коллекция
               </h3>
               <p className="mt-3 text-ink-muted">
-                Готовые чехлы на типовую арматуру. Со склада — по лекалам.
+                Готовые чехлы на типовую арматуру. Со склада, по лекалам.
               </p>
-              <div className="label-mono mt-auto pt-6 text-[11px] text-brass">
+              <div className="label-mono mt-auto pt-8 text-[11px] text-brass-soft">
                 срок 3–14 дней
               </div>
             </div>
           </div>
 
           {/* От кутюр — флагман */}
-          <div className="group relative flex flex-col overflow-hidden rounded-sm border border-garnet/50 bg-garnet-wine shadow-xl shadow-garnet/10 lg:col-span-3">
+          <div
+            className="group relative flex flex-col overflow-hidden rounded-sm border border-garnet/50 shadow-xl shadow-garnet/10"
+            style={{ backgroundColor: '#2a1215' }}
+          >
             <div className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={IMG_COUTURE}
                 alt="От кутюр — индивидуальный пошив термочехлов ПАНЦИРЬ"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-garnet-wine via-garnet-wine/30 to-transparent" />
-              <span className="label-mono absolute right-5 top-5 rounded-sm bg-garnet px-2.5 py-1 text-[10px] text-ink">
-                флагман
+              <div className="absolute inset-0 bg-black/30" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2a1215] via-[#2a1215]/30 to-transparent" />
+              <span className="label-mono absolute left-5 top-5 rounded-sm bg-garnet px-3 py-1.5 text-[10px] text-white">
+                Флагман
               </span>
             </div>
             <div className="flex flex-1 flex-col p-8 md:p-10">
               <MonoLabel>От кутюр</MonoLabel>
-              <h3 className="mt-4 font-display text-3xl font-medium text-ink md:text-4xl">
+              <h3 className="mt-4 font-display text-2xl font-medium text-white md:text-3xl">
                 Индивидуальный пошив
               </h3>
-              <p className="mt-3 max-w-lg text-ink-muted">
-                Крой под нестандартное оборудование по замерам и 3D-скану
-                объекта. Каждое изделие — единственное.
+              <p className="mt-3 text-ink-muted">
+                Крой под нестандартное оборудование. Каждое изделие —
+                единственное.
               </p>
               <a
                 href="#contacts"
-                className="mt-8 inline-flex w-fit items-center gap-2.5 rounded-sm bg-garnet px-7 py-3.5 text-sm font-medium text-ink shadow-lg shadow-garnet/30 transition-colors hover:bg-garnet-bright"
+                className="mt-8 inline-flex w-fit items-center gap-2.5 rounded-sm bg-garnet px-7 py-4 text-sm font-medium text-white shadow-lg shadow-garnet/40 transition-colors hover:bg-garnet-bright"
               >
                 <Icon name="Ruler" size={16} />
                 Заказать пошив
