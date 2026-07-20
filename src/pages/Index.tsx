@@ -1,6 +1,6 @@
 import Header from '@/components/panzir/Header';
 import Hero from '@/components/panzir/Hero';
-import About from '@/components/panzir/About';
+import About, { Process } from '@/components/panzir/About';
 import Collections from '@/components/panzir/Collections';
 import Docs from '@/components/panzir/Docs';
 import Contacts from '@/components/panzir/Contacts';
@@ -13,6 +13,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Process />
         <Collections />
         <Docs />
         <Contacts />

@@ -1,4 +1,4 @@
-import { MonoLabel, SeamLine } from './PatternDecor';
+import { MonoLabel } from './PatternDecor';
 
 const ATELIER_IMG =
   'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2e21b767-e8e9-412d-9672-d11fc72f939f.jpg';
@@ -90,9 +90,15 @@ const About = () => {
             </div>
           </div>
         </div>
+      </div>
+    </section>
+  );
+};
 
-        <SeamLine className="my-16 md:my-20" />
-
+const Process = () => {
+  return (
+    <section id="process" className="relative bg-bg-alt py-24 md:py-36">
+      <div className="container">
         {/* Такт 2 — процесс */}
         <div>
           <MonoLabel>Процесс работы</MonoLabel>
@@ -162,4 +168,5 @@ const About = () => {
   );
 };
 
+export { Process };
 export default About;
