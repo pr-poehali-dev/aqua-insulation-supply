@@ -38,9 +38,9 @@ const About = () => {
           playsInline
           preload="auto"
         />
-        {/* Лёгкий тёмный градиент — как в Hero */}
+        {/* Лёгкий тёмный градиент — как в Hero, низ полностью закрыт для чёткой границы блока */}
         <div className="absolute inset-0 bg-bg-alt/40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-alt/55 via-bg-alt/20 to-bg-alt/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-alt/55 via-bg-alt/20 to-bg-alt" />
       </div>
 
       <div className="container relative z-10">
