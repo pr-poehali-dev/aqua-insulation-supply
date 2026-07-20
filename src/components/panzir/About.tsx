@@ -25,8 +25,25 @@ const FACTS = [
 
 const About = () => {
   return (
-    <section id="about" className="relative bg-bg-alt py-24 md:py-36">
-      <div className="container">
+    <section id="about" className="relative overflow-hidden bg-bg-alt py-24 md:py-36">
+      {/* Видео-фон */}
+      <div className="absolute inset-0 z-0">
+        <video
+          className="h-full w-full object-cover"
+          src="/about-bg.mp4"
+          poster="/about-bg-poster.jpg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        />
+        {/* Лёгкий тёмный градиент — как в Hero */}
+        <div className="absolute inset-0 bg-bg-alt/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-alt/55 via-bg-alt/20 to-bg-alt/80" />
+      </div>
+
+      <div className="container relative z-10">
         <MonoLabel>О нас</MonoLabel>
 
         {/* Такт 1 — манифест */}
