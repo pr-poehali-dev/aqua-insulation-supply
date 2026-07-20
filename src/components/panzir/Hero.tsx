@@ -1,9 +1,6 @@
 import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 
-const HERO_IMG =
-  'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2aeff836-19c2-45ca-b859-e01126fe4fe3.jpg';
-
 const FACTS = [
   { value: '20 500+', label: 'изделий пошито' },
   { value: 'до +1250 °C', label: 'температура применения' },
@@ -16,16 +13,21 @@ const Hero = () => {
       id="top"
       className="relative flex min-h-screen items-center overflow-hidden bg-bg"
     >
-      {/* Атмосферный фон */}
+      {/* Видео-фон */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={HERO_IMG}
-          alt="Термочехол ПАНЦИРЬ крупным планом"
+        <video
           className="h-full w-full object-cover"
+          src="/hero-bg.mp4"
+          poster="/hero-bg-poster.jpg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
         />
-        {/* Затемнение фото + градиенты сверху и снизу для читаемости */}
-        <div className="absolute inset-0 bg-bg/50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/50 to-bg" />
+        {/* Затемнение видео + градиенты для читаемости текста */}
+        <div className="absolute inset-0 bg-bg/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/40 to-bg" />
       </div>
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
