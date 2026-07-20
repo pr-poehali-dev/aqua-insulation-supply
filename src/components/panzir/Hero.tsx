@@ -26,8 +26,8 @@ const Hero = () => {
           preload="auto"
         />
         {/* Затемнение видео + градиенты для читаемости текста */}
-        <div className="absolute inset-0 bg-bg/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/40 to-bg" />
+        <div className="absolute inset-0 bg-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/55 via-bg/20 to-bg/80" />
       </div>
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
