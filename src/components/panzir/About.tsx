@@ -1,8 +1,5 @@
 import { MonoLabel } from './PatternDecor';
 
-const ATELIER_IMG =
-  'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files/2e21b767-e8e9-412d-9672-d11fc72f939f.jpg';
-
 const CDN =
   'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files';
 
@@ -58,36 +55,25 @@ const About = () => {
               Собственная инженерная служба. Поставляем по всей России — от
               котельных до НПЗ и верфей.
             </p>
-
-            <div className="mt-12 grid gap-5 sm:grid-cols-3">
-              {FACTS.map((f, i) => (
-                <div
-                  key={i}
-                  className="rounded-sm border border-brass/20 p-7"
-                  style={{ backgroundColor: '#0f1a2e' }}
-                >
-                  <div className="font-display text-2xl font-semibold text-brass-soft">
-                    {f.value}
-                  </div>
-                  <div className="label-mono mt-3 text-[10px] text-steel">
-                    {f.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Атмосферный визуал */}
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
-              <img
-                src={ATELIER_IMG}
-                alt="Крой термочехла ПАНЦИРЬ"
-                className="h-full w-full object-cover"
-              />
-              {/* Тёмный оверлей по левому краю для читаемости */}
-              <div className="absolute inset-0 bg-gradient-to-r from-bg-alt via-bg-alt/30 to-transparent" />
-            </div>
+          {/* Ключевые факты */}
+          <div className="grid gap-5 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
+            {FACTS.map((f, i) => (
+              <div
+                key={i}
+                className="group relative overflow-hidden rounded-sm border border-brass/25 bg-ink/40 p-7 backdrop-blur-md transition-colors duration-300 hover:border-brass/60"
+              >
+                {/* Золотая грань слева */}
+                <span className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-brass/70 to-transparent" />
+                <div className="font-display text-3xl font-semibold text-brass-soft md:text-4xl">
+                  {f.value}
+                </div>
+                <div className="label-mono mt-3 text-[10px] tracking-wider text-steel">
+                  {f.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
