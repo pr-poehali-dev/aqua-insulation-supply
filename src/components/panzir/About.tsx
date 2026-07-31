@@ -86,23 +86,23 @@ const About = () => {
                 key={i}
                 className={`group relative flex h-full flex-col overflow-hidden rounded-lg border p-7 transition-colors duration-300 ${
                   t.featured
-                    ? 'border-garnet/50 bg-ink/70 shadow-lg shadow-garnet/10'
-                    : 'border-white/10 bg-ink/30 hover:border-white/25'
+                    ? 'border-garnet-bright/60 bg-[#0A1420] shadow-lg shadow-garnet/15'
+                    : 'border-white/15 bg-[#0E1B2B] hover:border-brass/40'
                 }`}
               >
                 <div
                   className={`flex items-center justify-center rounded-md border ${
                     t.featured
-                      ? 'h-14 w-14 border-garnet-bright/50 bg-garnet/15 text-garnet-bright'
-                      : 'h-12 w-12 border-brass/25 text-brass-soft'
+                      ? 'h-14 w-14 border-garnet-bright/60 bg-garnet/25 text-garnet-bright'
+                      : 'h-12 w-12 border-brass/40 bg-brass/10 text-brass-soft'
                   }`}
                 >
                   <Icon name={t.icon} size={t.featured ? 26 : 22} />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-medium text-ink">
+                <h3 className="mt-5 font-display text-xl font-semibold text-white">
                   {t.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">
                   {t.text}
                 </p>
               </div>
