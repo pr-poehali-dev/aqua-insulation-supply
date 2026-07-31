@@ -1,9 +1,7 @@
 import Header from '@/components/panzir/Header';
 import Hero from '@/components/panzir/Hero';
 import About, { Process } from '@/components/panzir/About';
-import Collections from '@/components/panzir/Collections';
-import Docs from '@/components/panzir/Docs';
-import Contacts from '@/components/panzir/Contacts';
+import PlaceholderSections from '@/components/panzir/PlaceholderSections';
 import Footer from '@/components/panzir/Footer';
 
 const Index = () => {
@@ -14,9 +12,7 @@ const Index = () => {
         <Hero />
         <About />
         <Process />
-        <Collections />
-        <Docs />
-        <Contacts />
+        <PlaceholderSections />
       </main>
       <Footer />
     </div>
