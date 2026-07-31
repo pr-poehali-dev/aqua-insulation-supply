@@ -1,6 +1,6 @@
 import Header from '@/components/panzir/Header';
 import Hero from '@/components/panzir/Hero';
-import About, { Process } from '@/components/panzir/About';
+import About from '@/components/panzir/About';
 import PlaceholderSections from '@/components/panzir/PlaceholderSections';
 import Footer from '@/components/panzir/Footer';
 
@@ -11,7 +11,6 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <Process />
         <PlaceholderSections />
       </main>
       <Footer />
