@@ -79,30 +79,25 @@ const About = () => {
             </div>
           </div>
 
-          {/* 6 плиток справа */}
+          {/* 6 плиток справа — сетка 2×3 */}
           <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
             {TILES.map((t, i) => (
               <div
                 key={i}
-                className={`group relative overflow-hidden rounded-sm border p-7 transition-colors duration-300 ${
+                className={`group relative flex h-full flex-col overflow-hidden rounded-lg border p-7 transition-colors duration-300 ${
                   t.featured
-                    ? 'border-garnet/60 bg-garnet/10 sm:col-span-2'
-                    : 'border-brass/20 bg-ink/40 hover:border-brass/50'
+                    ? 'border-garnet/50 bg-ink/70 shadow-lg shadow-garnet/10'
+                    : 'border-white/10 bg-ink/30 hover:border-white/25'
                 }`}
               >
-                <span
-                  className={`absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent to-transparent ${
-                    t.featured ? 'via-garnet-bright/80' : 'via-brass/60'
-                  }`}
-                />
                 <div
-                  className={`flex h-11 w-11 items-center justify-center rounded-sm border ${
+                  className={`flex items-center justify-center rounded-md border ${
                     t.featured
-                      ? 'border-garnet-bright/50 text-garnet-bright'
-                      : 'border-brass/30 text-brass-soft'
+                      ? 'h-14 w-14 border-garnet-bright/50 bg-garnet/15 text-garnet-bright'
+                      : 'h-12 w-12 border-brass/25 text-brass-soft'
                   }`}
                 >
-                  <Icon name={t.icon} size={22} />
+                  <Icon name={t.icon} size={t.featured ? 26 : 22} />
                 </div>
                 <h3 className="mt-5 font-display text-xl font-medium text-ink">
                   {t.title}
