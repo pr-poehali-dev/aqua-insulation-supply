@@ -1,77 +1,115 @@
+import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 
-const CDN =
-  'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/files';
+type Tile = {
+  icon: string;
+  title: string;
+  text: string;
+  featured?: boolean;
+};
 
-const STEPS = [
-  { title: 'Обсуждение и ТЗ', hint: 'Фиксируем задачу и требования к изоляции.', img: `${CDN}/008c50ed-a82f-43e1-a689-9620ee92aa74.jpg` },
-  { title: 'Опросный лист', hint: 'Собираем параметры объекта и оборудования.', img: `${CDN}/4c95812b-1524-4880-8550-99b1b7ca2e59.jpg` },
-  { title: 'Предварительное КП', hint: 'Состав, материалы и стоимость проекта.', img: `${CDN}/63796d43-6a9b-4f6a-9fc9-dd2bbac8c946.jpg` },
-  { title: 'Выезд и замер', hint: 'Снимаем размеры на объекте, в т.ч. 3D-сканером.', img: `${CDN}/a2133b51-147e-4d7f-baed-36f7f6033c3d.jpg` },
-  { title: 'Эскиз и лекало', hint: 'Строим крой под конкретную единицу оборудования.', img: `${CDN}/72b53501-7449-4ab7-848a-5cc7572ed969.jpg` },
-  { title: 'Пошив', hint: 'Собственное производство, срок 3–14 дней.', img: `${CDN}/f1dc16c0-aebf-4e2d-9cdf-dc93fe21894c.jpg` },
-  { title: 'Шеф-монтаж', hint: 'Устанавливаем изделие на объекте.', img: `${CDN}/39e9fec1-af19-49a2-bef5-ce870fcdc63b.jpg` },
-  { title: 'Гарантия и документация', hint: 'Паспорт изделия и гарантия 24 месяца.', img: `${CDN}/d892312b-483c-4ec3-8c54-b77641c615b3.jpg` },
-];
-
-const FACTS = [
-  { value: 'с 2018', label: 'шьём термочехлы' },
-  { value: 'своя', label: 'инженерная служба' },
-  { value: 'вся Россия', label: 'география поставок' },
+const TILES: Tile[] = [
+  {
+    icon: 'ShieldCheck',
+    title: 'Термочехлы «Панцирь»',
+    text: 'Разработка и производство съёмных термочехлов',
+    featured: true,
+  },
+  {
+    icon: 'Thermometer',
+    title: 'Теплоизоляция',
+    text: 'Для инженерных систем и судостроения',
+  },
+  {
+    icon: 'Layers',
+    title: 'Защитные покрытия',
+    text: 'Покрытия для теплоизоляции',
+  },
+  {
+    icon: 'Volume2',
+    title: 'Шумоизоляция',
+    text: 'Материалы и решения по снижению шума',
+  },
+  {
+    icon: 'Flame',
+    title: 'Огнезащита',
+    text: 'Огнезащитные материалы и системы',
+  },
+  {
+    icon: 'Boxes',
+    title: 'Системные решения',
+    text: 'Комплексные поставки теплоизоляция + покрытия',
+  },
 ];
 
 const About = () => {
   return (
     <section id="about" className="relative overflow-hidden bg-bg-alt py-24 md:py-36">
-      {/* Видео-фон */}
-      <div className="absolute inset-0 z-0">
-        <video
-          className="h-full w-full object-cover"
-          src="/about-bg.mp4"
-          poster="/about-bg-poster.jpg"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-        />
-        {/* Лёгкий тёмный градиент — как в Hero, низ полностью закрыт для чёткой границы блока */}
-        <div className="absolute inset-0 bg-bg-alt/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-alt/40 via-bg-alt/10 to-bg-alt" />
-      </div>
-
       <div className="container relative z-10">
-        <MonoLabel>О нас</MonoLabel>
-
-        {/* Такт 1 — манифест */}
-        <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-          <div className="lg:col-span-7">
-            <h2 className="font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
-              Первое промышленное ателье России
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+          {/* Текст слева */}
+          <div className="lg:col-span-5">
+            <MonoLabel>О нас</MonoLabel>
+            <h2 className="mt-6 font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+              О компании
             </h2>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted">
-              С 2018 года разрабатываем и шьём съёмные термочехлы. Работаем как
-              ателье: снимаем мерки на объекте и делаем индивидуальный крой.
-              Собственная инженерная служба. Поставляем по всей России — от
-              котельных до НПЗ и верфей.
-            </p>
+
+            <div className="mt-8 space-y-6 text-lg leading-relaxed text-ink-muted">
+              <p>
+                ООО «АкваРос СПб» основано 1 апреля 2008 года. Основатели
+                компании — инженеры с опытом более 20 лет в проектировании и
+                монтаже инженерных систем.
+              </p>
+              <p>
+                Мы разрабатываем и производим съёмные термочехлы «Панцирь» — это
+                собственное производство. Также поставляем комплексные решения по
+                теплоизоляции, шумоизоляции и огнезащите для промышленных и
+                гражданских объектов.
+              </p>
+              <p>
+                В работе опираемся на технические расчёты, выезжаем на объекты,
+                выполняем замеры и подбираем оптимальные решения под конкретные
+                задачи заказчика. Собственная инженерная служба. Регулярно
+                повышаем квалификацию специалистов.
+              </p>
+              <p>
+                Работаем по всей России — от небольших объектов до крупных
+                промышленных предприятий.
+              </p>
+            </div>
           </div>
 
-          {/* Ключевые факты */}
-          <div className="grid gap-5 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
-            {FACTS.map((f, i) => (
+          {/* 6 плиток справа */}
+          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
+            {TILES.map((t, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-sm border border-brass/25 bg-ink/40 p-7 backdrop-blur-md transition-colors duration-300 hover:border-brass/60"
+                className={`group relative overflow-hidden rounded-sm border p-7 transition-colors duration-300 ${
+                  t.featured
+                    ? 'border-garnet/60 bg-garnet/10 sm:col-span-2'
+                    : 'border-brass/20 bg-ink/40 hover:border-brass/50'
+                }`}
               >
-                {/* Золотая грань слева */}
-                <span className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-brass/70 to-transparent" />
-                <div className="font-display text-3xl font-semibold text-brass-soft md:text-4xl">
-                  {f.value}
+                <span
+                  className={`absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent to-transparent ${
+                    t.featured ? 'via-garnet-bright/80' : 'via-brass/60'
+                  }`}
+                />
+                <div
+                  className={`flex h-11 w-11 items-center justify-center rounded-sm border ${
+                    t.featured
+                      ? 'border-garnet-bright/50 text-garnet-bright'
+                      : 'border-brass/30 text-brass-soft'
+                  }`}
+                >
+                  <Icon name={t.icon} size={22} />
                 </div>
-                <div className="label-mono mt-3 text-[10px] tracking-wider text-steel">
-                  {f.label}
-                </div>
+                <h3 className="mt-5 font-display text-xl font-medium text-ink">
+                  {t.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  {t.text}
+                </p>
               </div>
             ))}
           </div>
@@ -81,78 +119,4 @@ const About = () => {
   );
 };
 
-const Process = () => {
-  return (
-    <section id="process" className="relative bg-bg-alt py-24 md:py-36">
-      <div className="container">
-        {/* Такт 2 — процесс */}
-        <div>
-          <MonoLabel>Процесс работы</MonoLabel>
-          <h3 className="mt-4 max-w-2xl font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
-            От лекала до шеф-монтажа
-          </h3>
-
-          <ol className="relative mt-16 space-y-16 md:space-y-24">
-            {/* Вертикальная соединительная линия по центру (desktop) */}
-            <span className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-brass/40 via-brass/15 to-transparent lg:block" />
-
-            {STEPS.map((s, i) => {
-              const reversed = i % 2 === 1;
-              return (
-                <li
-                  key={i}
-                  className="relative grid items-center gap-8 lg:grid-cols-2 lg:gap-16"
-                >
-                  {/* Фото */}
-                  <div className={reversed ? 'lg:order-2' : ''}>
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-white/10">
-                      <img
-                        src={s.img}
-                        alt={s.title}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-bg-alt/60 to-transparent" />
-                    </div>
-                  </div>
-
-                  {/* Текст */}
-                  <div
-                    className={
-                      reversed
-                        ? 'lg:order-1 lg:pr-12 lg:text-right'
-                        : 'lg:pl-12'
-                    }
-                  >
-                    <div
-                      className={`flex items-center gap-4 ${
-                        reversed ? 'lg:justify-end' : ''
-                      }`}
-                    >
-                      <span className="font-display text-5xl font-semibold text-brass md:text-6xl">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <span className="h-px w-12 bg-brass/50" />
-                    </div>
-                    <h4 className="mt-5 font-display text-2xl font-medium text-ink md:text-3xl">
-                      {s.title}
-                    </h4>
-                    <p className="mt-3 max-w-md text-ink-muted lg:inline-block">
-                      {s.hint}
-                    </p>
-                  </div>
-
-                  {/* Золотая точка на линии (desktop) */}
-                  <span className="pointer-events-none absolute left-1/2 top-1/2 hidden h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brass ring-4 ring-bg-alt lg:block" />
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export { Process };
 export default About;
