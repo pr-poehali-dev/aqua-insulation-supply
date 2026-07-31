@@ -2,9 +2,9 @@ import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 
 const FACTS = [
-  { value: '20 500+', label: 'изделий пошито' },
-  { value: 'до +1250 °C', label: 'температура применения' },
-  { value: '500+', label: 'циклов монтаж-демонтаж' },
+  { value: 'до 98%', label: 'снижение теплопотерь' },
+  { value: 'до 30 дБ', label: 'снижение шума' },
+  { value: '500+', label: 'циклов монтажа/демонтажа' },
 ];
 
 const Hero = () => {
@@ -32,32 +32,25 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <MonoLabel>Первое промышленное ателье России · Санкт-Петербург</MonoLabel>
+          <MonoLabel>Первое промышленное ателье России</MonoLabel>
 
-          <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.06] text-ink sm:text-6xl md:text-7xl">
-            ПАНЦИРЬ — <span className="italic text-garnet-bright">термочехлы</span>
-            <br />
-            от первого промышленного ателье России
+          <h1 className="mt-6 font-display text-6xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-7xl md:text-8xl">
+            ПАНЦИРЬ
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
-            Индивидуальный крой под экстремальные температуры до{' '}
-            <span className="whitespace-nowrap text-brass-soft">+1250 °C</span>.
+            Термочехлы индивидуального кроя
+            <br />
+            от первого промышленного ателье России
           </p>
 
-          <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row">
+          <div className="mt-10">
             <a
               href="#contacts"
               className="inline-flex items-center justify-center gap-2.5 rounded-sm bg-garnet px-9 py-5 text-lg font-medium text-ink shadow-lg shadow-garnet/30 transition-colors hover:bg-garnet-bright"
             >
               <Icon name="Ruler" size={20} />
-              Записаться на замер
-            </a>
-            <a
-              href="#collections"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/30 bg-ink/5 px-9 py-5 text-lg font-medium text-ink backdrop-blur-sm transition-colors hover:bg-ink/10"
-            >
-              Смотреть коллекции
+              Оставить заявку
             </a>
           </div>
 
