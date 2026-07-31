@@ -2,9 +2,9 @@ import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 
 const FACTS = [
-  { value: 'до 98%', label: 'снижение теплопотерь' },
-  { value: 'до 30 дБ', label: 'снижение шума' },
-  { value: '500+', label: 'циклов монтажа/демонтажа' },
+  { value: 'до 98%', label: 'меньше теплопотерь' },
+  { value: 'до 30 дБ', label: 'тише оборудование' },
+  { value: '500+', label: 'раз можно снять и поставить' },
 ];
 
 const Hero = () => {
@@ -39,9 +39,9 @@ const Hero = () => {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
-            Термочехлы индивидуального кроя
+            Съёмные термочехлы точного кроя под ваше оборудование.
             <br />
-            от первого промышленного ателье России
+            Снижают теплопотери, защищают от коррозии и служат годами.
           </p>
 
           <div className="mt-10">
@@ -49,8 +49,8 @@ const Hero = () => {
               href="#contacts"
               className="inline-flex items-center justify-center gap-2.5 rounded-sm bg-garnet px-9 py-5 text-lg font-medium text-ink shadow-lg shadow-garnet/30 transition-colors hover:bg-garnet-bright"
             >
-              <Icon name="Ruler" size={20} />
-              Оставить заявку
+              <Icon name="Calculator" size={20} />
+              Получить расчёт
             </a>
           </div>
 
