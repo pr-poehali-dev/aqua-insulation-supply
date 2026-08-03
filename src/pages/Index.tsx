@@ -7,6 +7,7 @@ import Supports from '@/components/panzir/Supports';
 import Ozv from '@/components/panzir/Ozv';
 import Protective from '@/components/panzir/Protective';
 import Applications from '@/components/panzir/Applications';
+import Advantages from '@/components/panzir/Advantages';
 import PlaceholderSections from '@/components/panzir/PlaceholderSections';
 import Footer from '@/components/panzir/Footer';
 
@@ -23,6 +24,7 @@ const Index = () => {
         <Ozv />
         <Protective />
         <Applications />
+        <Advantages />
         <PlaceholderSections />
       </main>
       <Footer />
