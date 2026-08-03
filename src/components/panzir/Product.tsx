@@ -233,7 +233,7 @@ const Product = () => {
               key={i}
               className={
                 c.featured
-                  ? 'group relative flex h-full flex-col rounded-lg border border-brass/50 bg-gradient-to-b from-brass/[0.12] to-[#0E1B2B] p-8 shadow-[0_0_0_1px_rgba(197,160,89,0.15)] transition-colors duration-300 hover:border-brass md:col-span-2 lg:col-span-1 lg:row-span-2 lg:justify-between'
+                  ? 'group relative flex h-full flex-col rounded-lg border border-brass/50 bg-gradient-to-b from-brass/[0.12] to-[#0E1B2B] p-7 shadow-[0_0_0_1px_rgba(197,160,89,0.15)] transition-colors duration-300 hover:border-brass'
                   : 'group flex h-full flex-col rounded-lg border border-white/15 bg-[#0E1B2B] p-7 transition-colors duration-300 hover:border-brass/40'
               }
             >
@@ -242,31 +242,15 @@ const Product = () => {
                   Флагман
                 </span>
               )}
-              <div
-                className={`flex items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft ${
-                  c.featured ? 'h-14 w-14' : 'h-12 w-12'
-                }`}
-              >
-                <Icon name={c.icon} size={c.featured ? 26 : 22} />
+              <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
+                <Icon name={c.icon} size={22} />
               </div>
-              <div className={c.featured ? 'mt-6 lg:mt-8' : ''}>
-                <h3
-                  className={`mt-5 font-display font-semibold text-white ${
-                    c.featured ? 'text-2xl' : 'text-xl'
-                  }`}
-                >
-                  {c.title}
-                </h3>
-                <p
-                  className={`mt-3 leading-relaxed ${
-                    c.featured
-                      ? 'text-base text-slate-200'
-                      : 'text-sm text-slate-300'
-                  }`}
-                >
-                  {c.text}
-                </p>
-              </div>
+              <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                {c.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                {c.text}
+              </p>
             </div>
           ))}
         </div>
