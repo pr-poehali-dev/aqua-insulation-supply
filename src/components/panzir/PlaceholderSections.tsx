@@ -7,7 +7,6 @@ type SectionDef = {
 };
 
 const SECTIONS: SectionDef[] = [
-  { id: 'applications', label: 'Применение', title: 'Области применения' },
   { id: 'advantages', label: 'Почему мы', title: 'Преимущества' },
   { id: 'objects', label: 'Портфолио', title: 'Примеры объектов' },
   { id: 'services', label: 'Услуги', title: 'Спектр услуг / Как мы работаем' },
@@ -23,7 +22,7 @@ const PlaceholderSections = () => {
           key={s.id}
           id={s.id}
           className={`relative py-24 md:py-36 ${
-            i % 2 === 0 ? 'bg-bg-alt' : 'bg-bg'
+            i % 2 === 0 ? 'bg-bg' : 'bg-bg-alt'
           }`}
         >
           <div className="container relative z-10">
