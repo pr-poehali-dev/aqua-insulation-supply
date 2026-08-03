@@ -5,6 +5,7 @@ import Product from '@/components/panzir/Product';
 import Verenitsa from '@/components/panzir/Verenitsa';
 import Supports from '@/components/panzir/Supports';
 import Ozv from '@/components/panzir/Ozv';
+import Protective from '@/components/panzir/Protective';
 import PlaceholderSections from '@/components/panzir/PlaceholderSections';
 import Footer from '@/components/panzir/Footer';
 
@@ -19,6 +20,7 @@ const Index = () => {
         <Verenitsa />
         <Supports />
         <Ozv />
+        <Protective />
         <PlaceholderSections />
       </main>
       <Footer />
