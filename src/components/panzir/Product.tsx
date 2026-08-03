@@ -154,6 +154,47 @@ const SpecTile = ({ card }: { card: SpecCard }) => (
   </div>
 );
 
+type CatalogItem = {
+  icon: string;
+  title: string;
+  text: string;
+  featured?: boolean;
+};
+
+const CATALOG: CatalogItem[] = [
+  {
+    icon: 'ShieldHalf',
+    title: 'Термочехлы ИТШМИ «Панцирь»',
+    text: 'Съёмные тепло- и шумоизоляционные чехлы индивидуального кроя. Главный продукт компании. Температуры от −200 до +1200 °C.',
+    featured: true,
+  },
+  {
+    icon: 'Layers',
+    title: 'Маты «Вереница»',
+    text: 'Амортизирующие и компенсационные маты для бесканальной прокладки тепловых сетей. Воспринимают температурные перемещения трубопроводов в грунте.',
+  },
+  {
+    icon: 'GitFork',
+    title: 'СОП «Периметр»',
+    text: 'Опорно-подвесная система. Предотвращает образование мостиков холода в местах крепления труб.',
+  },
+  {
+    icon: 'CircleDot',
+    title: 'СОП «Базис»',
+    text: 'Опорные кольца и системы опор для трубопроводов. Инженерные решения для промышленных и судовых объектов.',
+  },
+  {
+    icon: 'Flame',
+    title: 'ОЗВ-3000',
+    text: 'Огнезащитные трубопроводные вставки. Создают противопожарные разрывы в теплоизоляции (EI 60–180).',
+  },
+  {
+    icon: 'ShieldCheck',
+    title: 'ЗМ Панцирь',
+    text: 'Защитные материалы: алюминиевые ленты, мембраны, стеклоткани. Защита изоляции от влаги, УФ и механических повреждений.',
+  },
+];
+
 const TECH_HIGHLIGHTS = [
   { value: 'от −200 до +1200 °C', label: 'Рабочая температура' },
   { value: 'до 98%', label: 'Снижение теплопотерь' },
@@ -176,33 +217,89 @@ const Product = () => {
   return (
     <section id="product" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
-        <MonoLabel>Продукт</MonoLabel>
+        <MonoLabel>Каталог</MonoLabel>
         <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-          Термочехлы «Панцирь»
+          Каталог продукции
         </h2>
+        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
+          Инженерные решения для теплоизоляции, защиты и опоры трубопроводов и
+          оборудования.
+        </p>
 
-        <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
-          <p>
-            Съёмные тепло- и шумоизоляционные чехлы для арматуры, фланцевых
-            соединений, клапанов, оборудования и трубопроводных узлов.
-          </p>
-          <p>
-            Изготавливаются под конкретный узел и применяются для снижения
-            теплопотерь, защиты персонала и обслуживания оборудования без
-            демонтажа постоянной изоляции.
-          </p>
-        </div>
-
-        <div className="mt-10 flex flex-wrap gap-4">
-          {BADGES.map((b, i) => (
+        {/* Каталог продукции */}
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {CATALOG.map((c, i) => (
             <div
               key={i}
-              className="inline-flex items-center gap-2.5 rounded-sm border border-brass/30 bg-[#0E1B2B] px-4 py-3"
+              className={
+                c.featured
+                  ? 'group relative flex h-full flex-col rounded-lg border border-brass/50 bg-gradient-to-b from-brass/[0.12] to-[#0E1B2B] p-8 shadow-[0_0_0_1px_rgba(197,160,89,0.15)] transition-colors duration-300 hover:border-brass md:col-span-2 lg:col-span-1 lg:row-span-2 lg:justify-between'
+                  : 'group flex h-full flex-col rounded-lg border border-white/15 bg-[#0E1B2B] p-7 transition-colors duration-300 hover:border-brass/40'
+              }
             >
-              <Icon name={b.icon} size={18} className="text-brass-soft" />
-              <span className="text-sm font-medium text-ink">{b.text}</span>
+              {c.featured && (
+                <span className="label-mono absolute right-5 top-5 text-[10px] text-brass-soft">
+                  Флагман
+                </span>
+              )}
+              <div
+                className={`flex items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft ${
+                  c.featured ? 'h-14 w-14' : 'h-12 w-12'
+                }`}
+              >
+                <Icon name={c.icon} size={c.featured ? 26 : 22} />
+              </div>
+              <div className={c.featured ? 'mt-6 lg:mt-8' : ''}>
+                <h3
+                  className={`mt-5 font-display font-semibold text-white ${
+                    c.featured ? 'text-2xl' : 'text-xl'
+                  }`}
+                >
+                  {c.title}
+                </h3>
+                <p
+                  className={`mt-3 leading-relaxed ${
+                    c.featured
+                      ? 'text-base text-slate-200'
+                      : 'text-sm text-slate-300'
+                  }`}
+                >
+                  {c.text}
+                </p>
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* Термочехлы «Панцирь» */}
+        <div className="mt-20 border-t border-white/10 pt-16 md:mt-24">
+          <MonoLabel>Продукт</MonoLabel>
+          <h3 className="mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+            Термочехлы «Панцирь»
+          </h3>
+          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
+            <p>
+              Съёмные тепло- и шумоизоляционные чехлы для арматуры, фланцевых
+              соединений, клапанов, оборудования и трубопроводных узлов.
+            </p>
+            <p>
+              Изготавливаются под конкретный узел и применяются для снижения
+              теплопотерь, защиты персонала и обслуживания оборудования без
+              демонтажа постоянной изоляции.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            {BADGES.map((b, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center gap-2.5 rounded-sm border border-brass/30 bg-[#0E1B2B] px-4 py-3"
+              >
+                <Icon name={b.icon} size={18} className="text-brass-soft" />
+                <span className="text-sm font-medium text-ink">{b.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Основные функции */}
