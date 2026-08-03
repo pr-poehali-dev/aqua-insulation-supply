@@ -3,9 +3,6 @@ import Hero from '@/components/panzir/Hero';
 import About from '@/components/panzir/About';
 import Product from '@/components/panzir/Product';
 import Verenitsa from '@/components/panzir/Verenitsa';
-import Supports from '@/components/panzir/Supports';
-import Ozv from '@/components/panzir/Ozv';
-import Protective from '@/components/panzir/Protective';
 import Applications from '@/components/panzir/Applications';
 import Advantages from '@/components/panzir/Advantages';
 import PlaceholderSections from '@/components/panzir/PlaceholderSections';
@@ -20,9 +17,6 @@ const Index = () => {
         <About />
         <Product />
         <Verenitsa />
-        <Supports />
-        <Ozv />
-        <Protective />
         <Applications />
         <Advantages />
         <PlaceholderSections />
