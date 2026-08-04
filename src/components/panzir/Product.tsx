@@ -197,9 +197,9 @@ const Product = () => {
   return (
     <section id="product" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
-        <MonoLabel>Каталог</MonoLabel>
+        <MonoLabel>Продукция</MonoLabel>
         <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-          Каталог продукции
+          Продукция
         </h2>
         <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
           Инженерные решения для теплоизоляции, защиты и опоры трубопроводов и

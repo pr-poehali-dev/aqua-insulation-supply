@@ -2,8 +2,13 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const NAV = [
-  { label: 'О нас', href: '#about' },
-  { label: 'Коллекции', href: '#collections' },
+  { label: 'Главная', href: '#top' },
+  { label: 'О компании', href: '#about' },
+  { label: 'Продукция', href: '#product' },
+  { label: 'Области применения', href: '#applications' },
+  { label: 'Преимущества', href: '#advantages' },
+  { label: 'Примеры объектов', href: '#objects' },
+  { label: 'Как мы работаем', href: '#services' },
   { label: 'Документация', href: '#docs' },
   { label: 'Контакты', href: '#contacts' },
 ];
@@ -23,12 +28,12 @@ const Header = () => {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-ink-muted transition-colors hover:text-ink"
+              className="whitespace-nowrap text-[13px] text-ink-muted transition-colors hover:text-ink"
             >
               {item.label}
             </a>
@@ -37,13 +42,13 @@ const Header = () => {
 
         <a
           href="#contacts"
-          className="hidden rounded-sm border border-brass/40 px-5 py-2.5 text-sm font-medium text-brass-soft transition-colors hover:border-brass hover:bg-brass/10 md:inline-block"
+          className="hidden shrink-0 whitespace-nowrap rounded-sm border border-brass/40 px-4 py-2.5 text-[13px] font-medium text-brass-soft transition-colors hover:border-brass hover:bg-brass/10 lg:inline-block"
         >
           Записаться на замер
         </a>
 
         <button
-          className="text-ink md:hidden"
+          className="text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Меню"
         >
@@ -52,7 +57,7 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-bg md:hidden">
+        <div className="border-t border-border/60 bg-bg lg:hidden">
           <nav className="container flex flex-col py-4">
             {NAV.map((item) => (
               <a

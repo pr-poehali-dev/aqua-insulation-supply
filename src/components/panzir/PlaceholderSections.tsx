@@ -8,7 +8,7 @@ type SectionDef = {
 
 const SECTIONS: SectionDef[] = [
   { id: 'objects', label: 'Портфолио', title: 'Примеры объектов' },
-  { id: 'services', label: 'Услуги', title: 'Спектр услуг / Как мы работаем' },
+  { id: 'services', label: 'Услуги', title: 'Как мы работаем' },
   { id: 'docs', label: 'Документы', title: 'Документация' },
   { id: 'contacts', label: 'Связь', title: 'Контакты' },
 ];
