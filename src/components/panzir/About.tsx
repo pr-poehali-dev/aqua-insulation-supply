@@ -92,35 +92,34 @@ const About = () => {
             {TILES.map((t, i) => (
               <div
                 key={i}
-                className={`group relative flex h-full min-h-[260px] flex-col justify-end overflow-hidden rounded-lg border transition-colors duration-300 ${
+                className={`group relative flex h-full min-h-[280px] flex-col justify-end overflow-hidden rounded-xl border transition-all duration-300 ${
                   t.featured
-                    ? 'border-garnet-bright/60 shadow-lg shadow-garnet/15'
-                    : 'border-white/15 hover:border-brass/40'
+                    ? 'border-2 border-garnet-bright shadow-xl shadow-garnet/30 ring-1 ring-garnet-bright/30'
+                    : 'border-white/20 hover:border-brass/60 hover:shadow-lg hover:shadow-black/40'
                 }`}
               >
                 <img
                   src={t.image}
                   alt={t.title}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover brightness-[1.35] saturate-[1.05] transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#060D16]/45" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/75 via-45% to-[#060D16]/10" />
 
                 <div className="relative z-10 flex flex-col p-7">
                   <div
-                    className={`flex items-center justify-center rounded-md border backdrop-blur-sm ${
+                    className={`flex items-center justify-center rounded-md border backdrop-blur-md ${
                       t.featured
-                        ? 'h-14 w-14 border-garnet-bright/60 bg-garnet/25 text-garnet-bright'
-                        : 'h-12 w-12 border-brass/40 bg-brass/10 text-brass-soft'
+                        ? 'h-14 w-14 border-garnet-bright bg-garnet/40 text-white shadow-lg shadow-garnet/30'
+                        : 'h-12 w-12 border-brass/70 bg-brass/25 text-brass-soft'
                     }`}
                   >
                     <Icon name={t.icon} size={t.featured ? 26 : 22} />
                   </div>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                  <h3 className="mt-5 font-display text-xl font-semibold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
                     {t.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-200 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
                     {t.text}
                   </p>
                 </div>
