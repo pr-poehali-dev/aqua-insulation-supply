@@ -14,7 +14,8 @@ const TILES: Tile[] = [
     icon: 'ShieldCheck',
     title: 'Термочехлы «Панцирь»',
     text: 'Разработка и производство съёмных термочехлов',
-    image: '/about/covers.webp',
+    image:
+      'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/552eebab-ac0d-4b39-9561-206bae72ead7.jpg',
     featured: true,
   },
   {
