@@ -14,8 +14,7 @@ const TILES: Tile[] = [
     icon: 'ShieldCheck',
     title: 'Термочехлы «Панцирь»',
     text: 'Разработка и производство съёмных термочехлов',
-    image:
-      'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/552eebab-ac0d-4b39-9561-206bae72ead7.jpg',
+    image: '/about/panzir.webp',
     featured: true,
   },
   {
@@ -102,9 +101,9 @@ const About = () => {
                   src={t.image}
                   alt={t.title}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover brightness-[1.35] saturate-[1.05] transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/75 via-45% to-[#060D16]/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/70 via-50% to-[#060D16]/15" />
 
                 <div className="relative z-10 flex flex-col p-7">
                   <div
