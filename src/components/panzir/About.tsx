@@ -5,6 +5,7 @@ type Tile = {
   icon: string;
   title: string;
   text: string;
+  image: string;
   featured?: boolean;
 };
 
@@ -13,32 +14,38 @@ const TILES: Tile[] = [
     icon: 'ShieldCheck',
     title: 'Термочехлы «Панцирь»',
     text: 'Разработка и производство съёмных термочехлов',
+    image: '/about/covers.webp',
     featured: true,
   },
   {
     icon: 'Thermometer',
     title: 'Теплоизоляция',
     text: 'Для инженерных систем и судостроения',
+    image: '/about/thermal.webp',
   },
   {
     icon: 'Layers',
     title: 'Защитные покрытия',
     text: 'Покрытия для теплоизоляции',
+    image: '/about/protective.webp',
   },
   {
     icon: 'Volume2',
     title: 'Шумоизоляция',
     text: 'Материалы и решения по снижению шума',
+    image: '/about/noise.webp',
   },
   {
     icon: 'Flame',
     title: 'Огнезащита',
     text: 'Огнезащитные материалы и системы',
+    image: '/about/fire.webp',
   },
   {
     icon: 'Boxes',
     title: 'Системные решения',
     text: 'Комплексные поставки теплоизоляция + покрытия',
+    image: '/about/systems.webp',
   },
 ];
 
@@ -84,27 +91,38 @@ const About = () => {
             {TILES.map((t, i) => (
               <div
                 key={i}
-                className={`group relative flex h-full flex-col overflow-hidden rounded-lg border p-7 transition-colors duration-300 ${
+                className={`group relative flex h-full min-h-[260px] flex-col justify-end overflow-hidden rounded-lg border transition-colors duration-300 ${
                   t.featured
-                    ? 'border-garnet-bright/60 bg-[#0A1420] shadow-lg shadow-garnet/15'
-                    : 'border-white/15 bg-[#0E1B2B] hover:border-brass/40'
+                    ? 'border-garnet-bright/60 shadow-lg shadow-garnet/15'
+                    : 'border-white/15 hover:border-brass/40'
                 }`}
               >
-                <div
-                  className={`flex items-center justify-center rounded-md border ${
-                    t.featured
-                      ? 'h-14 w-14 border-garnet-bright/60 bg-garnet/25 text-garnet-bright'
-                      : 'h-12 w-12 border-brass/40 bg-brass/10 text-brass-soft'
-                  }`}
-                >
-                  <Icon name={t.icon} size={t.featured ? 26 : 22} />
+                <img
+                  src={t.image}
+                  alt={t.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-[#060D16]/45" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/80 to-transparent" />
+
+                <div className="relative z-10 flex flex-col p-7">
+                  <div
+                    className={`flex items-center justify-center rounded-md border backdrop-blur-sm ${
+                      t.featured
+                        ? 'h-14 w-14 border-garnet-bright/60 bg-garnet/25 text-garnet-bright'
+                        : 'h-12 w-12 border-brass/40 bg-brass/10 text-brass-soft'
+                    }`}
+                  >
+                    <Icon name={t.icon} size={t.featured ? 26 : 22} />
+                  </div>
+                  <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                    {t.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    {t.text}
+                  </p>
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold text-white">
-                  {t.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  {t.text}
-                </p>
               </div>
             ))}
           </div>
