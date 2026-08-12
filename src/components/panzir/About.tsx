@@ -6,7 +6,6 @@ type Tile = {
   title: string;
   text: string;
   image: string;
-  tone: 'light' | 'dark';
   featured?: boolean;
 };
 
@@ -16,7 +15,6 @@ const TILES: Tile[] = [
     title: 'Термочехлы «Панцирь»',
     text: 'Разработка и производство съёмных термочехлов',
     image: '/about/panzir.webp',
-    tone: 'light',
     featured: true,
   },
   {
@@ -24,40 +22,34 @@ const TILES: Tile[] = [
     title: 'Теплоизоляция',
     text: 'Для инженерных систем и судостроения',
     image: '/about/thermal.webp',
-    tone: 'light',
   },
   {
     icon: 'Layers',
     title: 'Защитные покрытия',
     text: 'Покрытия для теплоизоляции',
     image: '/about/protective.webp',
-    tone: 'dark',
   },
   {
     icon: 'Volume2',
     title: 'Шумоизоляция',
     text: 'Материалы и решения по снижению шума',
     image: '/about/noise.webp',
-    tone: 'light',
   },
   {
     icon: 'Flame',
     title: 'Огнезащита',
     text: 'Огнезащитные материалы и системы',
     image: '/about/fire.webp',
-    tone: 'light',
   },
   {
     icon: 'Boxes',
     title: 'Системные решения',
     text: 'Комплексные поставки теплоизоляция + покрытия',
     image: '/about/systems.webp',
-    tone: 'dark',
   },
 ];
 
 const FeaturedCard = ({ t }: { t: Tile }) => {
-  const light = t.tone === 'light';
   return (
     <div className="relative flex h-full min-h-[420px] w-full flex-col justify-end overflow-hidden rounded-2xl border-2 border-garnet-bright shadow-2xl shadow-garnet/30">
       <img
@@ -66,24 +58,18 @@ const FeaturedCard = ({ t }: { t: Tile }) => {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-2/5 bg-gradient-to-t from-[#050B13]/95 via-[#050B13]/70 to-transparent" />
+
       <div className="relative z-10 flex flex-col p-8">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border-2 border-garnet-bright bg-garnet text-white">
             <Icon name={t.icon} size={20} />
           </div>
-          <h3
-            className={`font-display text-2xl font-semibold md:text-3xl ${
-              light ? 'text-white' : 'text-[#0A1420]'
-            }`}
-          >
+          <h3 className="font-display text-2xl font-semibold text-white md:text-3xl">
             {t.title}
           </h3>
         </div>
-        <p
-          className={`mt-3 text-base font-medium leading-relaxed ${
-            light ? 'text-slate-100' : 'text-[#243447]'
-          }`}
-        >
+        <p className="mt-3 text-base font-medium leading-relaxed text-slate-100">
           {t.text}
         </p>
       </div>
@@ -92,15 +78,8 @@ const FeaturedCard = ({ t }: { t: Tile }) => {
 };
 
 const TileCard = ({ t }: { t: Tile }) => {
-  const light = t.tone === 'light';
   return (
-    <div
-      className={`group relative flex aspect-[15/16] w-full min-h-[340px] flex-col justify-end overflow-hidden rounded-xl border transition-colors duration-300 ${
-        light
-          ? 'border-white/25 hover:border-brass/60'
-          : 'border-[#0A1420]/20 hover:border-garnet/50'
-      }`}
-    >
+    <div className="group relative flex aspect-[15/16] min-h-[340px] w-full flex-col justify-end overflow-hidden rounded-xl border border-white/25 transition-colors duration-300 hover:border-brass/60">
       <img
         src={t.image}
         alt={t.title}
@@ -108,24 +87,18 @@ const TileCard = ({ t }: { t: Tile }) => {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-1/2 bg-gradient-to-t from-[#050B13]/95 via-[#050B13]/70 to-transparent" />
+
       <div className="relative z-10 flex flex-col justify-end p-5">
         <div className="flex min-h-[3rem] items-center gap-2.5">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-brass bg-brass/25 text-brass">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-brass bg-brass/25 text-brass-soft">
             <Icon name={t.icon} size={16} />
           </div>
-          <h3
-            className={`font-display text-base font-semibold leading-snug ${
-              light ? 'text-white' : 'text-[#0A1420]'
-            }`}
-          >
+          <h3 className="font-display text-base font-semibold leading-snug text-white">
             {t.title}
           </h3>
         </div>
-        <p
-          className={`mt-2 min-h-[3.75rem] text-sm font-medium leading-relaxed ${
-            light ? 'text-slate-100' : 'text-[#243447]'
-          }`}
-        >
+        <p className="mt-2 min-h-[3.75rem] text-sm font-medium leading-relaxed text-slate-200">
           {t.text}
         </p>
       </div>
