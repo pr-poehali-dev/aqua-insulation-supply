@@ -214,35 +214,31 @@ const Product = () => {
           {CATALOG.map((c, i) => (
             <div
               key={i}
-              className={
+              className={`group relative flex aspect-[16/12] h-full w-full flex-col justify-end overflow-hidden rounded-lg border transition-colors duration-300 ${
                 c.featured
-                  ? 'group relative flex h-full flex-col overflow-hidden rounded-lg border border-brass/50 bg-gradient-to-b from-brass/[0.12] to-[#0E1B2B] shadow-[0_0_0_1px_rgba(197,160,89,0.15)] transition-colors duration-300 hover:border-brass'
-                  : 'group relative flex h-full flex-col overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/40'
-              }
+                  ? 'border-brass/50 hover:border-brass'
+                  : 'border-white/15 hover:border-brass/40'
+              }`}
             >
               {c.image && (
-                <div className="aspect-[16/11] w-full overflow-hidden">
-                  <img
-                    src={c.image}
-                    alt={c.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
               )}
-              <div className="flex flex-1 flex-col p-8 md:p-10">
-                {c.featured && (
-                  <span className="label-mono absolute right-6 top-6 rounded-sm bg-[#050B13]/70 px-2.5 py-1 text-[11px] text-brass-soft">
-                    Флагман
-                  </span>
-                )}
-                <div className="flex h-14 w-14 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-                  <Icon name={c.icon} size={26} />
+
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-2/3 bg-gradient-to-t from-[#050B13]/95 via-[#050B13]/70 to-transparent" />
+
+              <div className="relative z-10 flex flex-col p-8 md:p-10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/50 bg-brass/20 text-brass-soft">
+                  <Icon name={c.icon} size={24} />
                 </div>
-                <h3 className="mt-6 font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
+                <h3 className="mt-5 font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
                   {c.title}
                 </h3>
-                <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-lg">
+                <p className="mt-4 text-base leading-relaxed text-slate-200 md:text-lg">
                   {c.text}
                 </p>
               </div>
