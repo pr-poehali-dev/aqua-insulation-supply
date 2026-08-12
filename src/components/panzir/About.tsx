@@ -49,14 +49,30 @@ const TILES: Tile[] = [
   },
 ];
 
+const FeaturedCard = ({ t }: { t: Tile }) => (
+  <div className="flex h-full flex-col overflow-hidden rounded-2xl border-2 border-garnet-bright bg-[#0A1420] shadow-2xl shadow-garnet/30">
+    <div className="relative aspect-[4/3] w-full overflow-hidden">
+      <img
+        src={t.image}
+        alt={t.title}
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    <div className="flex flex-1 flex-col p-8">
+      <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-garnet-bright bg-garnet/40 text-white">
+        <Icon name={t.icon} size={28} />
+      </div>
+      <h3 className="mt-5 font-display text-2xl font-semibold text-white md:text-3xl">
+        {t.title}
+      </h3>
+      <p className="mt-3 text-base leading-relaxed text-slate-300">{t.text}</p>
+    </div>
+  </div>
+);
+
 const TileCard = ({ t }: { t: Tile }) => (
-  <div
-    className={`group relative flex h-full flex-col overflow-hidden rounded-xl border transition-all duration-300 ${
-      t.featured
-        ? 'border-2 border-garnet-bright bg-[#0A1420] shadow-xl shadow-garnet/30'
-        : 'border-white/20 bg-[#0E1B2B] hover:border-brass/60'
-    }`}
-  >
+  <div className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/20 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/60">
     <div className="relative aspect-[16/10] w-full overflow-hidden">
       <img
         src={t.image}
@@ -66,17 +82,11 @@ const TileCard = ({ t }: { t: Tile }) => (
       />
     </div>
 
-    <div className="flex flex-1 flex-col p-6">
-      <div
-        className={`flex items-center justify-center rounded-md border ${
-          t.featured
-            ? 'h-12 w-12 border-garnet-bright bg-garnet/40 text-white'
-            : 'h-11 w-11 border-brass/70 bg-brass/20 text-brass-soft'
-        }`}
-      >
-        <Icon name={t.icon} size={t.featured ? 24 : 22} />
+    <div className="flex flex-1 flex-col p-5">
+      <div className="flex h-10 w-10 items-center justify-center rounded-md border border-brass/70 bg-brass/20 text-brass-soft">
+        <Icon name={t.icon} size={20} />
       </div>
-      <h3 className="mt-4 font-display text-xl font-semibold text-white">
+      <h3 className="mt-4 font-display text-base font-semibold leading-snug text-white">
         {t.title}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-slate-300">{t.text}</p>
@@ -85,15 +95,15 @@ const TileCard = ({ t }: { t: Tile }) => (
 );
 
 const About = () => {
-  const leftTiles = TILES.slice(0, 2);
-  const rightTiles = TILES.slice(2);
+  const featured = TILES[0];
+  const restTiles = TILES.slice(1);
 
   return (
     <section id="about" className="relative overflow-hidden bg-bg-alt py-24 md:py-36">
       <div className="container relative z-10">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
-          {/* Левая колонка: текст + 2 плитки */}
-          <div className="flex flex-col lg:col-span-5">
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Текст слева */}
+          <div className="flex flex-col lg:col-span-7">
             <MonoLabel>О нас</MonoLabel>
             <h2 className="mt-6 font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
               О компании
@@ -123,21 +133,19 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
-              {leftTiles.map((t, i) => (
-                <TileCard key={i} t={t} />
-              ))}
-            </div>
           </div>
 
-          {/* Правая колонка: сетка 2×2 */}
-          <div className="lg:col-span-7">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {rightTiles.map((t, i) => (
-                <TileCard key={i} t={t} />
-              ))}
-            </div>
+          {/* Большая плитка справа */}
+          <div className="lg:col-span-5">
+            <FeaturedCard t={featured} />
           </div>
+        </div>
+
+        {/* 5 плиток одной полосой */}
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {restTiles.map((t, i) => (
+            <TileCard key={i} t={t} />
+          ))}
         </div>
       </div>
     </section>
