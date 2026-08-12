@@ -67,20 +67,18 @@ const FeaturedCard = ({ t }: { t: Tile }) => {
       />
 
       <div className="relative z-10 flex flex-col p-8">
-        <div
-          className={`flex h-14 w-14 items-center justify-center rounded-lg border-2 border-garnet-bright ${
-            light ? 'bg-garnet text-white' : 'bg-garnet text-white'
-          }`}
-        >
-          <Icon name={t.icon} size={28} />
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border-2 border-garnet-bright bg-garnet text-white">
+            <Icon name={t.icon} size={20} />
+          </div>
+          <h3
+            className={`font-display text-2xl font-semibold md:text-3xl ${
+              light ? 'text-white' : 'text-[#0A1420]'
+            }`}
+          >
+            {t.title}
+          </h3>
         </div>
-        <h3
-          className={`mt-5 font-display text-2xl font-semibold md:text-3xl ${
-            light ? 'text-white' : 'text-[#0A1420]'
-          }`}
-        >
-          {t.title}
-        </h3>
         <p
           className={`mt-3 text-base font-medium leading-relaxed ${
             light ? 'text-slate-100' : 'text-[#243447]'
@@ -97,7 +95,7 @@ const TileCard = ({ t }: { t: Tile }) => {
   const light = t.tone === 'light';
   return (
     <div
-      className={`group relative flex aspect-[4/5] w-full min-h-[340px] flex-col justify-end overflow-hidden rounded-xl border transition-colors duration-300 ${
+      className={`group relative flex aspect-[15/16] w-full min-h-[340px] flex-col justify-end overflow-hidden rounded-xl border transition-colors duration-300 ${
         light
           ? 'border-white/25 hover:border-brass/60'
           : 'border-[#0A1420]/20 hover:border-garnet/50'
@@ -111,22 +109,18 @@ const TileCard = ({ t }: { t: Tile }) => {
       />
 
       <div className="relative z-10 flex flex-col justify-end p-5">
-        <div
-          className={`flex h-11 w-11 items-center justify-center rounded-md border-2 ${
-            light
-              ? 'border-brass bg-brass/30 text-brass'
-              : 'border-brass bg-white/80 text-brass'
-          }`}
-        >
-          <Icon name={t.icon} size={22} />
+        <div className="flex min-h-[3rem] items-center gap-2.5">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-brass bg-brass/25 text-brass">
+            <Icon name={t.icon} size={16} />
+          </div>
+          <h3
+            className={`font-display text-base font-semibold leading-snug ${
+              light ? 'text-white' : 'text-[#0A1420]'
+            }`}
+          >
+            {t.title}
+          </h3>
         </div>
-        <h3
-          className={`mt-4 flex min-h-[3rem] items-end font-display text-base font-semibold leading-snug ${
-            light ? 'text-white' : 'text-[#0A1420]'
-          }`}
-        >
-          {t.title}
-        </h3>
         <p
           className={`mt-2 min-h-[3.75rem] text-sm font-medium leading-relaxed ${
             light ? 'text-slate-100' : 'text-[#243447]'
@@ -148,7 +142,7 @@ const About = () => {
       <div className="container relative z-10">
         <div className="grid items-stretch gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Текст слева */}
-          <div className="flex flex-col lg:col-span-7">
+          <div className="flex flex-col lg:col-span-6">
             <MonoLabel>О нас</MonoLabel>
             <h2 className="mt-6 font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
               О компании
@@ -181,7 +175,7 @@ const About = () => {
           </div>
 
           {/* Большая плитка справа */}
-          <div className="flex lg:col-span-5">
+          <div className="flex lg:col-span-6">
             <FeaturedCard t={featured} />
           </div>
         </div>
