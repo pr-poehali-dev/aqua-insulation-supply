@@ -210,7 +210,7 @@ const Product = () => {
         </p>
 
         {/* Каталог продукции */}
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
           {CATALOG.map((c, i) => (
             <div
               key={i}
@@ -221,7 +221,7 @@ const Product = () => {
               }
             >
               {c.image && (
-                <div className="aspect-[16/10] w-full overflow-hidden">
+                <div className="aspect-[16/11] w-full overflow-hidden">
                   <img
                     src={c.image}
                     alt={c.title}
@@ -230,19 +230,19 @@ const Product = () => {
                   />
                 </div>
               )}
-              <div className="flex flex-1 flex-col p-7">
+              <div className="flex flex-1 flex-col p-8 md:p-10">
                 {c.featured && (
-                  <span className="label-mono absolute right-5 top-5 rounded-sm bg-[#050B13]/70 px-2 py-1 text-[10px] text-brass-soft">
+                  <span className="label-mono absolute right-6 top-6 rounded-sm bg-[#050B13]/70 px-2.5 py-1 text-[11px] text-brass-soft">
                     Флагман
                   </span>
                 )}
-                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-                  <Icon name={c.icon} size={22} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
+                  <Icon name={c.icon} size={26} />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                <h3 className="mt-6 font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
                   {c.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                <p className="mt-4 text-base leading-relaxed text-slate-300 md:text-lg">
                   {c.text}
                 </p>
               </div>
