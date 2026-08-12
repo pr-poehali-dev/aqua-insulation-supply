@@ -59,7 +59,7 @@ const TILES: Tile[] = [
 const FeaturedCard = ({ t }: { t: Tile }) => {
   const light = t.tone === 'light';
   return (
-    <div className="relative flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-2xl border-2 border-garnet-bright shadow-2xl shadow-garnet/30">
+    <div className="relative flex h-full min-h-[420px] w-full flex-col justify-end overflow-hidden rounded-2xl border-2 border-garnet-bright shadow-2xl shadow-garnet/30">
       <img
         src={t.image}
         alt={t.title}
@@ -97,7 +97,7 @@ const TileCard = ({ t }: { t: Tile }) => {
   const light = t.tone === 'light';
   return (
     <div
-      className={`group relative flex aspect-[3/4] w-full flex-col justify-end overflow-hidden rounded-xl border transition-colors duration-300 ${
+      className={`group relative flex aspect-[4/5] w-full min-h-[340px] flex-col justify-end overflow-hidden rounded-xl border transition-colors duration-300 ${
         light
           ? 'border-white/25 hover:border-brass/60'
           : 'border-[#0A1420]/20 hover:border-garnet/50'
@@ -110,25 +110,25 @@ const TileCard = ({ t }: { t: Tile }) => {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      <div className="relative z-10 flex flex-col p-5">
+      <div className="relative z-10 flex flex-col justify-end p-5">
         <div
-          className={`flex h-10 w-10 items-center justify-center rounded-md border-2 ${
+          className={`flex h-11 w-11 items-center justify-center rounded-md border-2 ${
             light
-              ? 'border-brass bg-brass/30 text-brass-soft'
-              : 'border-[#0A1420]/70 bg-white/70 text-[#0A1420]'
+              ? 'border-brass bg-brass/30 text-brass'
+              : 'border-brass bg-white/80 text-brass'
           }`}
         >
-          <Icon name={t.icon} size={20} />
+          <Icon name={t.icon} size={22} />
         </div>
         <h3
-          className={`mt-4 font-display text-base font-semibold leading-snug ${
+          className={`mt-4 flex min-h-[3rem] items-end font-display text-base font-semibold leading-snug ${
             light ? 'text-white' : 'text-[#0A1420]'
           }`}
         >
           {t.title}
         </h3>
         <p
-          className={`mt-2 text-sm font-medium leading-relaxed ${
+          className={`mt-2 min-h-[3.75rem] text-sm font-medium leading-relaxed ${
             light ? 'text-slate-100' : 'text-[#243447]'
           }`}
         >
@@ -146,7 +146,7 @@ const About = () => {
   return (
     <section id="about" className="relative overflow-hidden bg-bg-alt py-24 md:py-36">
       <div className="container relative z-10">
-        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid items-stretch gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Текст слева */}
           <div className="flex flex-col lg:col-span-7">
             <MonoLabel>О нас</MonoLabel>
@@ -181,13 +181,13 @@ const About = () => {
           </div>
 
           {/* Большая плитка справа */}
-          <div className="lg:col-span-5">
+          <div className="flex lg:col-span-5">
             <FeaturedCard t={featured} />
           </div>
         </div>
 
         {/* 5 плиток одной полосой */}
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-12 grid items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {restTiles.map((t, i) => (
             <TileCard key={i} t={t} />
           ))}
