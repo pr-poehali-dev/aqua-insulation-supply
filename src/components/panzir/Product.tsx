@@ -158,6 +158,7 @@ type CatalogItem = {
   icon: string;
   title: string;
   text: string;
+  image?: string;
   featured?: boolean;
 };
 
@@ -166,12 +167,14 @@ const CATALOG: CatalogItem[] = [
     icon: 'ShieldHalf',
     title: 'Термочехлы ИТШМИ «Панцирь»',
     text: 'Съёмные тепло- и шумоизоляционные чехлы индивидуального кроя. Главный продукт компании. Температуры от −200 до +1200 °C.',
+    image: '/product/pancir.webp',
     featured: true,
   },
   {
     icon: 'Layers',
     title: 'Маты «Вереница»',
     text: 'Амортизирующие и компенсационные маты для бесканальной прокладки тепловых сетей. Воспринимают температурные перемещения трубопроводов в грунте.',
+    image: '/product/verenitsa.webp',
   },
 ];
 
@@ -213,24 +216,36 @@ const Product = () => {
               key={i}
               className={
                 c.featured
-                  ? 'group relative flex h-full flex-col rounded-lg border border-brass/50 bg-gradient-to-b from-brass/[0.12] to-[#0E1B2B] p-7 shadow-[0_0_0_1px_rgba(197,160,89,0.15)] transition-colors duration-300 hover:border-brass'
-                  : 'group flex h-full flex-col rounded-lg border border-white/15 bg-[#0E1B2B] p-7 transition-colors duration-300 hover:border-brass/40'
+                  ? 'group relative flex h-full flex-col overflow-hidden rounded-lg border border-brass/50 bg-gradient-to-b from-brass/[0.12] to-[#0E1B2B] shadow-[0_0_0_1px_rgba(197,160,89,0.15)] transition-colors duration-300 hover:border-brass'
+                  : 'group relative flex h-full flex-col overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/40'
               }
             >
-              {c.featured && (
-                <span className="label-mono absolute right-5 top-5 text-[10px] text-brass-soft">
-                  Флагман
-                </span>
+              {c.image && (
+                <div className="aspect-[16/10] w-full overflow-hidden">
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               )}
-              <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-                <Icon name={c.icon} size={22} />
+              <div className="flex flex-1 flex-col p-7">
+                {c.featured && (
+                  <span className="label-mono absolute right-5 top-5 rounded-sm bg-[#050B13]/70 px-2 py-1 text-[10px] text-brass-soft">
+                    Флагман
+                  </span>
+                )}
+                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
+                  <Icon name={c.icon} size={22} />
+                </div>
+                <h3 className="mt-5 font-display text-xl font-semibold text-white">
+                  {c.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  {c.text}
+                </p>
               </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-white">
-                {c.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                {c.text}
-              </p>
             </div>
           ))}
         </div>
