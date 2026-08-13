@@ -7,7 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { FUNCTIONS } from './productData';
+import { MonoLabel } from '../PatternDecor';
+import { BADGES, FUNCTIONS } from './productData';
 
 const ProductFunctions = () => {
   const [activeFunction, setActiveFunction] = useState<
@@ -16,18 +17,42 @@ const ProductFunctions = () => {
 
   return (
     <>
-      {/* Основные функции */}
+      {/* Термочехлы «Панцирь» */}
       <div className="mt-20 border-t border-white/10 pt-16 md:mt-24">
-        <h3 className="max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-          Основные функции термочехлов
+        <MonoLabel>Продукт</MonoLabel>
+        <h3 className="mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+          Термочехлы «Панцирь»
         </h3>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted">
-          Съёмные термочехлы применяются для изоляции отдельных узлов
-          оборудования и трубопроводов, где требуется доступ для обслуживания,
-          снижение теплопотерь и защита персонала.
+        <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
+          <p>
+            Съёмные тепло- и шумоизоляционные чехлы для арматуры, фланцевых
+            соединений, клапанов, оборудования и трубопроводных узлов.
+          </p>
+          <p>
+            Изготавливаются под конкретный узел и применяются для снижения
+            теплопотерь, защиты персонала и обслуживания оборудования без
+            демонтажа постоянной изоляции.
+          </p>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          {BADGES.map((b, i) => (
+            <div
+              key={i}
+              className="inline-flex items-center gap-2.5 rounded-sm border border-brass/30 bg-[#0E1B2B] px-4 py-3"
+            >
+              <Icon name={b.icon} size={18} className="text-brass-soft" />
+              <span className="text-sm font-medium text-ink">{b.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-10 max-w-3xl text-lg leading-relaxed text-ink-muted">
+          Функции термочехлов опираются на требования нормативных документов.
+          Подробности и ссылки на стандарты — внутри плакатов.
         </p>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-10 sm:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
           {FUNCTIONS.map((f, i) => (
             <button
               key={i}
