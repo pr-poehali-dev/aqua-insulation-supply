@@ -264,7 +264,7 @@ const Product = () => {
             снижение теплопотерь и защита персонала.
           </p>
 
-          <div className="mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
+          <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
             {FUNCTIONS.map((f, i) => (
               <figure
                 key={i}
