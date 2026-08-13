@@ -63,11 +63,6 @@ const ProductFunctions = () => {
 
           {activeFunction && (
             <>
-              <img
-                src={activeFunction.image}
-                alt={activeFunction.title}
-                className="w-full rounded-md border border-white/10"
-              />
               <p className="text-base leading-relaxed text-slate-300">
                 {activeFunction.text}
               </p>
