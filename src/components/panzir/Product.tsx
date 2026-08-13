@@ -1,4 +1,12 @@
+import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { MonoLabel } from './PatternDecor';
 
 const BADGES = [
@@ -173,6 +181,10 @@ const TECH_SPECS_RIGHT = [
 ];
 
 const Product = () => {
+  const [activeFunction, setActiveFunction] = useState<
+    (typeof FUNCTIONS)[number] | null
+  >(null);
+
   return (
     <section id="product" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
@@ -266,9 +278,12 @@ const Product = () => {
 
           <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
             {FUNCTIONS.map((f, i) => (
-              <figure
+              <button
                 key={i}
-                className="group cursor-pointer overflow-hidden rounded-lg border-2 border-[#050B13] shadow-lg shadow-black/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl hover:shadow-brass/25 hover:ring-brass/50"
+                type="button"
+                onClick={() => setActiveFunction(f)}
+                aria-label={f.title}
+                className="group block cursor-pointer overflow-hidden rounded-lg border-2 border-[#050B13] text-left shadow-lg shadow-black/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl hover:shadow-brass/25 hover:ring-brass/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brass"
               >
                 <img
                   src={f.image}
@@ -276,7 +291,7 @@ const Product = () => {
                   loading="lazy"
                   className="w-full object-contain"
                 />
-              </figure>
+              </button>
             ))}
           </div>
         </div>
@@ -453,6 +468,30 @@ const Product = () => {
           </div>
         </div>
       </div>
+
+      <Dialog
+        open={!!activeFunction}
+        onOpenChange={(open) => !open && setActiveFunction(null)}
+      >
+        <DialogContent className="max-w-2xl border-white/15 bg-[#0E1B2B] text-white">
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl font-semibold text-white">
+              {activeFunction?.title}
+            </DialogTitle>
+            <DialogDescription className="text-base leading-relaxed text-slate-300">
+              Подробное описание функции будет добавлено позже.
+            </DialogDescription>
+          </DialogHeader>
+
+          {activeFunction && (
+            <img
+              src={activeFunction.image}
+              alt={activeFunction.title}
+              className="mt-2 w-full rounded-md border border-white/10"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
