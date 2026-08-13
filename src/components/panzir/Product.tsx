@@ -17,12 +17,54 @@ const BADGES = [
 ];
 
 const FUNCTIONS = [
-  { image: '/functions/heatloss.webp', title: 'Снижение теплопотерь' },
-  { image: '/functions/personnel.webp', title: 'Защита персонала' },
-  { image: '/functions/noise.webp', title: 'Шумоизоляция' },
-  { image: '/functions/condensate.webp', title: 'Контроль конденсата' },
-  { image: '/functions/equipment.webp', title: 'Защита оборудования' },
-  { image: '/functions/removable.webp', title: 'Съёмное исполнение' },
+  {
+    image: '/functions/heatloss.webp',
+    title: 'Снижение теплопотерь',
+    modalTitle: 'Нормирование тепловых потерь',
+    text: 'СП 61.13330.2012 «Тепловая изоляция оборудования и трубопроводов» — основной документ, регулирующий проектирование тепловой изоляции в России. Он устанавливает требования к допустимым тепловым потерям, правила расчёта толщины изоляции и требования к конструкциям для оборудования и трубопроводов с температурой от –180 °C до +600 °C. Съёмные термочехлы позволяют обеспечивать нормативные показатели теплопотерь и при этом сохранять доступ к оборудованию.',
+    linkLabel: 'СП 61.13330.2012',
+    link: 'https://docs.cntd.ru/document/1200091050',
+  },
+  {
+    image: '/functions/personnel.webp',
+    title: 'Защита персонала',
+    modalTitle: 'Безопасная температура поверхности',
+    text: 'Согласно Приказу Ростехнадзора от 15.12.2020 № 536 (п. 93), тепловая изоляция трубопроводов и арматуры должна обеспечивать температуру на своей поверхности при температуре окружающего воздуха 25 °C не более 55 °C. Это требование направлено на защиту персонала от ожогов при случайном контакте с горячими поверхностями.',
+    linkLabel: 'Приказ Ростехнадзора № 536',
+    link: 'https://normativ.kontur.ru/document?moduleId=1&documentId=384352',
+  },
+  {
+    image: '/functions/noise.webp',
+    title: 'Шумоизоляция',
+    modalTitle: 'Снижение шума на промышленных объектах',
+    text: 'Теплоизоляционные конструкции, особенно многослойные съёмные чехлы, дополнительно выполняют функцию снижения уровня шума от оборудования и трубопроводов. Требования к допустимым уровням шума на рабочих местах регулируются санитарными нормами. Съёмные термочехлы позволяют снижать шум на отдельных узлах без потери доступа к оборудованию.',
+    linkLabel: 'СП 61.13330.2012',
+    link: 'https://docs.cntd.ru/document/1200091050',
+  },
+  {
+    image: '/functions/condensate.webp',
+    title: 'Контроль конденсата',
+    modalTitle: 'Предотвращение образования конденсата',
+    text: 'СП 61.13330.2012 устанавливает требования к теплоизоляционным конструкциям, направленные на предотвращение конденсации влаги на поверхности оборудования и трубопроводов. Правильно подобранная толщина и конструкция изоляции исключают образование конденсата, который приводит к коррозии и снижению эффективности изоляции.',
+    linkLabel: 'СП 61.13330.2012',
+    link: 'https://docs.cntd.ru/document/1200091050',
+  },
+  {
+    image: '/functions/equipment.webp',
+    title: 'Защита оборудования',
+    modalTitle: 'Защита от внешних воздействий',
+    text: 'Теплоизоляционная конструкция защищает оборудование и трубопроводы от внешних механических воздействий, атмосферных осадков, пыли и агрессивных сред. СП 61.13330.2012 содержит требования к защитно-покровным слоям изоляции, которые должны обеспечивать сохранность теплоизоляционного материала в течение всего срока эксплуатации.',
+    linkLabel: 'СП 61.13330.2012',
+    link: 'https://docs.cntd.ru/document/1200091050',
+  },
+  {
+    image: '/functions/removable.webp',
+    title: 'Съёмное исполнение',
+    modalTitle: 'Обязательность съёмной изоляции',
+    text: 'Согласно Приказу Ростехнадзора от 15.12.2020 № 536 (п. 94): «Тепловая изоляция фланцевых соединений, арматуры и участков трубопроводов, подвергающихся периодическому контролю (сварные соединения, бобышки для измерения ползучести), должна быть съёмной». Это требование необходимо для обеспечения возможности регулярного осмотра и обслуживания оборудования без разрушения изоляции.',
+    linkLabel: 'Приказ Ростехнадзора № 536',
+    link: 'https://normativ.kontur.ru/document?moduleId=1&documentId=384352',
+  },
 ];
 
 type SpecCard = {
@@ -473,22 +515,36 @@ const Product = () => {
         open={!!activeFunction}
         onOpenChange={(open) => !open && setActiveFunction(null)}
       >
-        <DialogContent className="max-w-2xl border-white/15 bg-[#0E1B2B] text-white">
+        <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto border-white/15 bg-[#0E1B2B] text-white">
           <DialogHeader>
-            <DialogTitle className="font-display text-2xl font-semibold text-white">
-              {activeFunction?.title}
+            <DialogTitle className="pr-6 font-display text-2xl font-semibold leading-snug text-white">
+              {activeFunction?.modalTitle}
             </DialogTitle>
-            <DialogDescription className="text-base leading-relaxed text-slate-300">
-              Подробное описание функции будет добавлено позже.
+            <DialogDescription className="sr-only">
+              {activeFunction?.title}
             </DialogDescription>
           </DialogHeader>
 
           {activeFunction && (
-            <img
-              src={activeFunction.image}
-              alt={activeFunction.title}
-              className="mt-2 w-full rounded-md border border-white/10"
-            />
+            <>
+              <img
+                src={activeFunction.image}
+                alt={activeFunction.title}
+                className="w-full rounded-md border border-white/10"
+              />
+              <p className="text-base leading-relaxed text-slate-300">
+                {activeFunction.text}
+              </p>
+              <a
+                href={activeFunction.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-brass-soft underline underline-offset-4 transition-colors hover:text-brass"
+              >
+                <Icon name="ExternalLink" size={16} />
+                {activeFunction.linkLabel}
+              </a>
+            </>
           )}
         </DialogContent>
       </Dialog>
