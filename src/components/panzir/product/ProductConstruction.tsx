@@ -4,12 +4,17 @@ import { FASTENERS, INNER_LAYER, OUTER_LAYER, SpecCard } from './productData';
 
 const SpecTile = ({ card }: { card: SpecCard }) => (
   <div className="flex h-full flex-col overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/40">
-    {/* Место под фото */}
-    <div className="relative flex aspect-[4/3] items-center justify-center border-b border-white/10 bg-[#0A1420]">
-      <Icon name="Image" size={28} className="text-steel/40" />
-      <span className="label-mono absolute bottom-2 right-3 text-[9px] text-steel/30">
-        фото
-      </span>
+    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-white/10 bg-[#0A1420]">
+      {card.image ? (
+        <img
+          src={card.image}
+          alt={card.title}
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <Icon name="Image" size={28} className="text-steel/40" />
+      )}
     </div>
     <div className="flex flex-1 flex-col p-6">
       <h4 className="font-display text-lg font-semibold leading-snug text-white">

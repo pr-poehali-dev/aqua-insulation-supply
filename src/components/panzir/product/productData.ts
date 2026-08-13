@@ -58,6 +58,7 @@ export const FUNCTIONS = [
 
 export type SpecCard = {
   title: string;
+  image?: string;
   specs?: { label: string; value: string }[];
   note?: string;
 };
@@ -65,6 +66,7 @@ export type SpecCard = {
 export const OUTER_LAYER: SpecCard[] = [
   {
     title: 'Стеклоткань с двухсторонней силиконовой пропиткой',
+    image: '/construction/1_1_fiberglass_silicone_impregnation.webp',
     specs: [
       { label: 'Горючесть', value: 'Г1' },
       { label: 'Рабочая температура', value: 'от −60 до +250 °C' },
@@ -72,6 +74,7 @@ export const OUTER_LAYER: SpecCard[] = [
   },
   {
     title: 'Стеклоткань с алюминизированным покрытием',
+    image: '/construction/1_2_fiberglass_aluminized_coating.webp',
     specs: [
       { label: 'Горючесть', value: 'НГ' },
       { label: 'Рабочая температура', value: 'до +330 °C' },
@@ -79,6 +82,7 @@ export const OUTER_LAYER: SpecCard[] = [
   },
   {
     title: 'Стеклоткань с ПУ-покрытием, армированная металлической нитью',
+    image: '/construction/1_3_fiberglass_pu_coating_metal_thread.webp',
     specs: [
       { label: 'Горючесть', value: 'Г1' },
       { label: 'Рабочая температура', value: 'до +450 °C' },
@@ -86,6 +90,7 @@ export const OUTER_LAYER: SpecCard[] = [
   },
   {
     title: 'Кремнезёмная ткань',
+    image: '/construction/1_4_silica_fabric_coated_and_uncoated.webp',
     specs: [
       { label: 'Горючесть', value: 'НГ' },
       { label: 'Рабочая температура', value: 'до +1100 °C' },
@@ -96,6 +101,7 @@ export const OUTER_LAYER: SpecCard[] = [
 export const INNER_LAYER: SpecCard[] = [
   {
     title: 'Вспененный каучук',
+    image: '/construction/2_1_foamed_rubber.webp',
     specs: [
       { label: 'Температура применения', value: 'от −200 до +150 °C' },
       { label: 'Теплопроводность', value: '0,038 Вт/(м·°C)' },
@@ -103,6 +109,7 @@ export const INNER_LAYER: SpecCard[] = [
   },
   {
     title: 'Каменная вата',
+    image: '/construction/2_4_stone_wool.webp',
     specs: [
       { label: 'Температура применения', value: 'до +680 °C' },
       { label: 'Теплопроводность', value: '0,034 Вт/(м·°C)' },
@@ -110,6 +117,7 @@ export const INNER_LAYER: SpecCard[] = [
   },
   {
     title: 'Аэрогелевый войлок',
+    image: '/construction/2_3_aerogel.webp',
     specs: [
       { label: 'Температура применения', value: 'от −180 до +650 °C' },
       { label: 'Теплопроводность', value: '0,021 Вт/(м·°C)' },
@@ -118,6 +126,7 @@ export const INNER_LAYER: SpecCard[] = [
   },
   {
     title: 'Кремнезёмная вата',
+    image: '/construction/2_2_silica_wool.webp',
     specs: [
       { label: 'Температура применения', value: 'до +1100 °C' },
       { label: 'Теплопроводность', value: '0,025 Вт/(м·°C)' },
@@ -126,12 +135,15 @@ export const INNER_LAYER: SpecCard[] = [
 ];
 
 export const FASTENERS: SpecCard[] = [
-  { title: 'Пружинный замок' },
-  { title: 'Люверсы' },
-  { title: 'Металлические крючки' },
-  { title: 'D-образные полукольца' },
-  { title: 'Мультифиламентный ремень' },
-  { title: 'Липучки ВЕЛКРО' },
+  { title: 'Пружинный замок', image: '/construction/3_1_spring_latch.webp' },
+  { title: 'Люверсы', image: '/construction/3_2_grommets.webp' },
+  { title: 'Металлические крючки', image: '/construction/3_3_metal_hooks.webp' },
+  { title: 'D-образные полукольца', image: '/construction/3_4_d_rings.webp' },
+  {
+    title: 'Мультифиламентный ремень',
+    image: '/construction/3_5_multifilament_strap.webp',
+  },
+  { title: 'Липучки ВЕЛКРО', image: '/construction/3_6_velcro_tapes.webp' },
 ];
 
 export type CatalogItem = {
