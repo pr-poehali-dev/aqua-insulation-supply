@@ -9,36 +9,12 @@ const BADGES = [
 ];
 
 const FUNCTIONS = [
-  {
-    icon: 'ThermometerSnowflake',
-    title: 'Снижение теплопотерь',
-    text: 'Ограничение тепловых потерь на арматуре, фланцах, клапанах и трубопроводах.',
-  },
-  {
-    icon: 'HardHat',
-    title: 'Защита персонала',
-    text: 'Снижение риска контакта с горячими поверхностями при эксплуатации и обслуживании.',
-  },
-  {
-    icon: 'Volume2',
-    title: 'Шумоизоляция',
-    text: 'Снижение уровня шума на отдельных узлах оборудования и трубопроводах.',
-  },
-  {
-    icon: 'Droplets',
-    title: 'Контроль конденсата',
-    text: 'Ограничение образования конденсата на изолируемых поверхностях.',
-  },
-  {
-    icon: 'ShieldCheck',
-    title: 'Защита оборудования',
-    text: 'Дополнительная защита арматуры и узлов от внешних воздействий и загрязнений.',
-  },
-  {
-    icon: 'Repeat',
-    title: 'Съёмное исполнение',
-    text: 'Возможность быстрого демонтажа и повторной установки при обслуживании и ремонте.',
-  },
+  { image: '/functions/heatloss.webp', title: 'Снижение теплопотерь' },
+  { image: '/functions/personnel.webp', title: 'Защита персонала' },
+  { image: '/functions/noise.webp', title: 'Шумоизоляция' },
+  { image: '/functions/condensate.webp', title: 'Контроль конденсата' },
+  { image: '/functions/equipment.webp', title: 'Защита оборудования' },
+  { image: '/functions/removable.webp', title: 'Съёмное исполнение' },
 ];
 
 type SpecCard = {
@@ -288,22 +264,19 @@ const Product = () => {
             снижение теплопотерь и защита персонала.
           </p>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-8">
             {FUNCTIONS.map((f, i) => (
-              <div
+              <figure
                 key={i}
-                className="group flex h-full flex-col rounded-lg border border-white/15 bg-[#0E1B2B] p-7 transition-colors duration-300 hover:border-brass/40"
+                className="group overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/50"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-                  <Icon name={f.icon} size={22} />
-                </div>
-                <h4 className="mt-5 font-display text-xl font-semibold text-white">
-                  {f.title}
-                </h4>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  {f.text}
-                </p>
-              </div>
+                <img
+                  src={f.image}
+                  alt={f.title}
+                  loading="lazy"
+                  className="w-full object-contain"
+                />
+              </figure>
             ))}
           </div>
         </div>
