@@ -264,11 +264,11 @@ const Product = () => {
             снижение теплопотерь и защита персонала.
           </p>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:gap-8">
+          <div className="mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:gap-x-14 lg:gap-y-12">
             {FUNCTIONS.map((f, i) => (
               <figure
                 key={i}
-                className="group overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/50"
+                className="group cursor-pointer overflow-hidden rounded-lg border-2 border-[#050B13] shadow-lg shadow-black/40 ring-1 ring-white/10 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:shadow-2xl hover:shadow-brass/25 hover:ring-brass/50"
               >
                 <img
                   src={f.image}
