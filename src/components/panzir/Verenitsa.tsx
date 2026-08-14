@@ -3,19 +3,22 @@ import { MonoLabel } from './PatternDecor';
 
 const CONSTRUCTION = [
   {
-    icon: 'Layers',
+    num: '01 — Слой',
     title: 'Амортизирующий слой',
-    text: 'Вспененный полиэтилен или каучук.',
+    lead: 'Вспененный полиэтилен или каучук.',
+    text: 'Основной рабочий слой, который воспринимает температурные перемещения трубопровода в грунте и снижает нагрузку на изоляцию.',
   },
   {
-    icon: 'ShieldCheck',
+    num: '02 — Слой',
     title: 'Защитные слои',
-    text: 'Внутренний и наружный слой из стеклоткани с силиконовым покрытием.',
+    lead: 'Внутренний и наружный слой из стеклоткани с силиконовым покрытием.',
+    text: 'Защищают амортизирующий слой от влаги, грунта и механических повреждений.',
   },
   {
-    icon: 'Link',
+    num: '03 — Крепление',
     title: 'Система крепления',
-    text: 'Ремни, D-образные кольца, липучки Велкро.',
+    lead: 'Ремни, D-образные кольца, липучки Велкро.',
+    text: 'Обеспечивают надёжную фиксацию мата и возможность повторного монтажа.',
   },
 ];
 
@@ -50,26 +53,25 @@ const Verenitsa = () => {
           </div>
 
           {/* Конструкция */}
-          <div className="mt-14">
-            <MonoLabel>Конструкция</MonoLabel>
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {CONSTRUCTION.map((c, i) => (
-                <div
-                  key={i}
-                  className="flex h-full flex-col rounded-lg border border-white/15 bg-[#0E1B2B] p-7 transition-colors duration-300 hover:border-brass/40"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-                    <Icon name={c.icon} size={22} />
-                  </div>
-                  <h3 className="mt-5 font-display text-xl font-semibold text-white">
-                    {c.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                    {c.text}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="mt-16">
+            <h3 className="max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+              Конструкция
+            </h3>
+
+            {CONSTRUCTION.map((c, i) => (
+              <div key={i} className={i === 0 ? 'mt-10' : 'mt-12'}>
+                <MonoLabel>{c.num}</MonoLabel>
+                <h4 className="mt-4 font-display text-xl font-medium text-ink md:text-2xl">
+                  {c.title}
+                </h4>
+                <p className="mt-4 max-w-3xl leading-relaxed text-slate-200">
+                  {c.lead}
+                </p>
+                <p className="mt-2 max-w-3xl leading-relaxed text-ink-muted">
+                  {c.text}
+                </p>
+              </div>
+            ))}
           </div>
 
           {/* Ключевые параметры */}
