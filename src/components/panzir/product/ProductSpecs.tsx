@@ -1,4 +1,3 @@
-import Icon from '@/components/ui/icon';
 import {
   TECH_HIGHLIGHTS,
   TECH_SPECS_LEFT,
@@ -22,12 +21,15 @@ const ProductSpecs = () => (
         {TECH_HIGHLIGHTS.map((h, i) => (
           <div
             key={i}
-            className="rounded-lg border border-brass/30 bg-[#0E1B2B] p-8"
+            className="flex flex-col rounded-lg border border-brass/30 bg-[#0E1B2B] p-8"
           >
             <div className="font-display text-2xl font-semibold leading-tight text-brass-soft md:text-3xl">
               {h.value}
             </div>
             <div className="mt-3 text-sm text-slate-300">{h.label}</div>
+            <p className="mt-4 border-t border-white/10 pt-4 text-sm leading-relaxed text-ink-muted">
+              {h.text}
+            </p>
           </div>
         ))}
       </div>
@@ -65,51 +67,6 @@ const ProductSpecs = () => (
       <p className="mt-6 text-sm text-steel">
         Точные параметры рассчитываются под задачу заказчика.
       </p>
-    </div>
-
-    {/* Гарантия и срок службы */}
-    <div className="mt-20 border-t border-white/10 pt-16 md:mt-24">
-      <h3 className="max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-        Гарантия и срок службы
-      </h3>
-
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
-        <div className="flex items-start gap-4 rounded-lg border border-white/15 bg-[#0E1B2B] p-7">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-            <Icon name="ShieldCheck" size={22} />
-          </div>
-          <div>
-            <div className="font-display text-2xl font-semibold text-white">
-              2 года
-            </div>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">
-              Гарантийный срок на все изделия.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-4 rounded-lg border border-white/15 bg-[#0E1B2B] p-7">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-            <Icon name="Clock" size={22} />
-          </div>
-          <div>
-            <div className="font-display text-2xl font-semibold text-white">
-              до 25 лет
-            </div>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">
-              Срок службы термочехлов при соблюдении условий эксплуатации.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-5 space-y-4 rounded-lg border border-white/15 bg-[#0E1B2B] p-7 text-base leading-relaxed text-ink-muted md:p-8">
-        <p>Изделия рассчитаны на многократный монтаж и демонтаж (500+ циклов).</p>
-        <p>
-          После окончания гарантийного срока сохраняется возможность сервисного
-          обслуживания и замены отдельных элементов.
-        </p>
-      </div>
     </div>
   </>
 );
