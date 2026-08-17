@@ -1,26 +1,6 @@
 import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
-
-const CONSTRUCTION = [
-  {
-    num: '01 — Слой',
-    title: 'Амортизирующий слой',
-    lead: 'Вспененный полиэтилен или каучук.',
-    text: 'Основной рабочий слой, который воспринимает температурные перемещения трубопровода в грунте и снижает нагрузку на изоляцию.',
-  },
-  {
-    num: '02 — Слой',
-    title: 'Защитные слои',
-    lead: 'Внутренний и наружный слой из стеклоткани с силиконовым покрытием.',
-    text: 'Защищают амортизирующий слой от влаги, грунта и механических повреждений.',
-  },
-  {
-    num: '03 — Крепление',
-    title: 'Система крепления',
-    lead: 'Ремни, D-образные кольца, липучки Велкро.',
-    text: 'Обеспечивают надёжную фиксацию мата и возможность повторного монтажа.',
-  },
-];
+import VerenitsaConstruction from './VerenitsaConstruction';
 
 const PARAMS = [
   { label: 'Диаметры трубопроводов', value: '32–1420 мм' },
@@ -52,27 +32,7 @@ const Verenitsa = () => {
             </p>
           </div>
 
-          {/* Конструкция */}
-          <div className="mt-16">
-            <h3 className="max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-              Конструкция
-            </h3>
-
-            {CONSTRUCTION.map((c, i) => (
-              <div key={i} className={i === 0 ? 'mt-10' : 'mt-12'}>
-                <MonoLabel>{c.num}</MonoLabel>
-                <h4 className="mt-4 font-display text-xl font-medium text-ink md:text-2xl">
-                  {c.title}
-                </h4>
-                <p className="mt-4 max-w-3xl leading-relaxed text-slate-200">
-                  {c.lead}
-                </p>
-                <p className="mt-2 max-w-3xl leading-relaxed text-ink-muted">
-                  {c.text}
-                </p>
-              </div>
-            ))}
-          </div>
+          <VerenitsaConstruction />
 
           {/* Ключевые параметры */}
           <div className="mt-14">
