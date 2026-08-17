@@ -46,9 +46,13 @@ const FASTENERS: MatCard[] = [
   { title: 'Металлические крючки', image: '/construction/3_3_metal_hooks.webp' },
 ];
 
-const MatTile = ({ card }: { card: MatCard }) => (
+const MatTile = ({ card, wide }: { card: MatCard; wide?: boolean }) => (
   <div className="flex h-full flex-col overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] transition-colors duration-300 hover:border-brass/40">
-    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-white/10 bg-[#0A1420]">
+    <div
+      className={`relative flex items-center justify-center overflow-hidden border-b border-white/10 bg-[#0A1420] ${
+        wide ? 'aspect-[16/9]' : 'aspect-[4/3]'
+      }`}
+    >
       {card.image ? (
         <img
           src={card.image}
@@ -84,9 +88,9 @@ const VerenitsaConstruction = () => (
       <h4 className="mt-4 font-display text-xl font-medium text-ink md:text-2xl">
         Контактный (внутренний) слой
       </h4>
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5">
         {CONTACT_LAYER.map((c, i) => (
-          <MatTile key={i} card={c} />
+          <MatTile key={i} card={c} wide />
         ))}
       </div>
     </div>
@@ -112,9 +116,9 @@ const VerenitsaConstruction = () => (
       <h4 className="mt-4 font-display text-xl font-medium text-ink md:text-2xl">
         Внешний (покровный) слой
       </h4>
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-5 md:grid-cols-2">
         {OUTER_LAYER.map((c, i) => (
-          <MatTile key={i} card={c} />
+          <MatTile key={i} card={c} wide />
         ))}
       </div>
     </div>
