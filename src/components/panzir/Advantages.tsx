@@ -61,7 +61,8 @@ const COMPARISONS = [
       'Сохраняют герметичность',
       'Быстрый доступ к узлу',
     ],
-    photoLabel: 'Фото несъёмной изоляции',
+    photo: '/comparison/insulation.webp',
+    photoLabel: 'Слева — несъёмная изоляция, справа — термочехол «Панцирь»',
   },
   {
     title: 'Панцирь vs Металлические короба',
@@ -79,7 +80,8 @@ const COMPARISONS = [
       'Плотное прилегание без мостиков холода',
       'Сохраняют форму и герметичность',
     ],
-    photoLabel: 'Фото металлического короба',
+    photo: '/comparison/box.webp',
+    photoLabel: 'Слева — металлический короб, справа — термочехол «Панцирь»',
   },
   {
     title: 'Панцирь vs Типичные термочехлы',
@@ -99,6 +101,7 @@ const COMPARISONS = [
       'Индивидуальный крой под узел',
       'Высокий срок службы',
     ],
+    photo: null,
     photoLabel: 'Фото примеров плохих чехлов',
   },
 ];
@@ -158,6 +161,22 @@ const Advantages = () => {
                   )}
                 </div>
 
+                {c.photo && (
+                  <figure className="mt-7">
+                    <div className="overflow-hidden rounded-md border border-white/10 bg-black/20">
+                      <img
+                        src={c.photo}
+                        alt={c.photoLabel}
+                        loading="lazy"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 label-mono text-[11px] leading-relaxed text-steel">
+                      {c.photoLabel}
+                    </figcaption>
+                  </figure>
+                )}
+
                 <div className="mt-7 grid gap-5 lg:grid-cols-2">
                   {/* Конкурент */}
                   <div className="rounded-md border border-white/10 bg-black/20 p-6">
@@ -202,15 +221,16 @@ const Advantages = () => {
                   </div>
                 </div>
 
-                {/* Место под фото */}
-                <div className="mt-5 flex h-40 items-center justify-center rounded-md border border-dashed border-white/15 bg-black/20 md:h-48">
-                  <div className="flex flex-col items-center gap-2 text-steel/60">
-                    <Icon name="ImageOff" size={24} />
-                    <span className="label-mono text-[11px]">
-                      {c.photoLabel}
-                    </span>
+                {!c.photo && (
+                  <div className="mt-5 flex h-40 items-center justify-center rounded-md border border-dashed border-white/15 bg-black/20 md:h-48">
+                    <div className="flex flex-col items-center gap-2 text-steel/60">
+                      <Icon name="ImageOff" size={24} />
+                      <span className="label-mono text-[11px]">
+                        {c.photoLabel}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
