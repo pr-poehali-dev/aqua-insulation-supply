@@ -58,7 +58,7 @@ const Applications = () => {
                 loading="lazy"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/70 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#060D16] via-[#060D16]/60 to-transparent" />
               <div className="relative mt-auto p-7">
                 <h3 className="font-display text-xl font-semibold leading-snug text-white">
                   {a.title}
