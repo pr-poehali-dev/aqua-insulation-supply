@@ -50,7 +50,7 @@ const Applications = () => {
           {AREAS.map((a, i) => (
             <article
               key={i}
-              className="group relative flex min-h-[340px] overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40"
+              className="group relative flex aspect-[4/5] overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40"
             >
               <img
                 src={a.image}
