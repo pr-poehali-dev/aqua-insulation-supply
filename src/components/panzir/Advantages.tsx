@@ -148,7 +148,7 @@ const Advantages = () => {
             {COMPARISONS.map((c, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-white/15 bg-[#0E1B2B] p-7 md:p-9"
+                className="overflow-hidden rounded-lg border border-white/15 bg-[#0E1B2B] p-6 md:p-8"
               >
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   <h4 className="font-display text-xl font-semibold text-white">
@@ -177,7 +177,7 @@ const Advantages = () => {
                   </figure>
                 )}
 
-                <div className="mt-7 grid gap-5 lg:grid-cols-2">
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
                   {/* Конкурент */}
                   <div className="rounded-md border border-white/10 bg-black/20 p-6">
                     <span className="label-mono text-[11px] text-steel">
@@ -221,16 +221,6 @@ const Advantages = () => {
                   </div>
                 </div>
 
-                {!c.photo && (
-                  <div className="mt-5 flex h-40 items-center justify-center rounded-md border border-dashed border-white/15 bg-black/20 md:h-48">
-                    <div className="flex flex-col items-center gap-2 text-steel/60">
-                      <Icon name="ImageOff" size={24} />
-                      <span className="label-mono text-[11px]">
-                        {c.photoLabel}
-                      </span>
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </div>
