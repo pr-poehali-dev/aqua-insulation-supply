@@ -1,42 +1,35 @@
-import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 
 const AREAS = [
   {
-    icon: 'Zap',
+    image: '/applications/energy.webp',
     title: 'Энергетика',
     text: 'Тепловые и атомные станции, котельные, турбинное оборудование, паропроводы и арматура.',
-    products: 'Термочехлы ИТШМИ, огнезащитные вставки ОЗВ-3000, защитные материалы ЗМ.',
   },
   {
-    icon: 'Fuel',
+    image: '/applications/oilgas.webp',
     title: 'Нефтегаз',
-    text: 'Нефтеперерабатывающие и газоперерабатывающие заводы, месторождения, трубопроводы и запорная арматура.',
-    products: 'Термочехлы, защитные материалы ЗМ, системы опор.',
+    text: 'Нефте- и газоперерабатывающие заводы, месторождения, магистральные трубопроводы и запорная арматура.',
   },
   {
-    icon: 'Ship',
+    image: '/applications/ship.webp',
     title: 'Судостроение',
-    text: 'Судовые системы, арматура, трубопроводы и оборудование судов и кораблей, включая объекты с криогенными температурами.',
-    products: 'Термочехлы ИТШМИ, СОП, защитные материалы ЗМ.',
+    text: 'Судовые системы, арматура, трубопроводы и оборудование судов, включая объекты с криогенными температурами.',
   },
   {
-    icon: 'Building2',
+    image: '/applications/building.webp',
     title: 'Промышленное и гражданское строительство',
     text: 'Инженерные системы зданий, тепловые пункты, вентиляционные и технологические сети.',
-    products: 'Термочехлы, СОП «Периметр», защитные материалы.',
   },
   {
-    icon: 'Thermometer',
+    image: '/applications/heating.webp',
     title: 'Тепловые сети и ЖКХ',
     text: 'Бесканальная и канальная прокладка тепловых сетей, ЦТП, ИТП, объекты жилищно-коммунального хозяйства.',
-    products: 'Маты «Вереница», огнезащитные вставки ОЗВ-3000, термочехлы.',
   },
   {
-    icon: 'Factory',
+    image: '/applications/plant.webp',
     title: 'Заводы и производства',
     text: 'Химические, металлургические и другие промышленные предприятия. Защита технологического оборудования, трубопроводов и арматуры.',
-    products: 'Термочехлы, защитные материалы ЗМ, системы опор.',
   },
 ];
 
@@ -55,28 +48,26 @@ const Applications = () => {
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {AREAS.map((a, i) => (
-            <div
+            <article
               key={i}
-              className="flex h-full flex-col rounded-lg border border-white/15 bg-[#0E1B2B] p-7 transition-colors duration-300 hover:border-brass/40"
+              className="group relative flex min-h-[340px] overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-md border border-brass/40 bg-brass/10 text-brass-soft">
-                <Icon name={a.icon} size={22} />
-              </div>
-              <h3 className="mt-5 font-display text-xl font-semibold text-white">
-                {a.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                {a.text}
-              </p>
-              <div className="mt-auto border-t border-white/10 pt-4">
-                <span className="label-mono text-[11px] text-brass-soft">
-                  Особенно востребованы
-                </span>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                  {a.products}
+              <img
+                src={a.image}
+                alt={a.title}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060D16] via-[#060D16]/70 to-transparent" />
+              <div className="relative mt-auto p-7">
+                <h3 className="font-display text-xl font-semibold leading-snug text-white">
+                  {a.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-200">
+                  {a.text}
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
