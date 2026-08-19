@@ -126,18 +126,18 @@ const Portfolio = () => {
           Примеры объектов
         </h2>
 
-        <div className="relative mt-10 left-1/2 w-screen max-w-[100vw] -translate-x-1/2 px-4 md:px-8">
+        <div className="relative mt-10">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+            <div className="-ml-3.5 flex">
               {SLIDES.map((slide, i) => (
                 <div
                   key={slide.src}
-                  className="min-w-0 shrink-0 grow-0 basis-full pr-3 md:basis-1/2 md:pr-4 lg:basis-[44%]"
+                  className="min-w-0 shrink-0 grow-0 basis-full pl-3.5 md:basis-1/2 lg:basis-1/3"
                 >
                   <button
                     type="button"
                     onClick={() => setLightbox(i)}
-                    className="group relative block aspect-[4/5] max-h-[78vh] w-full overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40"
+                    className="group relative block h-[360px] w-full overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40 sm:h-[440px] lg:h-[500px]"
                   >
                     {slide.type === 'image' ? (
                       <img
@@ -174,7 +174,7 @@ const Portfolio = () => {
             type="button"
             aria-label="Назад"
             onClick={() => embla?.scrollPrev()}
-            className="absolute left-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-bg/80 text-ink backdrop-blur transition-colors hover:border-brass/50 hover:text-brass md:left-12"
+            className="absolute -left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-bg/80 text-ink backdrop-blur transition-colors hover:border-brass/50 hover:text-brass md:-left-5"
           >
             <Icon name="ChevronLeft" size={22} />
           </button>
@@ -182,7 +182,7 @@ const Portfolio = () => {
             type="button"
             aria-label="Вперёд"
             onClick={() => embla?.scrollNext()}
-            className="absolute right-6 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-bg/80 text-ink backdrop-blur transition-colors hover:border-brass/50 hover:text-brass md:right-12"
+            className="absolute -right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-bg/80 text-ink backdrop-blur transition-colors hover:border-brass/50 hover:text-brass md:-right-5"
           >
             <Icon name="ChevronRight" size={22} />
           </button>
