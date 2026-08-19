@@ -137,7 +137,7 @@ const Portfolio = () => {
                   <button
                     type="button"
                     onClick={() => setLightbox(i)}
-                    className="group relative block h-[360px] w-full overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40 sm:h-[440px] lg:h-[500px]"
+                    className="group relative block h-[420px] w-full overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40 sm:h-[520px] lg:h-[600px]"
                   >
                     {slide.type === 'image' ? (
                       <img
