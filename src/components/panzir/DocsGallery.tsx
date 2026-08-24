@@ -71,12 +71,14 @@ const DocsGallery = () => {
             </button>
 
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="font-display text-base font-medium leading-snug text-white">
+              <h3 className="font-display text-[21px] font-semibold leading-[1.25] tracking-[0.01em] text-white md:text-[23px]">
                 {doc.title}
               </h3>
-              <p className="label-mono mt-2 text-[10px] text-steel">
+              <p className="label-mono mt-2.5 text-[10px] leading-relaxed text-steel">
                 {doc.meta}
               </p>
+
+              <div className="flex-1" />
 
               <button
                 type="button"
