@@ -127,14 +127,14 @@ const Process = () => {
                         : 'md:col-start-2 md:pl-6'
                     }`}
                   >
-                    <div className="group relative aspect-[16/10] overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40">
+                    <div className="group relative overflow-hidden rounded-lg border border-white/15 transition-colors duration-300 hover:border-brass/40">
                       <img
                         src={step.photo}
                         alt={step.title}
                         loading="lazy"
-                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="block h-auto w-full transition-transform duration-700 group-hover:scale-105"
                       />
-                      <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                      <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       <span className="absolute left-4 top-4 rounded-md border border-brass/40 bg-bg/80 px-3 py-1.5 label-mono text-[10px] tracking-[0.22em] text-brass-soft backdrop-blur">
                         ЭТАП {step.num}
                       </span>
