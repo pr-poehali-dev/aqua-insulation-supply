@@ -36,6 +36,7 @@ const ContactsMap = () => {
       scrollWheelZoom: false,
       zoomControl: true,
       attributionControl: false,
+      zoomSnap: 0.25,
     });
     mapRef.current = map;
 
@@ -45,7 +46,8 @@ const ContactsMap = () => {
     ).addTo(map);
 
     const bounds = L.latLngBounds(POINTS.map((p) => p.coords));
-    map.fitBounds(bounds, { padding: [70, 70] });
+    map.fitBounds(bounds, { padding: [40, 40] });
+    map.setZoom(Math.min(map.getZoom() + 0.75, 15));
 
     POINTS.forEach((p) => {
       L.marker(p.coords, { icon: pinIcon(p.name) })

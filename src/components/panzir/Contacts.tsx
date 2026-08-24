@@ -3,23 +3,18 @@ import { MonoLabel } from './PatternDecor';
 import ContactForm from './ContactForm';
 import ContactsMap from './ContactsMap';
 
-type InfoBlock = {
+type Tile = {
   icon: string;
   label: string;
   lines?: string[];
   links?: { text: string; href: string }[];
 };
 
-const INFO: InfoBlock[] = [
+const TILES: Tile[] = [
   {
     icon: 'Building2',
     label: 'Офис',
-    lines: [
-      '196158, Санкт-Петербург',
-      'Московское шоссе 46Б',
-      'Офисный центр М-46',
-      'ООО «АкваРос СПб»',
-    ],
+    lines: ['Московское шоссе 46Б, ОЦ М-46', '196158, Санкт-Петербург'],
   },
   {
     icon: 'Phone',
@@ -54,47 +49,52 @@ const Contacts = () => {
           оборудование и пришлём коммерческое предложение.
         </p>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
-          <ContactForm />
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:content-start">
-            {INFO.map((b) => (
-              <div
-                key={b.label}
-                className="rounded-sm border border-white/12 p-7 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-brass/35"
-                style={{ backgroundColor: '#111f35' }}
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-sm bg-brass/10 ring-1 ring-brass/20">
-                  <Icon name={b.icon} size={20} className="text-brass" />
-                </span>
-                <div className="label-mono mt-5 text-[10px] text-brass-soft">
-                  {b.label}
+        {/* 4 компактные плитки */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {TILES.map((t) => (
+            <div
+              key={t.label}
+              className="flex items-start gap-4 rounded-sm border border-white/12 px-6 py-5 shadow-lg shadow-black/20 transition-colors duration-300 hover:border-brass/35"
+              style={{ backgroundColor: '#111f35' }}
+            >
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-brass/10 ring-1 ring-brass/20">
+                <Icon name={t.icon} size={17} className="text-brass" />
+              </span>
+              <div className="min-w-0">
+                <div className="label-mono text-[9px] text-brass-soft">
+                  {t.label}
                 </div>
-                <div className="mt-3 space-y-1.5">
-                  {b.lines?.map((l) => (
+                <div className="mt-1.5 space-y-0.5">
+                  {t.lines?.map((l) => (
                     <div
                       key={l}
-                      className="text-[15px] leading-relaxed text-ink-muted"
+                      className="text-[13px] leading-snug text-ink-muted"
                     >
                       {l}
                     </div>
                   ))}
-                  {b.links?.map((l) => (
+                  {t.links?.map((l) => (
                     <a
                       key={l.href}
                       href={l.href}
-                      className="block font-display text-[17px] font-medium tracking-[0.01em] text-white transition-colors hover:text-brass-soft"
+                      className="block text-[14px] font-medium leading-snug text-white transition-colors hover:text-brass-soft"
                     >
                       {l.text}
                     </a>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-10">
+        {/* Форма по центру */}
+        <div className="mx-auto mt-12 max-w-2xl">
+          <ContactForm />
+        </div>
+
+        {/* Карта на всю ширину */}
+        <div className="mt-12">
           <ContactsMap />
         </div>
       </div>
