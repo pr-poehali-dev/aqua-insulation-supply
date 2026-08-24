@@ -8,7 +8,7 @@ import Advantages from '@/components/panzir/Advantages';
 import Portfolio from '@/components/panzir/Portfolio';
 import Process from '@/components/panzir/Process';
 import Docs from '@/components/panzir/Docs';
-import PlaceholderSections from '@/components/panzir/PlaceholderSections';
+import Contacts from '@/components/panzir/Contacts';
 import Footer from '@/components/panzir/Footer';
 
 const Index = () => {
@@ -25,7 +25,7 @@ const Index = () => {
         <Portfolio />
         <Process />
         <Docs />
-        <PlaceholderSections />
+        <Contacts />
       </main>
       <Footer />
     </div>
