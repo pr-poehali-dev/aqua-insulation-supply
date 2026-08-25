@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { toast } from '@/hooks/use-toast';
 
@@ -13,15 +14,18 @@ const inputClass =
 
 const ContactForm = () => {
   const [sent, setSent] = useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!agreed) return;
     setSent(true);
     toast({
       title: 'Заявка отправлена',
       description: 'Мы свяжемся с вами в рабочее время.',
     });
     (e.target as HTMLFormElement).reset();
+    setAgreed(false);
     setTimeout(() => setSent(false), 4000);
   };
 
@@ -70,18 +74,44 @@ const ContactForm = () => {
 
       <div className="flex-1" />
 
+      <label className="mt-6 flex cursor-pointer items-start gap-3">
+        <input
+          type="checkbox"
+          checked={agreed}
+          onChange={(e) => setAgreed(e.target.checked)}
+          className="peer sr-only"
+        />
+        <span className="mt-0.5 flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-[3px] border border-white/25 bg-black/25 transition-colors peer-checked:border-brass peer-checked:bg-brass/20 peer-focus-visible:ring-2 peer-focus-visible:ring-brass/40">
+          {agreed && <Icon name="Check" size={13} className="text-brass" />}
+        </span>
+        <span className="text-[13px] leading-relaxed text-ink-muted">
+          Я согласен с{' '}
+          <Link
+            to="/privacy"
+            target="_blank"
+            className="text-brass-soft underline underline-offset-2 transition-colors hover:text-white"
+          >
+            Политикой конфиденциальности
+          </Link>{' '}
+          и{' '}
+          <Link
+            to="/personal-data"
+            target="_blank"
+            className="text-brass-soft underline underline-offset-2 transition-colors hover:text-white"
+          >
+            Политикой обработки персональных данных
+          </Link>
+        </span>
+      </label>
+
       <button
         type="submit"
-        disabled={sent}
-        className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-sm border border-brass/40 bg-brass/15 px-6 py-4 text-sm font-medium text-brass-soft transition-colors duration-300 hover:bg-brass/25 hover:text-white disabled:opacity-60"
+        disabled={sent || !agreed}
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-sm border border-brass/40 bg-brass/15 px-6 py-4 text-sm font-medium text-brass-soft transition-colors duration-300 hover:bg-brass/25 hover:text-white disabled:cursor-not-allowed disabled:border-white/12 disabled:bg-white/5 disabled:text-steel/60 disabled:hover:bg-white/5"
       >
         <Icon name={sent ? 'Check' : 'Send'} size={16} />
         {sent ? 'Заявка отправлена' : 'Отправить заявку'}
       </button>
-
-      <p className="label-mono mt-4 text-center text-[9px] leading-relaxed text-steel/70">
-        Нажимая кнопку, вы соглашаетесь на обработку персональных данных
-      </p>
     </form>
   );
 };
