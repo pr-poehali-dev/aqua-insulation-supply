@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import Footer from './Footer';
+import ScrollTop from './ScrollTop';
 import { MonoLabel } from './PatternDecor';
 
 type Block = { t: 'h2' | 'h3' | 'p' | 'li'; v: string };
@@ -91,6 +92,7 @@ const LegalPage = ({ file, label }: { file: string; label: string }) => {
       </main>
 
       <Footer />
+      <ScrollTop />
     </div>
   );
 };

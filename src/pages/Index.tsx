@@ -10,6 +10,7 @@ import Process from '@/components/panzir/Process';
 import Docs from '@/components/panzir/Docs';
 import Contacts from '@/components/panzir/Contacts';
 import Footer from '@/components/panzir/Footer';
+import ScrollTop from '@/components/panzir/ScrollTop';
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         <Contacts />
       </main>
       <Footer />
+      <ScrollTop />
     </div>
   );
 };
