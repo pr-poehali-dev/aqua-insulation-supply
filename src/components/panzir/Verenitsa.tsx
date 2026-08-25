@@ -12,7 +12,10 @@ const PARAMS = [
 
 const Verenitsa = () => {
   return (
-    <section id="verenitsa" className="relative bg-bg pb-24 md:pb-36">
+    <section
+      id="verenitsa"
+      className="relative scroll-mt-24 bg-bg pb-24 md:pb-36"
+    >
       <div className="container relative z-10">
         <div className="border-t border-white/10 pt-16 md:pt-24">
           <MonoLabel>Продукт</MonoLabel>

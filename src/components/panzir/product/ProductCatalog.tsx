@@ -2,6 +2,14 @@ import Icon from '@/components/ui/icon';
 import { MonoLabel } from '../PatternDecor';
 import { CATALOG } from './productData';
 
+const scrollTo = (id?: string) => {
+  if (!id) return;
+  document.getElementById(id)?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+};
+
 const ProductCatalog = () => (
   <>
     <MonoLabel>Продукция</MonoLabel>
@@ -16,12 +24,15 @@ const ProductCatalog = () => (
     {/* Каталог продукции */}
     <div className="mt-12 grid gap-8 md:grid-cols-2">
       {CATALOG.map((c, i) => (
-        <div
+        <button
           key={i}
-          className={`group relative flex aspect-[16/12] h-full w-full flex-col justify-end overflow-hidden rounded-lg border transition-colors duration-300 ${
+          type="button"
+          onClick={() => scrollTo(c.target)}
+          aria-label={`Подробнее: ${c.title}`}
+          className={`group relative flex aspect-[16/12] h-full w-full flex-col justify-end overflow-hidden rounded-lg border text-left transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40 ${
             c.featured
               ? 'border-brass/50 hover:border-brass'
-              : 'border-white/15 hover:border-brass/40'
+              : 'border-white/15 hover:border-brass/60'
           }`}
         >
           {c.image && (
@@ -29,7 +40,7 @@ const ProductCatalog = () => (
               src={c.image}
               alt={c.title}
               loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]"
             />
           )}
 
@@ -45,8 +56,16 @@ const ProductCatalog = () => (
             <p className="mt-4 text-base leading-relaxed text-slate-200 md:text-lg">
               {c.text}
             </p>
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brass-soft transition-colors group-hover:text-white">
+              Подробнее
+              <Icon
+                name="ArrowRight"
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </span>
           </div>
-        </div>
+        </button>
       ))}
     </div>
   </>

@@ -18,7 +18,10 @@ const ProductFunctions = () => {
   return (
     <>
       {/* Термочехлы «Панцирь» */}
-      <div className="mt-20 border-t border-white/10 pt-16 md:mt-24">
+      <div
+        id="thermocovers"
+        className="mt-20 scroll-mt-24 border-t border-white/10 pt-16 md:mt-24"
+      >
         <MonoLabel>Продукт</MonoLabel>
         <h3 className="mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
           Термочехлы «Панцирь»

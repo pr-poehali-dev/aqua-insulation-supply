@@ -152,6 +152,7 @@ export type CatalogItem = {
   text: string;
   image?: string;
   featured?: boolean;
+  target?: string;
 };
 
 export const CATALOG: CatalogItem[] = [
@@ -161,12 +162,14 @@ export const CATALOG: CatalogItem[] = [
     text: 'Съёмные тепло- и шумоизоляционные чехлы индивидуального кроя. Главный продукт компании. Температуры от −200 до +1200 °C.',
     image: '/product/pancir.webp',
     featured: true,
+    target: 'thermocovers',
   },
   {
     icon: 'Layers',
     title: 'Маты «Вереница»',
     text: 'Амортизирующие и компенсационные маты для бесканальной прокладки тепловых сетей. Воспринимают температурные перемещения трубопроводов в грунте.',
     image: '/product/verenitsa.webp',
+    target: 'verenitsa',
   },
 ];
 
