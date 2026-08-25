@@ -40,7 +40,7 @@ const ProductFunctions = () => {
           </p>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           {BADGES.map((b, i) => (
             <div
               key={i}
