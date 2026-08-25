@@ -121,10 +121,12 @@ const Portfolio = () => {
   return (
     <section id="objects" className="relative bg-bg-alt py-24 md:py-36">
       <div className="container relative z-10">
-        <MonoLabel>Портфолио</MonoLabel>
-        <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-          Примеры объектов
-        </h2>
+        <div className="text-center">
+          <MonoLabel>Портфолио</MonoLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
+            Примеры объектов
+          </h2>
+        </div>
 
         <div className="relative mt-10">
           <div className="overflow-hidden" ref={emblaRef}>

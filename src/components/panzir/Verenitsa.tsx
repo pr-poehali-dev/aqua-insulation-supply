@@ -18,10 +18,12 @@ const Verenitsa = () => {
     >
       <div className="container relative z-10">
         <div className="border-t border-white/10 pt-16 md:pt-24">
-          <MonoLabel>Продукт</MonoLabel>
-          <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-            Маты амортизирующие «Вереница»
-          </h2>
+          <div className="text-center">
+            <MonoLabel>Продукт</MonoLabel>
+            <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
+              Маты амортизирующие «Вереница»
+            </h2>
+          </div>
 
           <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
             <p>

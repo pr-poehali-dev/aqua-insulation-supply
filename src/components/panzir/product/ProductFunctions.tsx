@@ -22,10 +22,12 @@ const ProductFunctions = () => {
         id="thermocovers"
         className="mt-20 scroll-mt-24 border-t border-white/10 pt-16 md:mt-24"
       >
-        <MonoLabel>Продукт</MonoLabel>
-        <h3 className="mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-          Термочехлы «Панцирь»
-        </h3>
+        <div className="text-center">
+          <MonoLabel>Продукт</MonoLabel>
+          <h3 className="mx-auto mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+            Термочехлы «Панцирь»
+          </h3>
+        </div>
         <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
           <p>
             Съёмные тепло- и шумоизоляционные чехлы для арматуры, фланцевых

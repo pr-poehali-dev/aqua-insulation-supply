@@ -40,10 +40,12 @@ const Contacts = () => {
   return (
     <section id="contacts" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
-        <MonoLabel>Связь</MonoLabel>
-        <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-          Контакты
-        </h2>
+        <div className="text-center">
+          <MonoLabel>Связь</MonoLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
+            Контакты
+          </h2>
+        </div>
         <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
           Оставьте заявку — рассчитаем стоимость термочехлов под ваше
           оборудование и пришлём коммерческое предложение.

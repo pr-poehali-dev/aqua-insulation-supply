@@ -108,10 +108,12 @@ const Advantages = () => {
   return (
     <section id="advantages" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
-        <MonoLabel>Почему мы</MonoLabel>
-        <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-          Преимущества
-        </h2>
+        <div className="text-center">
+          <MonoLabel>Почему мы</MonoLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
+            Преимущества
+          </h2>
+        </div>
         <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
           Почему выбирают решения «ПАНЦИРЬ».
         </p>
@@ -137,10 +139,12 @@ const Advantages = () => {
 
         {/* Сравнение с другими решениями */}
         <div className="mt-24 border-t border-white/10 pt-16 md:mt-32 md:pt-24">
-          <MonoLabel>Сравнение</MonoLabel>
-          <h3 className="mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-            Сравнение с другими решениями
-          </h3>
+          <div className="text-center">
+            <MonoLabel>Сравнение</MonoLabel>
+            <h3 className="mx-auto mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+              Сравнение с другими решениями
+            </h3>
+          </div>
 
           <div className="mt-14 space-y-6">
             {COMPARISONS.map((c, i) => (

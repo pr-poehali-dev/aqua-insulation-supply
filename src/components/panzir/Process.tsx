@@ -72,10 +72,12 @@ const Process = () => {
   return (
     <section id="services" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
-        <MonoLabel>Услуги</MonoLabel>
-        <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-          Как мы работаем
-        </h2>
+        <div className="text-center">
+          <MonoLabel>Услуги</MonoLabel>
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
+            Как мы работаем
+          </h2>
+        </div>
         <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
           Восемь последовательных этапов — от первого обсуждения задачи до
           передачи документации на объекте.

@@ -12,10 +12,12 @@ const scrollTo = (id?: string) => {
 
 const ProductCatalog = () => (
   <>
-    <MonoLabel>Продукция</MonoLabel>
-    <h2 className="mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
-      Продукция
-    </h2>
+    <div className="text-center">
+      <MonoLabel>Продукция</MonoLabel>
+      <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
+        Продукция
+      </h2>
+    </div>
     <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
       Инженерные решения для теплоизоляции, защиты и опоры трубопроводов и
       оборудования.
