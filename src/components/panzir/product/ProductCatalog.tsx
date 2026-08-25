@@ -13,7 +13,7 @@ const scrollTo = (id?: string) => {
 const ProductCatalog = () => (
   <>
     <div className="text-center">
-      <MonoLabel>Продукция</MonoLabel>
+      <MonoLabel centered>Продукция</MonoLabel>
       <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
         Продукция
       </h2>

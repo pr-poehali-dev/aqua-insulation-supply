@@ -4,15 +4,18 @@ import { ReactNode } from 'react';
 export const MonoLabel = ({
   children,
   className = '',
+  centered = false,
 }: {
   children: ReactNode;
   className?: string;
+  centered?: boolean;
 }) => (
   <span
     className={`label-mono inline-flex items-center gap-3 text-[11px] text-steel ${className}`}
   >
     <span className="h-px w-6 bg-garnet/70" />
-    {children}
+    {centered ? <span className="-me-[0.2em]">{children}</span> : children}
+    {centered && <span className="h-px w-6 bg-garnet/70" />}
   </span>
 );
 

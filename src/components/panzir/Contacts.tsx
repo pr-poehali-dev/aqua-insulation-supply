@@ -41,7 +41,7 @@ const Contacts = () => {
     <section id="contacts" className="relative bg-bg py-24 md:py-36">
       <div className="container relative z-10">
         <div className="text-center">
-          <MonoLabel>Связь</MonoLabel>
+          <MonoLabel centered>Связь</MonoLabel>
           <h2 className="mx-auto mt-6 max-w-3xl font-display text-3xl font-medium leading-snug text-ink md:text-4xl">
             Контакты
           </h2>

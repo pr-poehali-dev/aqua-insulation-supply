@@ -32,7 +32,10 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <MonoLabel className="!gap-4 !text-[13px] font-semibold !tracking-[0.26em] !text-brass-soft md:!text-[15px]">
+          <MonoLabel
+            centered
+            className="!gap-4 !text-[13px] font-semibold !tracking-[0.26em] !text-brass-soft md:!text-[15px]"
+          >
             Первое промышленное ателье России
           </MonoLabel>
 
