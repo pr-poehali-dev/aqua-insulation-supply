@@ -48,8 +48,11 @@ const ContactsMap = () => {
     const bounds = L.latLngBounds(POINTS.map((p) => p.coords));
     const fit = () => {
       map.invalidateSize();
-      map.fitBounds(bounds, { padding: [28, 28] });
-      map.setZoom(Math.min(map.getZoom() + 0.5, 15));
+      map.fitBounds(bounds, {
+        paddingTopLeft: [50, 45],
+        paddingBottomRight: [110, 45],
+      });
+      map.setZoom(map.getZoom() - 0.5);
     };
     fit();
 
