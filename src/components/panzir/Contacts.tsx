@@ -88,14 +88,10 @@ const Contacts = () => {
           ))}
         </div>
 
-        {/* Форма по центру */}
-        <div className="mx-auto mt-12 max-w-2xl">
-          <ContactForm />
-        </div>
-
-        {/* Карта на всю ширину */}
-        <div className="mt-12">
+        {/* Карта + форма в две колонки, выровнены по высоте */}
+        <div className="mt-6 grid items-stretch gap-4 lg:grid-cols-2">
           <ContactsMap />
+          <ContactForm />
         </div>
       </div>
     </section>

@@ -46,8 +46,12 @@ const ContactsMap = () => {
     ).addTo(map);
 
     const bounds = L.latLngBounds(POINTS.map((p) => p.coords));
-    map.fitBounds(bounds, { padding: [40, 40] });
-    map.setZoom(Math.min(map.getZoom() + 0.75, 15));
+    const fit = () => {
+      map.invalidateSize();
+      map.fitBounds(bounds, { padding: [28, 28] });
+      map.setZoom(Math.min(map.getZoom() + 0.5, 15));
+    };
+    fit();
 
     POINTS.forEach((p) => {
       L.marker(p.coords, { icon: pinIcon(p.name) })
@@ -55,27 +59,31 @@ const ContactsMap = () => {
         .bindPopup(`<b>${p.name}</b><br/>${p.address}`);
     });
 
+    const ro = new ResizeObserver(fit);
+    ro.observe(ref.current);
+
     return () => {
+      ro.disconnect();
       map.remove();
       mapRef.current = null;
     };
   }, []);
 
   return (
-    <div className="overflow-hidden rounded-sm border border-white/12 shadow-lg shadow-black/20">
-      <div className="grid gap-px bg-white/10 sm:grid-cols-2">
+    <div className="flex h-full min-h-[420px] flex-col overflow-hidden rounded-sm border border-white/12 shadow-lg shadow-black/20">
+      <div className="grid shrink-0 gap-px bg-white/10 sm:grid-cols-2">
         {POINTS.map((p) => (
           <div
             key={p.name}
-            className="flex items-start gap-3 px-6 py-5"
+            className="flex items-start gap-3 px-5 py-4"
             style={{ backgroundColor: '#111f35' }}
           >
-            <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-brass ring-2 ring-brass/25" />
-            <div>
-              <div className="label-mono text-[10px] text-brass-soft">
+            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brass ring-2 ring-brass/25" />
+            <div className="min-w-0">
+              <div className="label-mono text-[9px] text-brass-soft">
                 {p.name}
               </div>
-              <div className="mt-1.5 text-sm leading-relaxed text-ink-muted">
+              <div className="mt-1 text-[13px] leading-snug text-ink-muted">
                 {p.address}
               </div>
             </div>
@@ -84,7 +92,7 @@ const ContactsMap = () => {
       </div>
       <div
         ref={ref}
-        className="h-[340px] w-full md:h-[420px]"
+        className="min-h-[300px] w-full flex-1"
         style={{ backgroundColor: '#0C1826' }}
       />
     </div>

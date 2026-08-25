@@ -28,7 +28,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-sm border border-white/12 p-7 shadow-lg shadow-black/20 md:p-9"
+      className="flex h-full flex-col rounded-sm border border-white/12 p-7 shadow-lg shadow-black/20 md:p-8"
       style={{ backgroundColor: '#111f35' }}
     >
       <div className="space-y-5">
@@ -67,6 +67,8 @@ const ContactForm = () => {
           />
         </div>
       </div>
+
+      <div className="flex-1" />
 
       <button
         type="submit"
