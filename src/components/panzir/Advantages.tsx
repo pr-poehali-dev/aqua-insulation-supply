@@ -114,7 +114,7 @@ const Advantages = () => {
             Преимущества
           </h2>
         </div>
-        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
+        <p className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-ink-muted">
           Почему выбирают решения «ПАНЦИРЬ».
         </p>
 
@@ -173,9 +173,6 @@ const Advantages = () => {
                         className="w-full object-cover"
                       />
                     </div>
-                    <figcaption className="mt-3 label-mono text-[11px] leading-relaxed text-steel">
-                      {c.photoLabel}
-                    </figcaption>
                   </figure>
                 )}
 

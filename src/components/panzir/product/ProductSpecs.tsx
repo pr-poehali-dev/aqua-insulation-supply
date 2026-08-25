@@ -8,10 +8,10 @@ const ProductSpecs = () => (
   <>
     {/* Технические характеристики */}
     <div className="mt-20 border-t border-white/10 pt-16 md:mt-24">
-      <h3 className="max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+      <h3 className="mx-auto max-w-3xl text-center font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
         Технические характеристики
       </h3>
-      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted">
+      <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-ink-muted">
         Параметры термочехла подбираются индивидуально под конкретный узел,
         температурный режим и условия эксплуатации.
       </p>

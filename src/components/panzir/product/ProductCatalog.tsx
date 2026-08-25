@@ -18,7 +18,7 @@ const ProductCatalog = () => (
         Продукция
       </h2>
     </div>
-    <p className="mt-8 max-w-3xl text-lg leading-relaxed text-ink-muted">
+    <p className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-ink-muted">
       Инженерные решения для теплоизоляции, защиты и опоры трубопроводов и
       оборудования.
     </p>

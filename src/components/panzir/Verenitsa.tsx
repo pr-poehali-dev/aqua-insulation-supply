@@ -25,7 +25,7 @@ const Verenitsa = () => {
             </h2>
           </div>
 
-          <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
+          <div className="mx-auto mt-8 max-w-3xl space-y-6 text-center text-lg leading-relaxed text-ink-muted">
             <p>
               Амортизирующие (компенсационные/демпфирующие) маты «Вереница»
               применяются при бесканальной прокладке тепловых сетей и

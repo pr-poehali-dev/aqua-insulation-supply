@@ -44,10 +44,10 @@ const SpecTile = ({ card }: { card: SpecCard }) => (
 
 const ProductConstruction = () => (
   <div className="mt-20 border-t border-white/10 pt-16 md:mt-24">
-    <h3 className="max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
+    <h3 className="mx-auto max-w-3xl text-center font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
       Конструкция термочехла
     </h3>
-    <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-muted">
+    <p className="mx-auto mt-6 max-w-3xl text-center text-lg leading-relaxed text-ink-muted">
       Конструкция термочехла подбирается под температурный режим (включая
       криогенные температуры до −196 °C), форму узла, условия эксплуатации и
       требования к быстрому демонтажу.

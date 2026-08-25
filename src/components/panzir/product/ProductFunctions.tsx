@@ -28,7 +28,7 @@ const ProductFunctions = () => {
             Термочехлы «Панцирь»
           </h3>
         </div>
-        <div className="mt-8 max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
+        <div className="mx-auto mt-8 max-w-3xl space-y-6 text-center text-lg leading-relaxed text-ink-muted">
           <p>
             Съёмные тепло- и шумоизоляционные чехлы для арматуры, фланцевых
             соединений, клапанов, оборудования и трубопроводных узлов.
@@ -52,7 +52,7 @@ const ProductFunctions = () => {
           ))}
         </div>
 
-        <p className="mt-10 max-w-3xl text-lg leading-relaxed text-ink-muted">
+        <p className="mx-auto mt-10 max-w-3xl text-center text-lg leading-relaxed text-ink-muted">
           Функции термочехлов опираются на требования нормативных документов.
           Подробности и ссылки на стандарты — внутри плакатов.
         </p>
