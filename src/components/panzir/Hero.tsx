@@ -32,9 +32,11 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <MonoLabel>Первое промышленное ателье России</MonoLabel>
+          <MonoLabel className="!gap-4 !text-[13px] font-semibold !tracking-[0.26em] !text-brass-soft md:!text-[15px]">
+            Первое промышленное ателье России
+          </MonoLabel>
 
-          <h1 className="mt-6 font-display text-6xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-7xl md:text-8xl">
+          <h1 className="mt-7 font-brand text-7xl font-medium leading-[1.05] tracking-[0.06em] text-ink sm:text-8xl md:text-[9rem]">
             ПАНЦИРЬ
           </h1>
 

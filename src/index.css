@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,14 +7,14 @@
 @layer base {
   :root {
     /* Panzir brand palette — premium industrial couture */
-    --bg: 210 52% 10%;             /* #0C1826 */
-    --bg-alt: 210 48% 14%;         /* #122234 */
-    --surface: 210 47% 18%;        /* #182B42 */
-    --ink: 43 39% 90%;             /* #F0EBDE warm ivory */
-    --ink-muted: 210 11% 65%;      /* #9BA6B0 */
-    --garnet: 352 57% 39%;         /* #9E2B3A deep burgundy */
-    --brass: 40 51% 57%;           /* #C9A25A bronze gold */
-    --steel: 205 15% 62%;          /* #8FA0AD */
+    --bg: 210 52% 10%; /* #0C1826 */
+    --bg-alt: 210 48% 14%; /* #122234 */
+    --surface: 210 47% 18%; /* #182B42 */
+    --ink: 43 39% 90%; /* #F0EBDE warm ivory */
+    --ink-muted: 210 11% 65%; /* #9BA6B0 */
+    --garnet: 352 57% 39%; /* #9E2B3A deep burgundy */
+    --brass: 40 51% 57%; /* #C9A25A bronze gold */
+    --steel: 205 15% 62%; /* #8FA0AD */
 
     --background: var(--bg);
     --foreground: var(--ink);
@@ -68,12 +68,20 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, .font-display {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
     font-family: "Fraunces", serif;
   }
 
   .font-mono {
     font-family: "IBM Plex Mono", monospace;
+  }
+
+  .font-brand {
+    font-family: "Cormorant Garamond", "Fraunces", serif;
   }
 }
 
