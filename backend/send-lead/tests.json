@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "CORS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Валидная заявка",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Тестов",
+        "phone": "+7 999 000-00-00",
+        "email": "test@example.com",
+        "message": "Проверка формы"
+      },
+      "expectedStatus": 200,
+      "expectedBody": { "success": true },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Без телефона — ошибка",
+      "method": "POST",
+      "path": "/",
+      "body": { "name": "Тест" },
+      "expectedStatus": 400
+    }
+  ]
+}
