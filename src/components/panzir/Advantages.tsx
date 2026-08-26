@@ -201,7 +201,7 @@ const Advantages = () => {
                   {/* Панцирь */}
                   <div className="rounded-md border border-brass/30 bg-brass/[0.06] p-6">
                     <span className="label-mono text-[11px] text-brass-soft">
-                      Термочехлы «Панцирь»
+                      ИТШМИ «Панцирь»
                     </span>
                     <ul className="mt-4 space-y-3">
                       {c.panzir.map((t, j) => (

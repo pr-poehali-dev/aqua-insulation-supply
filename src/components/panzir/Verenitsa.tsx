@@ -2,6 +2,13 @@ import Icon from '@/components/ui/icon';
 import { MonoLabel } from './PatternDecor';
 import VerenitsaConstruction from './VerenitsaConstruction';
 
+const BADGES = [
+  { icon: 'Thermometer', text: 'от −40 до +90 °C' },
+  { icon: 'MoveHorizontal', text: 'Компенсация перемещений' },
+  { icon: 'Ruler', text: 'Индивидуальный расчёт' },
+  { icon: 'FileText', text: 'ТУ 22.21.41.110-031-85495285-2025' },
+];
+
 const PARAMS = [
   { label: 'Диаметры трубопроводов', value: '32–1420 мм' },
   { label: 'Толщина мата', value: '50–200 мм (по расчёту)' },
@@ -35,6 +42,18 @@ const Verenitsa = () => {
               Основная задача — воспринимать температурные перемещения труб в
               грунте и снижать нагрузку на изоляцию и грунт.
             </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            {BADGES.map((b, i) => (
+              <div
+                key={i}
+                className="inline-flex items-center gap-2.5 rounded-sm border border-brass/30 bg-[#0E1B2B] px-4 py-3"
+              >
+                <Icon name={b.icon} size={18} className="text-brass-soft" />
+                <span className="text-sm font-medium text-ink">{b.text}</span>
+              </div>
+            ))}
           </div>
 
           <VerenitsaConstruction />

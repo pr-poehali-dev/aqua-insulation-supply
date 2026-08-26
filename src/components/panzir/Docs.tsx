@@ -13,7 +13,7 @@ const Docs = () => {
         </div>
         <p className="mx-auto mt-8 max-w-3xl text-center text-lg leading-relaxed text-ink-muted">
           Сертификаты соответствия, пожарные сертификаты, экспертные заключения
-          и инструкции по монтажу термочехлов «Панцирь».
+          и инструкции по монтажу ИТШМИ «Панцирь».
         </p>
 
         <div className="mt-14">

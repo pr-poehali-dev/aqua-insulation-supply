@@ -27,7 +27,7 @@ const DOCUMENTS: Doc[] = [
   {
     slug: 'sert-sootvetstviya-chehly',
     title: 'Сертификат соответствия ГОСТ Р',
-    meta: 'термочехлы «Панцирь»',
+    meta: 'ИТШМИ «Панцирь»',
   },
   {
     slug: 'instrukciya',

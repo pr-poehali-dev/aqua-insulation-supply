@@ -17,7 +17,7 @@ const ProductFunctions = () => {
 
   return (
     <>
-      {/* Термочехлы «Панцирь» */}
+      {/* ИТШМИ «Панцирь» */}
       <div
         id="thermocovers"
         className="mt-20 scroll-mt-24 border-t border-white/10 pt-16 md:mt-24"
@@ -25,7 +25,7 @@ const ProductFunctions = () => {
         <div className="text-center">
           <MonoLabel centered>Продукт</MonoLabel>
           <h3 className="mx-auto mt-6 max-w-3xl font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-            Термочехлы «Панцирь»
+            ИТШМИ «Панцирь»
           </h3>
         </div>
         <div className="mx-auto mt-8 max-w-3xl space-y-6 text-center text-lg leading-relaxed text-ink-muted">

@@ -158,7 +158,7 @@ export type CatalogItem = {
 export const CATALOG: CatalogItem[] = [
   {
     icon: 'ShieldHalf',
-    title: 'Термочехлы ИТШМИ «Панцирь»',
+    title: 'ИТШМИ «Панцирь»',
     text: 'Съёмные тепло- и шумоизоляционные чехлы индивидуального кроя. Главный продукт компании. Температуры от −200 до +1200 °C.',
     image: '/product/pancir.webp',
     featured: true,
