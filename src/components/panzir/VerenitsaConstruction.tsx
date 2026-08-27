@@ -16,7 +16,11 @@ const CONTACT_LAYER: MatCard[] = [
 ];
 
 const DAMPING_LAYER: MatCard[] = [
-  { title: 'Вспененный полиэтилен', image: '/verenitsa/polyethylene.webp' },
+  {
+    title: 'Вспененный полиэтилен',
+    image:
+      'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/47b18a41-6b79-45c4-96c5-16912fa36469.jpg',
+  },
   { title: 'Вспененный каучук', image: '/construction/2_1_foamed_rubber.webp' },
   {
     title: 'Мягкий полиуретан (закрытоячеистый)',
