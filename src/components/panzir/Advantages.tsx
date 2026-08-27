@@ -46,7 +46,7 @@ const ITEMS = [
 
 const COMPARISONS = [
   {
-    title: 'Панцирь vs Несъёмная изоляция',
+    title: 'Несъёмная изоляция vs Панцирь',
     subtitle: 'напыление / скорлупы',
     otherTitle: 'Несъёмная изоляция',
     other: [
@@ -65,7 +65,7 @@ const COMPARISONS = [
     photoLabel: 'Слева — несъёмная изоляция, справа — термочехол «Панцирь»',
   },
   {
-    title: 'Панцирь vs Металлические короба',
+    title: 'Металлические короба vs Панцирь',
     subtitle: null,
     otherTitle: 'Металлические короба',
     other: [
@@ -84,7 +84,7 @@ const COMPARISONS = [
     photoLabel: 'Слева — металлический короб, справа — термочехол «Панцирь»',
   },
   {
-    title: 'Панцирь vs Типичные чехлы',
+    title: 'Типичные чехлы vs Панцирь',
     subtitle: null,
     otherTitle: 'Типичные чехлы',
     other: [
