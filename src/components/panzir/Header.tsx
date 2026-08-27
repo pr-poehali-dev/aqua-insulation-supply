@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const NAV = [
@@ -15,9 +15,29 @@ const NAV = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y < 120 || open) {
+        setHidden(false);
+      } else if (Math.abs(y - lastY.current) > 8) {
+        setHidden(y > lastY.current);
+      }
+      lastY.current = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [open]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-xl">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-xl transition-transform duration-300 ease-out ${
+        hidden ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
       <div className="container flex h-[76px] items-center gap-6 xl:gap-10">
         <a
           href="#top"
