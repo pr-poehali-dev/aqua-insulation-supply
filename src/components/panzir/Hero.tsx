@@ -31,11 +31,18 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <h1 className="font-display text-4xl font-semibold uppercase leading-[1.12] tracking-[0.05em] text-ink sm:text-5xl md:text-6xl">
-            Первое промышленное
-            <br />
-            ателье России
-          </h1>
+          <div className="flex w-[min(100vw-2rem,1180px)] items-center justify-center gap-[3vw] sm:gap-7">
+            <span className="h-px w-[6vw] shrink-0 bg-gradient-to-r from-transparent to-brass-soft/70 sm:w-14 md:w-20" />
+            <h1
+              className="font-hero whitespace-nowrap text-[clamp(1.15rem,4.4vw,4rem)] font-semibold uppercase leading-[1.12] tracking-[0.02em] text-ink"
+              style={{ textShadow: '0 2px 24px rgba(12,24,38,.65)' }}
+            >
+              Первое промышленное
+              <br />
+              ателье России
+            </h1>
+            <span className="h-px w-[6vw] shrink-0 bg-gradient-to-l from-transparent to-brass-soft/70 sm:w-14 md:w-20" />
+          </div>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
             Съёмные термочехлы точного кроя под ваше оборудование.
