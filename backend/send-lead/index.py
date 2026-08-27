@@ -49,10 +49,10 @@ def save_lead(name: str, phone: str, email: str, message: str) -> None:
 
 
 def send_mail(name: str, phone: str, email: str, message: str) -> bool:
-    host = os.environ.get('SMTP_HOST')
-    user = os.environ.get('SMTP_USER')
+    host = os.environ.get('SMTP_HOST') or 'smtp.mail.ru'
+    user = os.environ.get('SMTP_USER') or TO_EMAIL
     password = os.environ.get('SMTP_PASSWORD')
-    if not (host and user and password):
+    if not password:
         return False
 
     port = int(os.environ.get('SMTP_PORT', '465'))
