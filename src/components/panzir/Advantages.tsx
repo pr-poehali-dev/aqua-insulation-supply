@@ -99,7 +99,8 @@ const COMPARISONS = [
       'Надёжные крепления',
       'Аккуратный и презентабельный вид',
     ],
-    photo: '/comparison/covers.webp',
+    photo:
+      'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/db853878-9c2a-4fef-ac23-20b348f910a4.jpg',
     photoLabel: 'Слева — типичные чехлы, справа — термочехол «Панцирь»',
   },
 ];
