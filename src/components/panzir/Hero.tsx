@@ -1,5 +1,4 @@
 import Icon from '@/components/ui/icon';
-import { MonoLabel } from './PatternDecor';
 
 const FACTS = [
   { value: 'до 98%', label: 'меньше теплопотерь' },
@@ -32,15 +31,10 @@ const Hero = () => {
 
       <div className="container relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <MonoLabel
-            centered
-            className="!gap-4 !text-[13px] font-semibold !tracking-[0.26em] !text-brass-soft md:!text-[15px]"
-          >
-            Первое промышленное ателье России
-          </MonoLabel>
-
-          <h1 className="mt-7 font-brand text-7xl font-medium leading-[1.05] tracking-[0.06em] text-ink sm:text-8xl md:text-[9rem]">
-            ПАНЦИРЬ
+          <h1 className="font-display text-4xl font-semibold uppercase leading-[1.12] tracking-[0.05em] text-ink sm:text-5xl md:text-6xl">
+            Первое промышленное
+            <br />
+            ателье России
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-muted md:text-xl">
