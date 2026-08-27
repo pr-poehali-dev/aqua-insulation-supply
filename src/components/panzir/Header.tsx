@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-bg/70 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between">
+      <div className="container flex h-[76px] items-center gap-6 xl:gap-10">
         <a
           href="#top"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -28,25 +28,24 @@ const Header = () => {
           <img
             src="https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/4236fddd-6edc-4ec4-ba04-e809caf68bbc.png"
             alt="Панцирь"
-            className="h-11 w-auto md:h-12"
+            className="h-12 w-auto md:h-[52px]"
           />
         </a>
 
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
+        <nav className="ml-auto hidden items-center lg:flex">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-[13px] text-ink-muted transition-colors hover:text-ink"
+              className="whitespace-nowrap rounded-sm px-2.5 py-2 text-[13px] leading-none text-ink-muted transition-colors hover:bg-brass/10 hover:text-brass-soft xl:px-3.5"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-
         <button
-          className="text-ink lg:hidden"
+          className="ml-auto text-ink lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Меню"
         >
