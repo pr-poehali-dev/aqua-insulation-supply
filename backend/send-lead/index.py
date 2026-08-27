@@ -16,7 +16,7 @@ CORS = {
     'Content-Type': 'application/json',
 }
 
-TO_EMAIL = 'sale@a-ros.ru'
+TO_EMAIL = 'teplofabrika@mail.ru'
 
 
 def esc(value: str) -> str:
