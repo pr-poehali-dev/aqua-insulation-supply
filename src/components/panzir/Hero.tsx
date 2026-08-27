@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="flex w-[min(100vw-2rem,1180px)] items-center justify-center gap-[3vw] sm:gap-7">
             <span className="h-px w-[6vw] shrink-0 bg-gradient-to-r from-transparent to-brass-soft/70 sm:w-14 md:w-20" />
             <h1
-              className="font-hero whitespace-nowrap text-[clamp(1.15rem,4.4vw,4rem)] font-semibold uppercase leading-[1.12] tracking-[0.02em] text-ink"
+              className="font-brand whitespace-nowrap text-[clamp(1.15rem,4.4vw,4rem)] font-semibold uppercase leading-[1.12] tracking-[0.02em] text-brass-soft"
               style={{ textShadow: '0 2px 24px rgba(12,24,38,.65)' }}
             >
               Первое промышленное
