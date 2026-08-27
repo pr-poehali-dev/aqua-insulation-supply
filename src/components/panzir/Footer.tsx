@@ -14,6 +14,20 @@ const Footer = () => {
             <div className="label-mono mt-1 text-[10px] text-steel">
               ООО «АкваРос СПб» · термочехлы
             </div>
+            <div className="mt-4 flex flex-col gap-1.5">
+              <a
+                href="tel:+78007008481"
+                className="text-sm font-medium text-ink transition-colors hover:text-brass-soft"
+              >
+                8 (800) 700-84-81
+              </a>
+              <a
+                href="tel:+78127031644"
+                className="text-sm font-medium text-ink transition-colors hover:text-brass-soft"
+              >
+                +7 (812) 703-16-44
+              </a>
+            </div>
           </div>
 
           <nav className="flex flex-col gap-2.5 md:items-end">

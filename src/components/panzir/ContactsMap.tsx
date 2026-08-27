@@ -19,8 +19,8 @@ const pinIcon = (label: string) =>
   L.divIcon({
     className: '',
     html: `<div style="display:flex;align-items:center;gap:6px;transform:translate(-11px,-11px)">
-      <span style="width:22px;height:22px;border-radius:50%;background:#C9A25A;border:3px solid #0C1826;box-shadow:0 0 0 2px rgba(201,162,90,.35)"></span>
-      <span style="font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#F0EBDE;background:rgba(12,24,38,.85);padding:5px 8px;border:1px solid rgba(201,162,90,.35);border-radius:2px;white-space:nowrap">${label}</span>
+      <span style="width:22px;height:22px;border-radius:50%;background:#C9A25A;border:3px solid #0C1826;box-shadow:0 0 0 3px rgba(255,255,255,.9)"></span>
+      <span style="font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#F0EBDE;background:rgba(12,24,38,.92);padding:5px 8px;border:1px solid rgba(201,162,90,.55);border-radius:2px;white-space:nowrap">${label}</span>
     </div>`,
     iconSize: [0, 0],
   });
@@ -41,7 +41,7 @@ const ContactsMap = () => {
     mapRef.current = map;
 
     L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       { maxZoom: 19 },
     ).addTo(map);
 
@@ -96,7 +96,7 @@ const ContactsMap = () => {
       <div
         ref={ref}
         className="min-h-[300px] w-full flex-1"
-        style={{ backgroundColor: '#0C1826' }}
+        style={{ backgroundColor: '#E8E6E1' }}
       />
     </div>
   );
