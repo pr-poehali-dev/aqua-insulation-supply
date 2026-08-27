@@ -100,7 +100,7 @@ const COMPARISONS = [
       'Аккуратный и презентабельный вид',
     ],
     photo:
-      'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/db853878-9c2a-4fef-ac23-20b348f910a4.jpg',
+      'https://cdn.poehali.dev/projects/f1826e2b-819c-415e-ba4d-8aa7518a1625/bucket/0c029a1e-69ee-49b7-a609-708b6d91a184.jpg',
     photoLabel: 'Слева — типичные чехлы, справа — термочехол «Панцирь»',
   },
 ];
