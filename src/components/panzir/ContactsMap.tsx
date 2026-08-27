@@ -1,11 +1,15 @@
+import Icon from '@/components/ui/icon';
+
 const POINTS = [
   {
     name: 'Офис',
     address: 'Московское шоссе 46Б, Санкт-Петербург',
+    link: 'https://yandex.ru/maps/?text=Санкт-Петербург, Московское шоссе 46Б',
   },
   {
     name: 'Склад',
     address: 'Индустриальная ул. 21, Колтуши',
+    link: 'https://yandex.ru/maps/?text=Колтуши, Индустриальная улица 21',
   },
 ];
 
@@ -18,9 +22,12 @@ const ContactsMap = () => {
     <div className="flex h-full min-h-[420px] flex-col overflow-hidden rounded-sm border border-white/12 shadow-lg shadow-black/20">
       <div className="grid shrink-0 gap-px bg-white/10 sm:grid-cols-2">
         {POINTS.map((p) => (
-          <div
+          <a
             key={p.name}
-            className="flex items-start gap-3 px-5 py-4"
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-start gap-3 px-5 py-4 transition-colors hover:bg-[#17273f]"
             style={{ backgroundColor: '#111f35' }}
           >
             <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brass ring-2 ring-brass/25" />
@@ -28,11 +35,16 @@ const ContactsMap = () => {
               <div className="label-mono text-[9px] text-brass-soft">
                 {p.name}
               </div>
-              <div className="mt-1 text-[13px] leading-snug text-ink-muted">
+              <div className="mt-1 text-[13px] leading-snug text-ink-muted transition-colors group-hover:text-ink">
                 {p.address}
               </div>
             </div>
-          </div>
+            <Icon
+              name="ExternalLink"
+              size={14}
+              className="ml-auto mt-1 shrink-0 text-steel transition-colors group-hover:text-brass-soft"
+            />
+          </a>
         ))}
       </div>
       <div
