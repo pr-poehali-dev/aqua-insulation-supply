@@ -1,77 +1,19 @@
-import { useEffect, useRef } from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-
 const POINTS = [
   {
     name: 'Офис',
     address: 'Московское шоссе 46Б, Санкт-Петербург',
-    coords: [59.81936, 30.37071] as [number, number],
   },
   {
     name: 'Склад',
     address: 'Индустриальная ул. 21, Колтуши',
-    coords: [59.9303, 30.6247] as [number, number],
   },
 ];
 
-const pinIcon = (label: string) =>
-  L.divIcon({
-    className: '',
-    html: `<div style="display:flex;align-items:center;gap:6px;transform:translate(-11px,-11px)">
-      <span style="width:22px;height:22px;border-radius:50%;background:#C9A25A;border:3px solid #0C1826;box-shadow:0 0 0 3px rgba(255,255,255,.9)"></span>
-      <span style="font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#F0EBDE;background:rgba(12,24,38,.92);padding:5px 8px;border:1px solid rgba(201,162,90,.55);border-radius:2px;white-space:nowrap">${label}</span>
-    </div>`,
-    iconSize: [0, 0],
-  });
+const MAP_SRC =
+  'https://yandex.ru/map-widget/v1/?lang=ru_RU&ll=30.497700%2C59.874800&z=11' +
+  '&pt=30.370710,59.819360,pm2orgm~30.624700,59.930300,pm2orgm';
 
 const ContactsMap = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<L.Map | null>(null);
-
-  useEffect(() => {
-    if (!ref.current || mapRef.current) return;
-
-    const map = L.map(ref.current, {
-      scrollWheelZoom: false,
-      zoomControl: true,
-      attributionControl: false,
-      zoomSnap: 0.25,
-    });
-    mapRef.current = map;
-
-    L.tileLayer(
-      'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-      { maxZoom: 19 },
-    ).addTo(map);
-
-    const bounds = L.latLngBounds(POINTS.map((p) => p.coords));
-    const fit = () => {
-      map.invalidateSize();
-      map.fitBounds(bounds, {
-        paddingTopLeft: [50, 45],
-        paddingBottomRight: [110, 45],
-      });
-      map.setZoom(map.getZoom() - 0.5);
-    };
-    fit();
-
-    POINTS.forEach((p) => {
-      L.marker(p.coords, { icon: pinIcon(p.name) })
-        .addTo(map)
-        .bindPopup(`<b>${p.name}</b><br/>${p.address}`);
-    });
-
-    const ro = new ResizeObserver(fit);
-    ro.observe(ref.current);
-
-    return () => {
-      ro.disconnect();
-      map.remove();
-      mapRef.current = null;
-    };
-  }, []);
-
   return (
     <div className="flex h-full min-h-[420px] flex-col overflow-hidden rounded-sm border border-white/12 shadow-lg shadow-black/20">
       <div className="grid shrink-0 gap-px bg-white/10 sm:grid-cols-2">
@@ -94,10 +36,17 @@ const ContactsMap = () => {
         ))}
       </div>
       <div
-        ref={ref}
         className="min-h-[300px] w-full flex-1"
         style={{ backgroundColor: '#E8E6E1' }}
-      />
+      >
+        <iframe
+          src={MAP_SRC}
+          title="Карта: офис и склад"
+          className="h-full w-full border-0"
+          allowFullScreen
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 };
