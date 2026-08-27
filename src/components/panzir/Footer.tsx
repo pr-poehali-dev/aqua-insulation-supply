@@ -8,11 +8,13 @@ const Footer = () => {
         <SeamLine className="mb-10" />
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
           <div>
-            <div className="font-display text-2xl font-semibold text-ink">
-              ПАНЦИРЬ
-            </div>
-            <div className="label-mono mt-1 text-[10px] text-steel">
-              ООО «АкваРос СПб» · термочехлы
+            <img
+              src="/pancir-logo-light.png"
+              alt="Панцирь"
+              className="h-11 w-auto md:h-12"
+            />
+            <div className="label-mono mt-3 text-[10px] text-steel">
+              ООО «АкваРос СПб»
             </div>
             <div className="mt-4 flex flex-col gap-1.5">
               <a
