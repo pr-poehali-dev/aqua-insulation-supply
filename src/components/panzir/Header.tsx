@@ -17,7 +17,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-bg/70 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/95 backdrop-blur-xl">
       <div className="container flex h-[76px] items-center gap-6 xl:gap-10">
         <a
           href="#top"
@@ -37,7 +37,7 @@ const Header = () => {
             <a
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap rounded-sm px-2.5 py-2 text-[13px] leading-none text-ink-muted transition-colors hover:bg-brass/10 hover:text-brass-soft xl:px-3.5"
+              className="whitespace-nowrap rounded-sm px-2.5 py-2 text-[13px] font-medium leading-none text-[#1B2C42] transition-colors hover:bg-garnet/10 hover:text-garnet xl:px-3.5"
             >
               {item.label}
             </a>
@@ -45,7 +45,7 @@ const Header = () => {
         </nav>
 
         <button
-          className="ml-auto text-ink lg:hidden"
+          className="ml-auto text-[#1B2C42] lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Меню"
         >
@@ -54,14 +54,14 @@ const Header = () => {
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-bg lg:hidden">
+        <div className="border-t border-black/10 bg-white lg:hidden">
           <nav className="container flex flex-col py-4">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-ink-muted hover:text-ink"
+                className="py-3 text-[13px] font-medium text-[#1B2C42] hover:text-garnet"
               >
                 {item.label}
               </a>
