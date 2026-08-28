@@ -17,6 +17,7 @@ CORS = {
 }
 
 TO_EMAIL = 't1izol@mail.ru'
+SITE_NAME = 'протермочехол.рф'
 
 
 def esc(value: str) -> str:
@@ -61,6 +62,7 @@ def send_mail(name: str, phone: str, email: str, message: str) -> bool:
         ('Телефон', phone),
         ('Email', email or '—'),
         ('Сообщение', message or '—'),
+        ('Сайт', SITE_NAME),
     ]
     html_rows = ''.join(
         f'<tr><td style="padding:8px 16px 8px 0;color:#8FA0AD;'
@@ -79,7 +81,7 @@ def send_mail(name: str, phone: str, email: str, message: str) -> bool:
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = f'Заявка с сайта ПАНЦИРЬ — {name}'
-    msg['From'] = formataddr(('Сайт ПАНЦИРЬ', user))
+    msg['From'] = formataddr((SITE_NAME, user))
     msg['To'] = TO_EMAIL
     msg['Date'] = formatdate(localtime=True)
     if email:
