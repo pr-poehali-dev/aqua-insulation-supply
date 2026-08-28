@@ -4,6 +4,7 @@ import re
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from datetime import datetime, timedelta, timezone
 from email.utils import formataddr, formatdate
 
 import psycopg2
@@ -63,6 +64,12 @@ def send_mail(name: str, phone: str, email: str, message: str) -> bool:
         ('Email', email or '—'),
         ('Сообщение', message or '—'),
         ('Сайт', SITE_NAME),
+        (
+            'Дата и время',
+            datetime.now(timezone(timedelta(hours=3))).strftime(
+                '%d.%m.%Y %H:%M (МСК)'
+            ),
+        ),
     ]
     html_rows = ''.join(
         f'<tr><td style="padding:8px 16px 8px 0;color:#8FA0AD;'
