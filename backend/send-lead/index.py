@@ -80,14 +80,14 @@ def send_mail(name: str, phone: str, email: str, message: str) -> bool:
     )
     html = (
         '<div style="font-family:Arial,Helvetica,sans-serif">'
-        '<h2 style="color:#12202E;margin:0 0 16px">Заявка с сайта ПАНЦИРЬ</h2>'
+        f'<h2 style="color:#12202E;margin:0 0 16px">Заявка с сайта {SITE_NAME}</h2>'
         f'<table cellpadding="0" cellspacing="0">{html_rows}</table>'
         '</div>'
     )
     text = '\n'.join(f'{k}: {v}' for k, v in rows)
 
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = f'Заявка с сайта ПАНЦИРЬ — {name}'
+    msg['Subject'] = f'Заявка с сайта {SITE_NAME} — {name}'
     msg['From'] = formataddr((SITE_NAME, user))
     msg['To'] = TO_EMAIL
     msg['Date'] = formatdate(localtime=True)
