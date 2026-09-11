@@ -8,6 +8,23 @@ import { MonoLabel } from './PatternDecor';
 type Block = { t: 'h2' | 'h3' | 'p' | 'li'; v: string };
 type Doc = { title: string; blocks: Block[] };
 
+const EMAIL_RE = /([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g;
+
+const withLinks = (text: string) =>
+  text.split(EMAIL_RE).map((part, i) =>
+    i % 2 === 1 ? (
+      <a
+        key={i}
+        href={`mailto:${part}`}
+        className="text-brass-soft underline underline-offset-4 transition-colors hover:text-brass"
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    ),
+  );
+
 const LegalPage = ({ file, label }: { file: string; label: string }) => {
   const [doc, setDoc] = useState<Doc | null>(null);
 
@@ -74,7 +91,7 @@ const LegalPage = ({ file, label }: { file: string; label: string }) => {
                   <div key={i} className="mt-2.5 flex gap-3 pl-1">
                     <span className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-brass" />
                     <span className="text-[15px] leading-relaxed text-ink-muted">
-                      {b.v}
+                      {withLinks(b.v)}
                     </span>
                   </div>
                 );
@@ -83,7 +100,7 @@ const LegalPage = ({ file, label }: { file: string; label: string }) => {
                   key={i}
                   className="mt-5 text-[15px] leading-relaxed text-ink-muted md:text-base"
                 >
-                  {b.v}
+                  {withLinks(b.v)}
                 </p>
               );
             })}
