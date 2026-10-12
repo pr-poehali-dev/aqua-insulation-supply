@@ -12,11 +12,7 @@ type Tile = {
   external?: boolean;
 };
 
-const MAP_URL =
-  'https://yandex.ru/maps/?text=' +
-  encodeURIComponent(
-    '196158, Санкт-Петербург, Московское шоссе 46Б, Офисный центр М-46',
-  );
+const MAP_URL = 'https://yandex.ru/maps/-/CXucZPoF';
 
 const TILES: Tile[] = [
   {

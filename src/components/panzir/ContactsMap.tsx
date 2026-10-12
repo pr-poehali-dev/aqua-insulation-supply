@@ -4,7 +4,7 @@ const POINTS = [
   {
     name: 'Офис',
     address: 'Московское шоссе 46Б, Санкт-Петербург',
-    link: 'https://yandex.ru/maps/?text=Санкт-Петербург, Московское шоссе 46Б',
+    link: 'https://yandex.ru/maps/-/CXucZPoF',
   },
   {
     name: 'Склад',
